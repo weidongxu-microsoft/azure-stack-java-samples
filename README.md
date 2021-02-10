@@ -1,5 +1,9 @@
 # Samples for Java SDK for Azure Stack
 
+## Limitation
+
+The samples only works for Azure Cloud, not Azure Stack, as the api-version of the services involved is not yet available to any Azure Stack.
+
 ## Requirement
 
 Requires an Azure Subscription.
