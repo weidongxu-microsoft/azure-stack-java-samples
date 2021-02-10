@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.azure</groupId>
+  <artifactId>azure-stack-samples-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0-beta.1</version> <!-- Need not change for every release-->
+
+  <modules>
+    <module>azure-stack</module>
+
+    <module>compute/azure-resourcemanager-compute-generated</module>
+    <module>iothub/azure-resourcemanager-iothub-generated</module>
+    <module>network/azure-resourcemanager-network-generated</module>
+    <module>resources/azure-resourcemanager-resources-generated</module>
+    <module>storage/azure-resourcemanager-storage-generated</module>
+  </modules>
+</project>

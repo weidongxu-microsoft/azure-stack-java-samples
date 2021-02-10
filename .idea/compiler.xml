@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="azure-resourcemanager-network-generated" />
+        <module name="azure-resourcemanager-iothub-generated" />
+        <module name="azure-resourcemanager-resources-generated" />
+        <module name="azure-resourcemanager-storage-generated" />
+        <module name="azure-stack" />
+        <module name="azure-resourcemanager-compute-generated" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="azure-resourcemanager-compute-generated" target="11" />
+      <module name="azure-resourcemanager-iothub-generated" target="11" />
+      <module name="azure-resourcemanager-network-generated" target="11" />
+      <module name="azure-resourcemanager-resources-generated" target="11" />
+      <module name="azure-resourcemanager-storage-generated" target="11" />
+      <module name="azure-stack" target="11" />
+      <module name="azure-stack-samples-parent" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
