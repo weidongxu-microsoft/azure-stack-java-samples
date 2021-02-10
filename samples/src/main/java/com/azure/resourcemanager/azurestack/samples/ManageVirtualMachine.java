@@ -96,7 +96,7 @@ public final class ManageVirtualMachine {
                             new ImageReference()
                                     .withPublisher("Canonical")
                                     .withOffer("UbuntuServer")
-                                    .withSku("18.04.0-LTS")
+                                    .withSku("18.04-LTS")
                                     .withVersion("latest")
                     ))
                     .withOsProfile(

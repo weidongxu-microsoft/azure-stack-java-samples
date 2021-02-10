@@ -5,7 +5,6 @@ package com.azure.resourcemanager.azurestack.samples;
 
 import com.azure.core.credential.TokenCredential;
 import com.azure.core.http.HttpClient;
-import com.azure.core.http.HttpClientProvider;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.core.http.policy.HttpPipelinePolicy;
 import com.azure.core.http.policy.RetryPolicy;
