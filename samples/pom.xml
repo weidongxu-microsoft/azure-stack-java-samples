@@ -1,6 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>com.azure.resourcemanager</groupId>
     <artifactId>azure-stack-samples-parent</artifactId>
@@ -8,38 +7,28 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>azure-resourcemanager-azurestack</artifactId>
+  <artifactId>azure-stack-samples</artifactId>
   <version>1.0.0-beta.1</version>
   <packaging>jar</packaging>
 
   <dependencies>
     <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-compute-generated</artifactId>
-      <version>1.0.0-beta.1</version>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-identity</artifactId>
+      <version>1.2.2</version>
     </dependency>
     <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-iothub-generated</artifactId>
-      <version>1.0.0-beta.1</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.30</version>
     </dependency>
+
     <dependency>
       <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-network-generated</artifactId>
-      <version>1.0.0-beta.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-resources-generated</artifactId>
-      <version>1.0.0-beta.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-storage-generated</artifactId>
+      <artifactId>azure-resourcemanager-azurestack</artifactId>
       <version>1.0.0-beta.1</version>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>

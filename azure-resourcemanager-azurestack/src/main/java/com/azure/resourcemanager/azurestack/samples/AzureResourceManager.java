@@ -1,10 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-package com.azure.resourcemanager.azurestack;
+package com.azure.resourcemanager.azurestack.samples;
 
 import com.azure.core.credential.TokenCredential;
 import com.azure.core.http.HttpClient;
+import com.azure.core.http.HttpClientProvider;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.core.http.policy.HttpPipelinePolicy;
 import com.azure.core.http.policy.RetryPolicy;
@@ -162,12 +163,16 @@ public class AzureResourceManager {
         NetworkManager.Configurable networkManagerConfigurable = NetworkManager.configure();
         IotHubManager.Configurable iotHubManagerConfigurable = IotHubManager.configure();
 
-        if (configurable.httpClient != null) {
-            resourceManagerConfigurable.withHttpClient(configurable.httpClient);
-            storageManagerConfigurable.withHttpClient(configurable.httpClient);
-            computeManagerConfigurable.withHttpClient(configurable.httpClient);
-            networkManagerConfigurable.withHttpClient(configurable.httpClient);
-            iotHubManagerConfigurable.withHttpClient(configurable.httpClient);
+        HttpClient httpClient = configurable.httpClient;
+        if (httpClient == null) {
+            httpClient = HttpClient.createDefault();
+        }
+        if (httpClient != null) {
+            resourceManagerConfigurable.withHttpClient(httpClient);
+            storageManagerConfigurable.withHttpClient(httpClient);
+            computeManagerConfigurable.withHttpClient(httpClient);
+            networkManagerConfigurable.withHttpClient(httpClient);
+            iotHubManagerConfigurable.withHttpClient(httpClient);
         }
         if (configurable.httpLogOptions != null) {
             resourceManagerConfigurable.withLogOptions(configurable.httpLogOptions);
