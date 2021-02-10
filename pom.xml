@@ -9,10 +9,10 @@
   <modules>
     <module>azure-resourcemanager-azurestack</module>
 
-    <module>compute/azure-resourcemanager-compute-generated</module>
-    <module>iothub/azure-resourcemanager-iothub-generated</module>
-    <module>network/azure-resourcemanager-network-generated</module>
-    <module>resources/azure-resourcemanager-resources-generated</module>
-    <module>storage/azure-resourcemanager-storage-generated</module>
+    <module>sdk/azure-resourcemanager-compute-generated</module>
+    <module>sdk/azure-resourcemanager-iothub-generated</module>
+    <module>sdk/azure-resourcemanager-network-generated</module>
+    <module>sdk/azure-resourcemanager-resources-generated</module>
+    <module>sdk/azure-resourcemanager-storage-generated</module>
   </modules>
 </project>
