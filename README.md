@@ -18,7 +18,7 @@ This way, only Subscription ID is required. It can be configured as `AZURE_SUBSC
 
 ## Modules
 
-`azure-resourcemanager-azurestack` is the proof of concept of the new Azure Stack aggregated package. Artifact name and package name is TBD.
+`azure-resourcemanager-azurestack` module is the proof of concept of the new Azure Stack aggregated package. Artifact name and package name is TBD.
 
 Modules under `sdk` is Java SDK for services, as none of the SDK is released, it had to be included with this repository. Artifact name and package name is TBD.
 
