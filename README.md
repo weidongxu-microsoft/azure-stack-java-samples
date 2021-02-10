@@ -1,29 +1,30 @@
-# Samples for Java Azure Stack
+# Samples for Java SDK for Azure Stack
 
 ## Requirement
 
 Requires an Azure Subscription.
 
-Configure following system enviornment for default authentication via client/secret.
+JDK 8 or above, and Maven.
+
+Configure following system environment for default authentication via client/secret.
 - `AZURE_CLIENT_ID`
 - `AZURE_CLIENT_SECRET`
 - `AZURE_TENANT_ID`
 - `AZURE_SUBSCRIPTION_ID`
 
 Alternatively one can run it inside Azure resource, with Managed Identity enabled.
-This way, only Subscription ID is required.
-It can be configured as `AZURE_SUBSCRIPTION_ID` system enviornment, or via `AzureProfile` directly in code.
+This way, only Subscription ID is required. It can be configured as `AZURE_SUBSCRIPTION_ID` system environment, or via `AzureProfile` directly in code.
 `AZURE_CLIENT_ID` is required if it is user-assigned managed identity.
 
 ## Modules
 
-`azure-resourcemanager-azurestack` is POC of track1 Azure Stack aggregated package. Name is TBD.
+`azure-resourcemanager-azurestack` is the proof of concept of the new Azure Stack aggregated package. Artifact name and package name is TBD.
 
-Modules under `sdk` is Java SDK for services, as none of the SDK is released, it had to be included with the samples repository.
+Modules under `sdk` is Java SDK for services, as none of the SDK is released, it had to be included with this repository. Artifact name and package name is TBD.
 
-`samples` module contains the sample.
+`samples` module contains the classes for samples.
 
 ## Samples
 
-- `ManageVirtualMachine` is sample for managing Azure Virtual Machine
-- `ManageIotHub` is sample for managing Azure IoT Hub
+- [`ManageVirtualMachine`](samples/src/main/java/com/azure/resourcemanager/azurestack/samples/ManageVirtualMachine.java) is sample for managing Azure Virtual Machine.
+- [`ManageIotHub`](samples/src/main/java/com/azure/resourcemanager/azurestack/samples/ManageIotHub.java) is sample for managing Azure IoT Hub.

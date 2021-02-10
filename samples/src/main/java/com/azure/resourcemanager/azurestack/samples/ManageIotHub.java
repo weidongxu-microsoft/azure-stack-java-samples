@@ -31,6 +31,10 @@ public final class ManageIotHub {
         String iotHubName = randomString("iot", 15);
 
         try {
+            azure.resources().resourceGroups().define(rgName)
+                    .withRegion(region)
+                    .create();
+
             IotHubDescription iotHubDescription = azure.iotHub().iotHubResources().define(iotHubName)
                     .withRegion(Region.US_WEST)
                     .withExistingResourceGroup(rgName)
