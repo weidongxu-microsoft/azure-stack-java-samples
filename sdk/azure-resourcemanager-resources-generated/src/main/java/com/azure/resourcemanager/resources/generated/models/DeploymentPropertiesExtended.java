@@ -19,10 +19,10 @@ public final class DeploymentPropertiesExtended {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(DeploymentPropertiesExtended.class);
 
     /*
-     * Denotes the state of provisioning.
+     * The state of the provisioning.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
-    private ProvisioningState provisioningState;
+    private String provisioningState;
 
     /*
      * The correlation ID of the deployment.
@@ -121,11 +121,11 @@ public final class DeploymentPropertiesExtended {
     private ManagementError error;
 
     /**
-     * Get the provisioningState property: Denotes the state of provisioning.
+     * Get the provisioningState property: The state of the provisioning.
      *
      * @return the provisioningState value.
      */
-    public ProvisioningState provisioningState() {
+    public String provisioningState() {
         return this.provisioningState;
     }
 

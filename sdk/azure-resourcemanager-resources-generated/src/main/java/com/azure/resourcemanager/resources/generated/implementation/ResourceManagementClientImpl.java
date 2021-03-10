@@ -222,7 +222,7 @@ public final class ResourceManagementClientImpl implements ResourceManagementCli
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2020-06-01";
+        this.apiVersion = "2019-10-01";
         this.operations = new OperationsClientImpl(this);
         this.deployments = new DeploymentsClientImpl(this);
         this.providers = new ProvidersClientImpl(this);

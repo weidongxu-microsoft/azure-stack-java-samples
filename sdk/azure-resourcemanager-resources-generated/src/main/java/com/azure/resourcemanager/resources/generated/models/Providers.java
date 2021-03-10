@@ -34,31 +34,6 @@ public interface Providers {
     Response<Provider> unregisterWithResponse(String resourceProviderNamespace, Context context);
 
     /**
-     * Registers a management group with a resource provider.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider to register.
-     * @param groupId The management group ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId);
-
-    /**
-     * Registers a management group with a resource provider.
-     *
-     * @param resourceProviderNamespace The namespace of the resource provider to register.
-     * @param groupId The management group ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
-     */
-    Response<Void> registerAtManagementGroupScopeWithResponse(
-        String resourceProviderNamespace, String groupId, Context context);
-
-    /**
      * Registers a subscription with a resource provider.
      *
      * @param resourceProviderNamespace The namespace of the resource provider to register.

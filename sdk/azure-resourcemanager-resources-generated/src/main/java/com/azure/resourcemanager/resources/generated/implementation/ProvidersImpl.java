@@ -50,17 +50,6 @@ public final class ProvidersImpl implements Providers {
         }
     }
 
-    public void registerAtManagementGroupScope(String resourceProviderNamespace, String groupId) {
-        this.serviceClient().registerAtManagementGroupScope(resourceProviderNamespace, groupId);
-    }
-
-    public Response<Void> registerAtManagementGroupScopeWithResponse(
-        String resourceProviderNamespace, String groupId, Context context) {
-        return this
-            .serviceClient()
-            .registerAtManagementGroupScopeWithResponse(resourceProviderNamespace, groupId, context);
-    }
-
     public Provider register(String resourceProviderNamespace) {
         ProviderInner inner = this.serviceClient().register(resourceProviderNamespace);
         if (inner != null) {
