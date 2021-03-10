@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallFqdnTagInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallFqdnTag;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -14,9 +13,11 @@ import java.util.Map;
 public final class AzureFirewallFqdnTagImpl implements AzureFirewallFqdnTag {
     private AzureFirewallFqdnTagInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AzureFirewallFqdnTagImpl(AzureFirewallFqdnTagInner innerObject, NetworkManager serviceManager) {
+    AzureFirewallFqdnTagImpl(
+        AzureFirewallFqdnTagInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -62,7 +63,7 @@ public final class AzureFirewallFqdnTagImpl implements AzureFirewallFqdnTag {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

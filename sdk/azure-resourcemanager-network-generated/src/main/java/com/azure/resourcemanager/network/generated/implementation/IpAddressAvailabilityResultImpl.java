@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.IpAddressAvailabilityResultInner;
 import com.azure.resourcemanager.network.generated.models.IpAddressAvailabilityResult;
 import java.util.Collections;
@@ -13,9 +12,11 @@ import java.util.List;
 public final class IpAddressAvailabilityResultImpl implements IpAddressAvailabilityResult {
     private IpAddressAvailabilityResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    IpAddressAvailabilityResultImpl(IpAddressAvailabilityResultInner innerObject, NetworkManager serviceManager) {
+    IpAddressAvailabilityResultImpl(
+        IpAddressAvailabilityResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -37,7 +38,7 @@ public final class IpAddressAvailabilityResultImpl implements IpAddressAvailabil
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

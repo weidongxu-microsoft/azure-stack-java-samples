@@ -33,7 +33,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupListResult;
-import com.azure.resourcemanager.compute.generated.models.UpdateResource;
+import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupUpdate;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ProximityPlacementGroupsClient. */
@@ -93,7 +93,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
             @PathParam("proximityPlacementGroupName") String proximityPlacementGroupName,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") UpdateResource parameters,
+            @BodyParam("application/json") ProximityPlacementGroupUpdate parameters,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -369,7 +369,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> updateWithResponseAsync(
-        String resourceGroupName, String proximityPlacementGroupName, UpdateResource parameters) {
+        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupUpdate parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -429,7 +429,10 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProximityPlacementGroupInner>> updateWithResponseAsync(
-        String resourceGroupName, String proximityPlacementGroupName, UpdateResource parameters, Context context) {
+        String resourceGroupName,
+        String proximityPlacementGroupName,
+        ProximityPlacementGroupUpdate parameters,
+        Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -485,7 +488,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProximityPlacementGroupInner> updateAsync(
-        String resourceGroupName, String proximityPlacementGroupName, UpdateResource parameters) {
+        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupUpdate parameters) {
         return updateWithResponseAsync(resourceGroupName, proximityPlacementGroupName, parameters)
             .flatMap(
                 (Response<ProximityPlacementGroupInner> res) -> {
@@ -510,7 +513,7 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ProximityPlacementGroupInner update(
-        String resourceGroupName, String proximityPlacementGroupName, UpdateResource parameters) {
+        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupUpdate parameters) {
         return updateAsync(resourceGroupName, proximityPlacementGroupName, parameters).block();
     }
 
@@ -528,7 +531,10 @@ public final class ProximityPlacementGroupsClientImpl implements ProximityPlacem
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ProximityPlacementGroupInner> updateWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, UpdateResource parameters, Context context) {
+        String resourceGroupName,
+        String proximityPlacementGroupName,
+        ProximityPlacementGroupUpdate parameters,
+        Context context) {
         return updateWithResponseAsync(resourceGroupName, proximityPlacementGroupName, parameters, context).block();
     }
 

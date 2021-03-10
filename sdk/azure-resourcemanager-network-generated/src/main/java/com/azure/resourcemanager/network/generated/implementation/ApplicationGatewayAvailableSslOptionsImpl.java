@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableSslOptionsInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAvailableSslOptions;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewaySslCipherSuite;
@@ -18,10 +17,11 @@ import java.util.Map;
 public final class ApplicationGatewayAvailableSslOptionsImpl implements ApplicationGatewayAvailableSslOptions {
     private ApplicationGatewayAvailableSslOptionsInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ApplicationGatewayAvailableSslOptionsImpl(
-        ApplicationGatewayAvailableSslOptionsInner innerObject, NetworkManager serviceManager) {
+        ApplicationGatewayAvailableSslOptionsInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -86,7 +86,7 @@ public final class ApplicationGatewayAvailableSslOptionsImpl implements Applicat
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

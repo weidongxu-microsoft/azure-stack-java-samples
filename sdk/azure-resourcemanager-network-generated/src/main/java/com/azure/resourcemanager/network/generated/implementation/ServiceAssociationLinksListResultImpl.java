@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinksListResult;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class ServiceAssociationLinksListResultImpl implements ServiceAssociationLinksListResult {
     private ServiceAssociationLinksListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ServiceAssociationLinksListResultImpl(
-        ServiceAssociationLinksListResultInner innerObject, NetworkManager serviceManager) {
+        ServiceAssociationLinksListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class ServiceAssociationLinksListResultImpl implements ServiceAssoc
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

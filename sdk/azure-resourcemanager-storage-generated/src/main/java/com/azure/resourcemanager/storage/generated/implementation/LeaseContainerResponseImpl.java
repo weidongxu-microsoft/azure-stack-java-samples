@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.LeaseContainerResponseInner;
 import com.azure.resourcemanager.storage.generated.models.LeaseContainerResponse;
 
 public final class LeaseContainerResponseImpl implements LeaseContainerResponse {
     private LeaseContainerResponseInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    LeaseContainerResponseImpl(LeaseContainerResponseInner innerObject, StorageManager serviceManager) {
+    LeaseContainerResponseImpl(
+        LeaseContainerResponseInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +31,7 @@ public final class LeaseContainerResponseImpl implements LeaseContainerResponse 
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

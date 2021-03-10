@@ -7,7 +7,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.ResourceSkusClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ResourceSkuInner;
 import com.azure.resourcemanager.compute.generated.models.ResourceSku;
@@ -19,9 +18,10 @@ public final class ResourceSkusImpl implements ResourceSkus {
 
     private final ResourceSkusClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public ResourceSkusImpl(ResourceSkusClient innerClient, ComputeManager serviceManager) {
+    public ResourceSkusImpl(
+        ResourceSkusClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class ResourceSkusImpl implements ResourceSkus {
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

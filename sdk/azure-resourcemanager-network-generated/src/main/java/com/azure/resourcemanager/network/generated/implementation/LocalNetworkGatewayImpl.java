@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.LocalNetworkGatewayInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
@@ -20,7 +19,7 @@ public final class LocalNetworkGatewayImpl
     implements LocalNetworkGateway, LocalNetworkGateway.Definition, LocalNetworkGateway.Update {
     private LocalNetworkGatewayInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -87,7 +86,7 @@ public final class LocalNetworkGatewayImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -120,7 +119,7 @@ public final class LocalNetworkGatewayImpl
         return this;
     }
 
-    LocalNetworkGatewayImpl(String name, NetworkManager serviceManager) {
+    LocalNetworkGatewayImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new LocalNetworkGatewayInner();
         this.serviceManager = serviceManager;
         this.localNetworkGatewayName = name;
@@ -151,7 +150,9 @@ public final class LocalNetworkGatewayImpl
         return this;
     }
 
-    LocalNetworkGatewayImpl(LocalNetworkGatewayInner innerObject, NetworkManager serviceManager) {
+    LocalNetworkGatewayImpl(
+        LocalNetworkGatewayInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

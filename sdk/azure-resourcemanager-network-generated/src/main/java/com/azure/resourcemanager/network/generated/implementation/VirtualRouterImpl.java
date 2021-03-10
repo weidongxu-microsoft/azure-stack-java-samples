@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterInner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualRouter;
@@ -18,7 +17,7 @@ import java.util.Map;
 public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Definition, VirtualRouter.Update {
     private VirtualRouterInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -95,7 +94,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -126,7 +125,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this;
     }
 
-    VirtualRouterImpl(String name, NetworkManager serviceManager) {
+    VirtualRouterImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualRouterInner();
         this.serviceManager = serviceManager;
         this.virtualRouterName = name;
@@ -154,7 +153,8 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this;
     }
 
-    VirtualRouterImpl(VirtualRouterInner innerObject, NetworkManager serviceManager) {
+    VirtualRouterImpl(
+        VirtualRouterInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

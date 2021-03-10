@@ -41,8 +41,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineS
 import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
-import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMListResult;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMReimageParameters;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -90,7 +90,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
             @PathParam("instanceId") String instanceId,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
-            @BodyParam("application/json") VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+            @BodyParam("application/json") VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
             Context context);
 
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
@@ -360,7 +360,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput) {
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -421,7 +421,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -479,7 +479,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput) {
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
         Mono<Response<Flux<ByteBuffer>>> mono =
             reimageWithResponseAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput);
         return this
@@ -505,7 +505,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
@@ -532,7 +532,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput) {
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
         return beginReimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput)
             .getSyncPoller();
     }
@@ -555,7 +555,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context) {
         return beginReimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput, context)
             .getSyncPoller();
@@ -578,7 +578,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput) {
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
         return beginReimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
@@ -597,7 +597,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Void> reimageAsync(String resourceGroupName, String vmScaleSetName, String instanceId) {
-        final VirtualMachineReimageParameters vmScaleSetVMReimageInput = null;
+        final VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput = null;
         return beginReimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
@@ -621,7 +621,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context) {
         return beginReimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput, context)
             .last()
@@ -644,7 +644,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput) {
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
         reimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput).block();
     }
 
@@ -660,7 +660,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public void reimage(String resourceGroupName, String vmScaleSetName, String instanceId) {
-        final VirtualMachineReimageParameters vmScaleSetVMReimageInput = null;
+        final VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput = null;
         reimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput).block();
     }
 
@@ -681,7 +681,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context) {
         reimageAsync(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput, context).block();
     }

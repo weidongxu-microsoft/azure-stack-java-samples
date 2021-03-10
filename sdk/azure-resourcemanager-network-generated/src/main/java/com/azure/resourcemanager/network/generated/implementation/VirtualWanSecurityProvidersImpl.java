@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualWanSecurityProvidersInner;
 import com.azure.resourcemanager.network.generated.models.VirtualWanSecurityProvider;
 import com.azure.resourcemanager.network.generated.models.VirtualWanSecurityProviders;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class VirtualWanSecurityProvidersImpl implements VirtualWanSecurityProviders {
     private VirtualWanSecurityProvidersInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualWanSecurityProvidersImpl(VirtualWanSecurityProvidersInner innerObject, NetworkManager serviceManager) {
+    VirtualWanSecurityProvidersImpl(
+        VirtualWanSecurityProvidersInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class VirtualWanSecurityProvidersImpl implements VirtualWanSecurity
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

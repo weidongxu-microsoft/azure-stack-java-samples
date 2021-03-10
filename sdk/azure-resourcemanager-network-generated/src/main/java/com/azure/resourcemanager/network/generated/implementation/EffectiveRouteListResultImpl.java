@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.EffectiveRouteListResultInner;
 import com.azure.resourcemanager.network.generated.models.EffectiveRoute;
 import com.azure.resourcemanager.network.generated.models.EffectiveRouteListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class EffectiveRouteListResultImpl implements EffectiveRouteListResult {
     private EffectiveRouteListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    EffectiveRouteListResultImpl(EffectiveRouteListResultInner innerObject, NetworkManager serviceManager) {
+    EffectiveRouteListResultImpl(
+        EffectiveRouteListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +39,7 @@ public final class EffectiveRouteListResultImpl implements EffectiveRouteListRes
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

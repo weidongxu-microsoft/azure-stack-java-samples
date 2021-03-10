@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.SubnetsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
 import com.azure.resourcemanager.network.generated.models.PrepareNetworkPoliciesRequest;
@@ -23,9 +22,10 @@ public final class SubnetsImpl implements Subnets {
 
     private final SubnetsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public SubnetsImpl(SubnetsClient innerClient, NetworkManager serviceManager) {
+    public SubnetsImpl(
+        SubnetsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -150,7 +150,7 @@ public final class SubnetsImpl implements Subnets {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

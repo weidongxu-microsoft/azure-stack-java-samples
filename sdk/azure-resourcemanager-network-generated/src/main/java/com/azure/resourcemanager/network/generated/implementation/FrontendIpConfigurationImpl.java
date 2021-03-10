@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
@@ -21,9 +20,11 @@ import java.util.List;
 public final class FrontendIpConfigurationImpl implements FrontendIpConfiguration {
     private FrontendIpConfigurationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    FrontendIpConfigurationImpl(FrontendIpConfigurationInner innerObject, NetworkManager serviceManager) {
+    FrontendIpConfigurationImpl(
+        FrontendIpConfigurationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -131,7 +132,7 @@ public final class FrontendIpConfigurationImpl implements FrontendIpConfiguratio
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

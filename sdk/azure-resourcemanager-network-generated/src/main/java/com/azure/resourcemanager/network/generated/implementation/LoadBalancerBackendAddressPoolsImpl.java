@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerBackendAddressPoolsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner;
 import com.azure.resourcemanager.network.generated.models.BackendAddressPool;
@@ -21,10 +20,11 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
 
     private final LoadBalancerBackendAddressPoolsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public LoadBalancerBackendAddressPoolsImpl(
-        LoadBalancerBackendAddressPoolsClient innerClient, NetworkManager serviceManager) {
+        LoadBalancerBackendAddressPoolsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -192,7 +192,7 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

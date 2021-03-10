@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityGroupViewResultInner;
 import com.azure.resourcemanager.network.generated.models.SecurityGroupNetworkInterface;
 import com.azure.resourcemanager.network.generated.models.SecurityGroupViewResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class SecurityGroupViewResultImpl implements SecurityGroupViewResult {
     private SecurityGroupViewResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SecurityGroupViewResultImpl(SecurityGroupViewResultInner innerObject, NetworkManager serviceManager) {
+    SecurityGroupViewResultImpl(
+        SecurityGroupViewResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class SecurityGroupViewResultImpl implements SecurityGroupViewResul
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

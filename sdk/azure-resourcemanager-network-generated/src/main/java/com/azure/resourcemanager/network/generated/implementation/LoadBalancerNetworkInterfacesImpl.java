@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerNetworkInterfacesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerNetworkInterfaces;
@@ -19,10 +18,11 @@ public final class LoadBalancerNetworkInterfacesImpl implements LoadBalancerNetw
 
     private final LoadBalancerNetworkInterfacesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public LoadBalancerNetworkInterfacesImpl(
-        LoadBalancerNetworkInterfacesClient innerClient, NetworkManager serviceManager) {
+        LoadBalancerNetworkInterfacesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +42,7 @@ public final class LoadBalancerNetworkInterfacesImpl implements LoadBalancerNetw
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

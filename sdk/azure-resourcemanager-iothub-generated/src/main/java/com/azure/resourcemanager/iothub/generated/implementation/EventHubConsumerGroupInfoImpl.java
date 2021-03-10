@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.EventHubConsumerGroupInfoInner;
 import com.azure.resourcemanager.iothub.generated.models.EventHubConsumerGroupBodyDescription;
 import com.azure.resourcemanager.iothub.generated.models.EventHubConsumerGroupInfo;
@@ -17,9 +16,11 @@ public final class EventHubConsumerGroupInfoImpl
     implements EventHubConsumerGroupInfo, EventHubConsumerGroupInfo.Definition {
     private EventHubConsumerGroupInfoInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    EventHubConsumerGroupInfoImpl(EventHubConsumerGroupInfoInner innerObject, IotHubManager serviceManager) {
+    EventHubConsumerGroupInfoImpl(
+        EventHubConsumerGroupInfoInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +54,7 @@ public final class EventHubConsumerGroupInfoImpl
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 
@@ -97,7 +98,8 @@ public final class EventHubConsumerGroupInfoImpl
         return this;
     }
 
-    EventHubConsumerGroupInfoImpl(String name, IotHubManager serviceManager) {
+    EventHubConsumerGroupInfoImpl(
+        String name, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = new EventHubConsumerGroupInfoInner();
         this.serviceManager = serviceManager;
         this.name = name;

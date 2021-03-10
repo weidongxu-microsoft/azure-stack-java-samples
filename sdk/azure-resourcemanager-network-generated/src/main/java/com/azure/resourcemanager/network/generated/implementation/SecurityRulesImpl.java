@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.SecurityRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 import com.azure.resourcemanager.network.generated.models.SecurityRule;
@@ -21,9 +20,10 @@ public final class SecurityRulesImpl implements SecurityRules {
 
     private final SecurityRulesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public SecurityRulesImpl(SecurityRulesClient innerClient, NetworkManager serviceManager) {
+    public SecurityRulesImpl(
+        SecurityRulesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -198,7 +198,7 @@ public final class SecurityRulesImpl implements SecurityRules {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

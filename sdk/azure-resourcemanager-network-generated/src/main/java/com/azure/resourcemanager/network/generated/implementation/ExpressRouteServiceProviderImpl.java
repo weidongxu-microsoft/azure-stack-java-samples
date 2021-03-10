@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteServiceProviderInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProvider;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProviderBandwidthsOffered;
@@ -16,9 +15,11 @@ import java.util.Map;
 public final class ExpressRouteServiceProviderImpl implements ExpressRouteServiceProvider {
     private ExpressRouteServiceProviderInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteServiceProviderImpl(ExpressRouteServiceProviderInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteServiceProviderImpl(
+        ExpressRouteServiceProviderInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -74,7 +75,7 @@ public final class ExpressRouteServiceProviderImpl implements ExpressRouteServic
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

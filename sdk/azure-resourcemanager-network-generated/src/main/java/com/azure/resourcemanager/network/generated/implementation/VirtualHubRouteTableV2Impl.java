@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTableV2;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class VirtualHubRouteTableV2Impl implements VirtualHubRouteTableV2 {
     private VirtualHubRouteTableV2Inner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualHubRouteTableV2Impl(VirtualHubRouteTableV2Inner innerObject, NetworkManager serviceManager) {
+    VirtualHubRouteTableV2Impl(
+        VirtualHubRouteTableV2Inner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -60,7 +61,7 @@ public final class VirtualHubRouteTableV2Impl implements VirtualHubRouteTableV2 
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

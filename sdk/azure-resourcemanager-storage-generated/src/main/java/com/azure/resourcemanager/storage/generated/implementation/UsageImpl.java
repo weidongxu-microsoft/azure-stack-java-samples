@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.storage.generated.models.Usage;
 import com.azure.resourcemanager.storage.generated.models.UsageName;
@@ -13,9 +12,9 @@ import com.azure.resourcemanager.storage.generated.models.UsageUnit;
 public final class UsageImpl implements Usage {
     private UsageInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    UsageImpl(UsageInner innerObject, StorageManager serviceManager) {
+    UsageImpl(UsageInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +39,7 @@ public final class UsageImpl implements Usage {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.SecurityPartnerProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityPartnerProviderInner;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProvider;
@@ -21,9 +20,11 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
 
     private final SecurityPartnerProvidersClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public SecurityPartnerProvidersImpl(SecurityPartnerProvidersClient innerClient, NetworkManager serviceManager) {
+    public SecurityPartnerProvidersImpl(
+        SecurityPartnerProvidersClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -178,7 +179,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

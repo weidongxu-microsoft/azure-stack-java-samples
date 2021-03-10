@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ServiceTagsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceTagsListResultInner;
 import com.azure.resourcemanager.network.generated.models.ServiceTags;
@@ -20,9 +19,10 @@ public final class ServiceTagsImpl implements ServiceTags {
 
     private final ServiceTagsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ServiceTagsImpl(ServiceTagsClient innerClient, NetworkManager serviceManager) {
+    public ServiceTagsImpl(
+        ServiceTagsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class ServiceTagsImpl implements ServiceTags {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

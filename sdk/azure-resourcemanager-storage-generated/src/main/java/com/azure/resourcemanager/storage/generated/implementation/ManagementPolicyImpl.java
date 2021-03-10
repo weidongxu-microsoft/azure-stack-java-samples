@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.ManagementPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicy;
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicyName;
@@ -16,7 +15,7 @@ public final class ManagementPolicyImpl
     implements ManagementPolicy, ManagementPolicy.Definition, ManagementPolicy.Update {
     private ManagementPolicyInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -42,7 +41,7 @@ public final class ManagementPolicyImpl
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -80,7 +79,8 @@ public final class ManagementPolicyImpl
         return this;
     }
 
-    ManagementPolicyImpl(ManagementPolicyName name, StorageManager serviceManager) {
+    ManagementPolicyImpl(
+        ManagementPolicyName name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new ManagementPolicyInner();
         this.serviceManager = serviceManager;
         this.managementPolicyName = name;
@@ -112,7 +112,8 @@ public final class ManagementPolicyImpl
         return this;
     }
 
-    ManagementPolicyImpl(ManagementPolicyInner innerObject, StorageManager serviceManager) {
+    ManagementPolicyImpl(
+        ManagementPolicyInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

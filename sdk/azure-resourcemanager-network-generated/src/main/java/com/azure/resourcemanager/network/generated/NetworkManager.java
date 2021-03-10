@@ -266,6 +266,10 @@ public final class NetworkManager {
 
     private ResourceProviders resourceProviders;
 
+    private NetworkInterfaces networkInterfaces;
+
+    private PublicIpAddresses publicIpAddresses;
+
     private CustomIpPrefixes customIpPrefixes;
 
     private DdosCustomPolicies ddosCustomPolicies;
@@ -324,8 +328,6 @@ public final class NetworkManager {
 
     private NatGateways natGateways;
 
-    private NetworkInterfaces networkInterfaces;
-
     private NetworkInterfaceIpConfigurations networkInterfaceIpConfigurations;
 
     private NetworkInterfaceLoadBalancers networkInterfaceLoadBalancers;
@@ -365,8 +367,6 @@ public final class NetworkManager {
     private PrivateDnsZoneGroups privateDnsZoneGroups;
 
     private PrivateLinkServices privateLinkServices;
-
-    private PublicIpAddresses publicIpAddresses;
 
     private PublicIpPrefixes publicIpPrefixes;
 
@@ -428,11 +428,11 @@ public final class NetworkManager {
 
     private VpnGateways vpnGateways;
 
+    private VpnLinkConnections vpnLinkConnections;
+
     private VpnConnections vpnConnections;
 
     private VpnSiteLinkConnections vpnSiteLinkConnections;
-
-    private VpnLinkConnections vpnLinkConnections;
 
     private NatRules natRules;
 
@@ -719,6 +719,22 @@ public final class NetworkManager {
         return resourceProviders;
     }
 
+    /** @return Resource collection API of NetworkInterfaces. */
+    public NetworkInterfaces networkInterfaces() {
+        if (this.networkInterfaces == null) {
+            this.networkInterfaces = new NetworkInterfacesImpl(clientObject.getNetworkInterfaces(), this);
+        }
+        return networkInterfaces;
+    }
+
+    /** @return Resource collection API of PublicIpAddresses. */
+    public PublicIpAddresses publicIpAddresses() {
+        if (this.publicIpAddresses == null) {
+            this.publicIpAddresses = new PublicIpAddressesImpl(clientObject.getPublicIpAddresses(), this);
+        }
+        return publicIpAddresses;
+    }
+
     /** @return Resource collection API of CustomIpPrefixes. */
     public CustomIpPrefixes customIpPrefixes() {
         if (this.customIpPrefixes == null) {
@@ -968,14 +984,6 @@ public final class NetworkManager {
         return natGateways;
     }
 
-    /** @return Resource collection API of NetworkInterfaces. */
-    public NetworkInterfaces networkInterfaces() {
-        if (this.networkInterfaces == null) {
-            this.networkInterfaces = new NetworkInterfacesImpl(clientObject.getNetworkInterfaces(), this);
-        }
-        return networkInterfaces;
-    }
-
     /** @return Resource collection API of NetworkInterfaceIpConfigurations. */
     public NetworkInterfaceIpConfigurations networkInterfaceIpConfigurations() {
         if (this.networkInterfaceIpConfigurations == null) {
@@ -1140,14 +1148,6 @@ public final class NetworkManager {
             this.privateLinkServices = new PrivateLinkServicesImpl(clientObject.getPrivateLinkServices(), this);
         }
         return privateLinkServices;
-    }
-
-    /** @return Resource collection API of PublicIpAddresses. */
-    public PublicIpAddresses publicIpAddresses() {
-        if (this.publicIpAddresses == null) {
-            this.publicIpAddresses = new PublicIpAddressesImpl(clientObject.getPublicIpAddresses(), this);
-        }
-        return publicIpAddresses;
     }
 
     /** @return Resource collection API of PublicIpPrefixes. */
@@ -1401,6 +1401,14 @@ public final class NetworkManager {
         return vpnGateways;
     }
 
+    /** @return Resource collection API of VpnLinkConnections. */
+    public VpnLinkConnections vpnLinkConnections() {
+        if (this.vpnLinkConnections == null) {
+            this.vpnLinkConnections = new VpnLinkConnectionsImpl(clientObject.getVpnLinkConnections(), this);
+        }
+        return vpnLinkConnections;
+    }
+
     /** @return Resource collection API of VpnConnections. */
     public VpnConnections vpnConnections() {
         if (this.vpnConnections == null) {
@@ -1416,14 +1424,6 @@ public final class NetworkManager {
                 new VpnSiteLinkConnectionsImpl(clientObject.getVpnSiteLinkConnections(), this);
         }
         return vpnSiteLinkConnections;
-    }
-
-    /** @return Resource collection API of VpnLinkConnections. */
-    public VpnLinkConnections vpnLinkConnections() {
-        if (this.vpnLinkConnections == null) {
-            this.vpnLinkConnections = new VpnLinkConnectionsImpl(clientObject.getVpnLinkConnections(), this);
-        }
-        return vpnLinkConnections;
     }
 
     /** @return Resource collection API of NatRules. */

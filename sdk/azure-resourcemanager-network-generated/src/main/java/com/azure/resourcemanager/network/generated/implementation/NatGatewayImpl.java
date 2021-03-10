@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.models.NatGateway;
 import com.azure.resourcemanager.network.generated.models.NatGatewaySku;
@@ -20,7 +19,7 @@ import java.util.Map;
 public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, NatGateway.Update {
     private NatGatewayInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -115,7 +114,7 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -148,7 +147,7 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this;
     }
 
-    NatGatewayImpl(String name, NetworkManager serviceManager) {
+    NatGatewayImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new NatGatewayInner();
         this.serviceManager = serviceManager;
         this.natGatewayName = name;
@@ -179,7 +178,8 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this;
     }
 
-    NatGatewayImpl(NatGatewayInner innerObject, NetworkManager serviceManager) {
+    NatGatewayImpl(
+        NatGatewayInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

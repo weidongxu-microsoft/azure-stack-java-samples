@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceTagsListResultInner;
 import com.azure.resourcemanager.network.generated.models.ServiceTagInformation;
 import com.azure.resourcemanager.network.generated.models.ServiceTagsListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class ServiceTagsListResultImpl implements ServiceTagsListResult {
     private ServiceTagsListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ServiceTagsListResultImpl(ServiceTagsListResultInner innerObject, NetworkManager serviceManager) {
+    ServiceTagsListResultImpl(
+        ServiceTagsListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -58,7 +59,7 @@ public final class ServiceTagsListResultImpl implements ServiceTagsListResult {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

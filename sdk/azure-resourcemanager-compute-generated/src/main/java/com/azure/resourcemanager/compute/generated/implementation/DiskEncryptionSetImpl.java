@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskEncryptionSetInner;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSet;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSetType;
@@ -21,7 +20,7 @@ public final class DiskEncryptionSetImpl
     implements DiskEncryptionSet, DiskEncryptionSet.Definition, DiskEncryptionSet.Update {
     private DiskEncryptionSetInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -85,7 +84,7 @@ public final class DiskEncryptionSetImpl
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -118,7 +117,7 @@ public final class DiskEncryptionSetImpl
         return this;
     }
 
-    DiskEncryptionSetImpl(String name, ComputeManager serviceManager) {
+    DiskEncryptionSetImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new DiskEncryptionSetInner();
         this.serviceManager = serviceManager;
         this.diskEncryptionSetName = name;
@@ -147,7 +146,8 @@ public final class DiskEncryptionSetImpl
         return this;
     }
 
-    DiskEncryptionSetImpl(DiskEncryptionSetInner innerObject, ComputeManager serviceManager) {
+    DiskEncryptionSetImpl(
+        DiskEncryptionSetInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureQueryStatusResultInner;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureQueryStatusResult;
 import com.azure.resourcemanager.network.generated.models.PcError;
@@ -16,9 +15,11 @@ import java.util.List;
 public final class PacketCaptureQueryStatusResultImpl implements PacketCaptureQueryStatusResult {
     private PacketCaptureQueryStatusResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PacketCaptureQueryStatusResultImpl(PacketCaptureQueryStatusResultInner innerObject, NetworkManager serviceManager) {
+    PacketCaptureQueryStatusResultImpl(
+        PacketCaptureQueryStatusResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -56,7 +57,7 @@ public final class PacketCaptureQueryStatusResultImpl implements PacketCaptureQu
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

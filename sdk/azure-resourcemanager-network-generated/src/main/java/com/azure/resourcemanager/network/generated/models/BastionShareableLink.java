@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.management.Resource;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionShareableLinkInner;
 
 /** An immutable client-side representation of BastionShareableLink. */
@@ -14,7 +13,7 @@ public interface BastionShareableLink {
      *
      * @return the vm value.
      */
-    Resource vm();
+    VM vm();
 
     /**
      * Gets the bsl property: The unique Bastion Shareable Link to the virtual machine.

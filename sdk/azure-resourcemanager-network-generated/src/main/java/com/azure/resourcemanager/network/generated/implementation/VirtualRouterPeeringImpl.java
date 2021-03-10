@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterPeeringInner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualRouterPeering;
@@ -14,7 +13,7 @@ public final class VirtualRouterPeeringImpl
     implements VirtualRouterPeering, VirtualRouterPeering.Definition, VirtualRouterPeering.Update {
     private VirtualRouterPeeringInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -48,7 +47,7 @@ public final class VirtualRouterPeeringImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -82,7 +81,7 @@ public final class VirtualRouterPeeringImpl
         return this;
     }
 
-    VirtualRouterPeeringImpl(String name, NetworkManager serviceManager) {
+    VirtualRouterPeeringImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualRouterPeeringInner();
         this.serviceManager = serviceManager;
         this.peeringName = name;
@@ -110,7 +109,9 @@ public final class VirtualRouterPeeringImpl
         return this;
     }
 
-    VirtualRouterPeeringImpl(VirtualRouterPeeringInner innerObject, NetworkManager serviceManager) {
+    VirtualRouterPeeringImpl(
+        VirtualRouterPeeringInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

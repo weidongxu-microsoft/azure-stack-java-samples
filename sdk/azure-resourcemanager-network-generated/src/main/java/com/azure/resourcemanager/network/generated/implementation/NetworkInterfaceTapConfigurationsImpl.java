@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceTapConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapConfiguration;
@@ -21,10 +20,11 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
 
     private final NetworkInterfaceTapConfigurationsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public NetworkInterfaceTapConfigurationsImpl(
-        NetworkInterfaceTapConfigurationsClient innerClient, NetworkManager serviceManager) {
+        NetworkInterfaceTapConfigurationsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -205,7 +205,7 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

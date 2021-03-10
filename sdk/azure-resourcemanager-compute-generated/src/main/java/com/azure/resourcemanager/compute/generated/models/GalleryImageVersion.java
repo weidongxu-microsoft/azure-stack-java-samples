@@ -47,11 +47,11 @@ public interface GalleryImageVersion {
     Map<String, String> tags();
 
     /**
-     * Gets the publishingProfile property: Describes the basic gallery artifact publishing profile.
+     * Gets the publishingProfile property: The publishing profile of a gallery Image Version.
      *
      * @return the publishingProfile value.
      */
-    GalleryArtifactPublishingProfileBase publishingProfile();
+    GalleryImageVersionPublishingProfile publishingProfile();
 
     /**
      * Gets the provisioningState property: The provisioning state, which only appears in the response.
@@ -174,12 +174,12 @@ public interface GalleryImageVersion {
         /** The stage of the GalleryImageVersion definition allowing to specify publishingProfile. */
         interface WithPublishingProfile {
             /**
-             * Specifies the publishingProfile property: Describes the basic gallery artifact publishing profile..
+             * Specifies the publishingProfile property: The publishing profile of a gallery Image Version..
              *
-             * @param publishingProfile Describes the basic gallery artifact publishing profile.
+             * @param publishingProfile The publishing profile of a gallery Image Version.
              * @return the next definition stage.
              */
-            WithCreate withPublishingProfile(GalleryArtifactPublishingProfileBase publishingProfile);
+            WithCreate withPublishingProfile(GalleryImageVersionPublishingProfile publishingProfile);
         }
         /** The stage of the GalleryImageVersion definition allowing to specify storageProfile. */
         interface WithStorageProfile {
@@ -232,12 +232,12 @@ public interface GalleryImageVersion {
         /** The stage of the GalleryImageVersion update allowing to specify publishingProfile. */
         interface WithPublishingProfile {
             /**
-             * Specifies the publishingProfile property: Describes the basic gallery artifact publishing profile..
+             * Specifies the publishingProfile property: The publishing profile of a gallery Image Version..
              *
-             * @param publishingProfile Describes the basic gallery artifact publishing profile.
+             * @param publishingProfile The publishing profile of a gallery Image Version.
              * @return the next definition stage.
              */
-            Update withPublishingProfile(GalleryArtifactPublishingProfileBase publishingProfile);
+            Update withPublishingProfile(GalleryImageVersionPublishingProfile publishingProfile);
         }
         /** The stage of the GalleryImageVersion update allowing to specify storageProfile. */
         interface WithStorageProfile {

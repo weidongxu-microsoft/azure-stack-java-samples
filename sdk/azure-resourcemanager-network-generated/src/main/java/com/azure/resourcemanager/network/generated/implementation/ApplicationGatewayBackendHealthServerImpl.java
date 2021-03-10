@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthServerInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealthServer;
@@ -14,10 +13,11 @@ import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConf
 public final class ApplicationGatewayBackendHealthServerImpl implements ApplicationGatewayBackendHealthServer {
     private ApplicationGatewayBackendHealthServerInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ApplicationGatewayBackendHealthServerImpl(
-        ApplicationGatewayBackendHealthServerInner innerObject, NetworkManager serviceManager) {
+        ApplicationGatewayBackendHealthServerInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +47,7 @@ public final class ApplicationGatewayBackendHealthServerImpl implements Applicat
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

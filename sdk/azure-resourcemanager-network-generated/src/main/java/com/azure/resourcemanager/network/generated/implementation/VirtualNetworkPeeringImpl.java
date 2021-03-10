@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -16,9 +15,11 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringS
 public final class VirtualNetworkPeeringImpl implements VirtualNetworkPeering {
     private VirtualNetworkPeeringInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualNetworkPeeringImpl(VirtualNetworkPeeringInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkPeeringImpl(
+        VirtualNetworkPeeringInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -75,7 +76,7 @@ public final class VirtualNetworkPeeringImpl implements VirtualNetworkPeering {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

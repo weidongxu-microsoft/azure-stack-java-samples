@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.InboundSecurityRuleInner;
 import com.azure.resourcemanager.network.generated.models.InboundSecurityRule;
 import com.azure.resourcemanager.network.generated.models.InboundSecurityRules;
@@ -17,7 +16,7 @@ public final class InboundSecurityRuleImpl
     implements InboundSecurityRule, InboundSecurityRule.Definition, InboundSecurityRule.Update {
     private InboundSecurityRuleInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -52,7 +51,7 @@ public final class InboundSecurityRuleImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -93,7 +92,7 @@ public final class InboundSecurityRuleImpl
         return this;
     }
 
-    InboundSecurityRuleImpl(String name, NetworkManager serviceManager) {
+    InboundSecurityRuleImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new InboundSecurityRuleInner();
         this.serviceManager = serviceManager;
         this.ruleCollectionName = name;
@@ -127,7 +126,9 @@ public final class InboundSecurityRuleImpl
         return this;
     }
 
-    InboundSecurityRuleImpl(InboundSecurityRuleInner innerObject, NetworkManager serviceManager) {
+    InboundSecurityRuleImpl(
+        InboundSecurityRuleInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

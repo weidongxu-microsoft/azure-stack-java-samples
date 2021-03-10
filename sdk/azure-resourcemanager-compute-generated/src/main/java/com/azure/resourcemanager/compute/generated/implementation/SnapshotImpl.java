@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.SnapshotInner;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
 import com.azure.resourcemanager.compute.generated.models.DiskState;
@@ -27,7 +26,7 @@ import java.util.Map;
 public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapshot.Update {
     private SnapshotInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -138,7 +137,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -171,7 +170,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this;
     }
 
-    SnapshotImpl(String name, ComputeManager serviceManager) {
+    SnapshotImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new SnapshotInner();
         this.serviceManager = serviceManager;
         this.snapshotName = name;
@@ -200,7 +199,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this;
     }
 
-    SnapshotImpl(SnapshotInner innerObject, ComputeManager serviceManager) {
+    SnapshotImpl(SnapshotInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.TopologyInner;
 import com.azure.resourcemanager.network.generated.models.Topology;
 import com.azure.resourcemanager.network.generated.models.TopologyResource;
@@ -15,9 +14,9 @@ import java.util.List;
 public final class TopologyImpl implements Topology {
     private TopologyInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    TopologyImpl(TopologyInner innerObject, NetworkManager serviceManager) {
+    TopologyImpl(TopologyInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +46,7 @@ public final class TopologyImpl implements Topology {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

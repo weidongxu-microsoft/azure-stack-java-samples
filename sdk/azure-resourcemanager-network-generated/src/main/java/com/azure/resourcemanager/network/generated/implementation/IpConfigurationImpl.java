@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
@@ -17,9 +16,10 @@ import com.azure.resourcemanager.network.generated.models.Subnet;
 public final class IpConfigurationImpl implements IpConfiguration {
     private IpConfigurationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    IpConfigurationImpl(IpConfigurationInner innerObject, NetworkManager serviceManager) {
+    IpConfigurationImpl(
+        IpConfigurationInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -70,7 +70,7 @@ public final class IpConfigurationImpl implements IpConfiguration {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

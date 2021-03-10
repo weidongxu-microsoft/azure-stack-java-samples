@@ -70,6 +70,14 @@ public interface EncryptionScope {
     EncryptionScopeKeyVaultProperties keyVaultProperties();
 
     /**
+     * Gets the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a
+     * secondary layer of encryption with platform managed keys for data at rest.
+     *
+     * @return the requireInfrastructureEncryption value.
+     */
+    Boolean requireInfrastructureEncryption();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.EncryptionScopeInner object.
      *
      * @return the inner object.
@@ -103,7 +111,10 @@ public interface EncryptionScope {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithSource, DefinitionStages.WithState, DefinitionStages.WithKeyVaultProperties {
+            extends DefinitionStages.WithSource,
+                DefinitionStages.WithState,
+                DefinitionStages.WithKeyVaultProperties,
+                DefinitionStages.WithRequireInfrastructureEncryption {
             /**
              * Executes the create request.
              *
@@ -154,6 +165,18 @@ public interface EncryptionScope {
              */
             WithCreate withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties);
         }
+        /** The stage of the EncryptionScope definition allowing to specify requireInfrastructureEncryption. */
+        interface WithRequireInfrastructureEncryption {
+            /**
+             * Specifies the requireInfrastructureEncryption property: A boolean indicating whether or not the service
+             * applies a secondary layer of encryption with platform managed keys for data at rest..
+             *
+             * @param requireInfrastructureEncryption A boolean indicating whether or not the service applies a
+             *     secondary layer of encryption with platform managed keys for data at rest.
+             * @return the next definition stage.
+             */
+            WithCreate withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);
+        }
     }
     /**
      * Begins update for the EncryptionScope resource.
@@ -163,7 +186,11 @@ public interface EncryptionScope {
     EncryptionScope.Update update();
 
     /** The template for EncryptionScope update. */
-    interface Update extends UpdateStages.WithSource, UpdateStages.WithState, UpdateStages.WithKeyVaultProperties {
+    interface Update
+        extends UpdateStages.WithSource,
+            UpdateStages.WithState,
+            UpdateStages.WithKeyVaultProperties,
+            UpdateStages.WithRequireInfrastructureEncryption {
         /**
          * Executes the update request.
          *
@@ -215,6 +242,18 @@ public interface EncryptionScope {
              * @return the next definition stage.
              */
             Update withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties);
+        }
+        /** The stage of the EncryptionScope update allowing to specify requireInfrastructureEncryption. */
+        interface WithRequireInfrastructureEncryption {
+            /**
+             * Specifies the requireInfrastructureEncryption property: A boolean indicating whether or not the service
+             * applies a secondary layer of encryption with platform managed keys for data at rest..
+             *
+             * @param requireInfrastructureEncryption A boolean indicating whether or not the service applies a
+             *     secondary layer of encryption with platform managed keys for data at rest.
+             * @return the next definition stage.
+             */
+            Update withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);
         }
     }
     /**

@@ -10,8 +10,8 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.compute.generated.fluent.models.LogAnalyticsOperationResultInner;
-import com.azure.resourcemanager.compute.generated.models.LogAnalyticsInputBase;
 import com.azure.resourcemanager.compute.generated.models.RequestRateByIntervalInput;
+import com.azure.resourcemanager.compute.generated.models.ThrottledRequestsInput;
 
 /** An instance of this class provides access to all the operations defined in LogAnalyticsClient. */
 public interface LogAnalyticsClient {
@@ -89,7 +89,7 @@ public interface LogAnalyticsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     SyncPoller<PollResult<LogAnalyticsOperationResultInner>, LogAnalyticsOperationResultInner>
-        beginExportThrottledRequests(String location, LogAnalyticsInputBase parameters);
+        beginExportThrottledRequests(String location, ThrottledRequestsInput parameters);
 
     /**
      * Export logs that show total throttled Api requests for this subscription in the given time window.
@@ -104,7 +104,7 @@ public interface LogAnalyticsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     SyncPoller<PollResult<LogAnalyticsOperationResultInner>, LogAnalyticsOperationResultInner>
-        beginExportThrottledRequests(String location, LogAnalyticsInputBase parameters, Context context);
+        beginExportThrottledRequests(String location, ThrottledRequestsInput parameters, Context context);
 
     /**
      * Export logs that show total throttled Api requests for this subscription in the given time window.
@@ -117,7 +117,7 @@ public interface LogAnalyticsClient {
      * @return logAnalytics operation status response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    LogAnalyticsOperationResultInner exportThrottledRequests(String location, LogAnalyticsInputBase parameters);
+    LogAnalyticsOperationResultInner exportThrottledRequests(String location, ThrottledRequestsInput parameters);
 
     /**
      * Export logs that show total throttled Api requests for this subscription in the given time window.
@@ -132,5 +132,5 @@ public interface LogAnalyticsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     LogAnalyticsOperationResultInner exportThrottledRequests(
-        String location, LogAnalyticsInputBase parameters, Context context);
+        String location, ThrottledRequestsInput parameters, Context context);
 }

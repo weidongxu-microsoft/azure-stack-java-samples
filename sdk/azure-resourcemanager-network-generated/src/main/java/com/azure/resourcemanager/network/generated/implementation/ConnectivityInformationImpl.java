@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectivityInformationInner;
 import com.azure.resourcemanager.network.generated.models.ConnectionStatus;
 import com.azure.resourcemanager.network.generated.models.ConnectivityHop;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class ConnectivityInformationImpl implements ConnectivityInformation {
     private ConnectivityInformationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ConnectivityInformationImpl(ConnectivityInformationInner innerObject, NetworkManager serviceManager) {
+    ConnectivityInformationImpl(
+        ConnectivityInformationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -59,7 +60,7 @@ public final class ConnectivityInformationImpl implements ConnectivityInformatio
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.ImageInner;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.HyperVGenerationTypes;
@@ -20,7 +19,7 @@ import java.util.Map;
 public final class ImageImpl implements Image, Image.Definition, Image.Update {
     private ImageInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -79,7 +78,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -112,7 +111,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         return this;
     }
 
-    ImageImpl(String name, ComputeManager serviceManager) {
+    ImageImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new ImageInner();
         this.serviceManager = serviceManager;
         this.imageName = name;
@@ -138,7 +137,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         return this;
     }
 
-    ImageImpl(ImageInner innerObject, ComputeManager serviceManager) {
+    ImageImpl(ImageInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

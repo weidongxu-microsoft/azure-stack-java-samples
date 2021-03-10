@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.P2SVpnGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.AadAuthenticationParameters;
@@ -30,7 +29,7 @@ public final class VpnServerConfigurationImpl
     implements VpnServerConfiguration, VpnServerConfiguration.Definition, VpnServerConfiguration.Update {
     private VpnServerConfigurationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -183,7 +182,7 @@ public final class VpnServerConfigurationImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -216,7 +215,7 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    VpnServerConfigurationImpl(String name, NetworkManager serviceManager) {
+    VpnServerConfigurationImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VpnServerConfigurationInner();
         this.serviceManager = serviceManager;
         this.vpnServerConfigurationName = name;
@@ -249,7 +248,9 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    VpnServerConfigurationImpl(VpnServerConfigurationInner innerObject, NetworkManager serviceManager) {
+    VpnServerConfigurationImpl(
+        VpnServerConfigurationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

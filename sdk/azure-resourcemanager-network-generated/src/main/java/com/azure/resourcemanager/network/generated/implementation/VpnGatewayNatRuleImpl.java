@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayNatRuleInner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayNatRule;
@@ -20,7 +19,7 @@ public final class VpnGatewayNatRuleImpl
     implements VpnGatewayNatRule, VpnGatewayNatRule.Definition, VpnGatewayNatRule.Update {
     private VpnGatewayNatRuleInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -94,7 +93,7 @@ public final class VpnGatewayNatRuleImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -128,7 +127,7 @@ public final class VpnGatewayNatRuleImpl
         return this;
     }
 
-    VpnGatewayNatRuleImpl(String name, NetworkManager serviceManager) {
+    VpnGatewayNatRuleImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VpnGatewayNatRuleInner();
         this.serviceManager = serviceManager;
         this.natRuleName = name;
@@ -156,7 +155,8 @@ public final class VpnGatewayNatRuleImpl
         return this;
     }
 
-    VpnGatewayNatRuleImpl(VpnGatewayNatRuleInner innerObject, NetworkManager serviceManager) {
+    VpnGatewayNatRuleImpl(
+        VpnGatewayNatRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

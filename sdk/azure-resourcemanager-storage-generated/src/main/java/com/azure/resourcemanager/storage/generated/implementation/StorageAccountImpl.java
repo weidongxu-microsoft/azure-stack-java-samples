@@ -7,7 +7,6 @@ package com.azure.resourcemanager.storage.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStatusInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
@@ -20,6 +19,7 @@ import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
 import com.azure.resourcemanager.storage.generated.models.Endpoints;
+import com.azure.resourcemanager.storage.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
 import com.azure.resourcemanager.storage.generated.models.Identity;
 import com.azure.resourcemanager.storage.generated.models.Kind;
@@ -49,7 +49,7 @@ import java.util.stream.Collectors;
 public final class StorageAccountImpl implements StorageAccount, StorageAccount.Definition, StorageAccount.Update {
     private StorageAccountInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -86,6 +86,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public Identity identity() {
         return this.innerModel().identity();
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public ProvisioningState provisioningState() {
@@ -203,6 +207,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().allowSharedKeyAccess();
     }
 
+    public Boolean enableNfsV3() {
+        return this.innerModel().enableNfsV3();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -215,7 +223,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -250,7 +258,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    StorageAccountImpl(String name, StorageManager serviceManager) {
+    StorageAccountImpl(String name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new StorageAccountInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -282,7 +290,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    StorageAccountImpl(StorageAccountInner innerObject, StorageManager serviceManager) {
+    StorageAccountImpl(
+        StorageAccountInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -418,6 +427,11 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         }
     }
 
+    public StorageAccountImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.createParameters.withExtendedLocation(extendedLocation);
+        return this;
+    }
+
     public StorageAccountImpl withIdentity(Identity identity) {
         if (isInCreateMode()) {
             this.createParameters.withIdentity(identity);
@@ -542,6 +556,11 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             this.updateParameters.withAllowSharedKeyAccess(allowSharedKeyAccess);
             return this;
         }
+    }
+
+    public StorageAccountImpl withEnableNfsV3(Boolean enableNfsV3) {
+        this.createParameters.withEnableNfsV3(enableNfsV3);
+        return this;
     }
 
     private boolean isInCreateMode() {

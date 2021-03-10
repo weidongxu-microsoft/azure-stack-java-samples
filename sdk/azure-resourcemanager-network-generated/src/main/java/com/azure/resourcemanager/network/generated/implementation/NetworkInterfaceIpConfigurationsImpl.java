@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceIpConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
@@ -21,10 +20,11 @@ public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterf
 
     private final NetworkInterfaceIpConfigurationsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public NetworkInterfaceIpConfigurationsImpl(
-        NetworkInterfaceIpConfigurationsClient innerClient, NetworkManager serviceManager) {
+        NetworkInterfaceIpConfigurationsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +72,7 @@ public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterf
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

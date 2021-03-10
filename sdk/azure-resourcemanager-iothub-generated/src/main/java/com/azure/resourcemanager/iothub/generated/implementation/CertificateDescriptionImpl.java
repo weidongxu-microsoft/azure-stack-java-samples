@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateDescriptionInner;
 import com.azure.resourcemanager.iothub.generated.models.CertificateDescription;
 import com.azure.resourcemanager.iothub.generated.models.CertificateProperties;
@@ -14,7 +13,7 @@ public final class CertificateDescriptionImpl
     implements CertificateDescription, CertificateDescription.Definition, CertificateDescription.Update {
     private CertificateDescriptionInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -40,7 +39,7 @@ public final class CertificateDescriptionImpl
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 
@@ -82,7 +81,7 @@ public final class CertificateDescriptionImpl
         return this;
     }
 
-    CertificateDescriptionImpl(String name, IotHubManager serviceManager) {
+    CertificateDescriptionImpl(String name, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = new CertificateDescriptionInner();
         this.serviceManager = serviceManager;
         this.certificateName = name;
@@ -116,7 +115,9 @@ public final class CertificateDescriptionImpl
         return this;
     }
 
-    CertificateDescriptionImpl(CertificateDescriptionInner innerObject, IotHubManager serviceManager) {
+    CertificateDescriptionImpl(
+        CertificateDescriptionInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

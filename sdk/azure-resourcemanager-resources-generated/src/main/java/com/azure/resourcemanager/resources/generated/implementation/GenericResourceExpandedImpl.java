@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.resources.generated.implementation;
 
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.GenericResourceExpandedInner;
 import com.azure.resourcemanager.resources.generated.models.GenericResourceExpanded;
 import com.azure.resourcemanager.resources.generated.models.Identity;
@@ -17,9 +16,11 @@ import java.util.Map;
 public final class GenericResourceExpandedImpl implements GenericResourceExpanded {
     private GenericResourceExpandedInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    GenericResourceExpandedImpl(GenericResourceExpandedInner innerObject, ResourceManager serviceManager) {
+    GenericResourceExpandedImpl(
+        GenericResourceExpandedInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -89,7 +90,7 @@ public final class GenericResourceExpandedImpl implements GenericResourceExpande
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

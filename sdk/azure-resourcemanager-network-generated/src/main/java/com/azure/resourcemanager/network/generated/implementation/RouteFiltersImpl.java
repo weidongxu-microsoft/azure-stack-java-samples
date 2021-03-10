@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.RouteFiltersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterInner;
 import com.azure.resourcemanager.network.generated.models.RouteFilter;
@@ -21,9 +20,10 @@ public final class RouteFiltersImpl implements RouteFilters {
 
     private final RouteFiltersClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public RouteFiltersImpl(RouteFiltersClient innerClient, NetworkManager serviceManager) {
+    public RouteFiltersImpl(
+        RouteFiltersClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -163,7 +163,7 @@ public final class RouteFiltersImpl implements RouteFilters {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

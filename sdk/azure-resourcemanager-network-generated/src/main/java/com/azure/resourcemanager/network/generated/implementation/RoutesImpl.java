@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.RoutesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteInner;
 import com.azure.resourcemanager.network.generated.models.Route;
@@ -21,9 +20,10 @@ public final class RoutesImpl implements Routes {
 
     private final RoutesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public RoutesImpl(RoutesClient innerClient, NetworkManager serviceManager) {
+    public RoutesImpl(
+        RoutesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -178,7 +178,7 @@ public final class RoutesImpl implements Routes {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

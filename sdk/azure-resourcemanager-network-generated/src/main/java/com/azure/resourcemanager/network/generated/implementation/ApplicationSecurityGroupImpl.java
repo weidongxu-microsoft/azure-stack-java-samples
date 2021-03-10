@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationSecurityGroup;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -18,7 +17,7 @@ public final class ApplicationSecurityGroupImpl
     implements ApplicationSecurityGroup, ApplicationSecurityGroup.Definition, ApplicationSecurityGroup.Update {
     private ApplicationSecurityGroupInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -69,7 +68,7 @@ public final class ApplicationSecurityGroupImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -102,7 +101,8 @@ public final class ApplicationSecurityGroupImpl
         return this;
     }
 
-    ApplicationSecurityGroupImpl(String name, NetworkManager serviceManager) {
+    ApplicationSecurityGroupImpl(
+        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ApplicationSecurityGroupInner();
         this.serviceManager = serviceManager;
         this.applicationSecurityGroupName = name;
@@ -133,7 +133,9 @@ public final class ApplicationSecurityGroupImpl
         return this;
     }
 
-    ApplicationSecurityGroupImpl(ApplicationSecurityGroupInner innerObject, NetworkManager serviceManager) {
+    ApplicationSecurityGroupImpl(
+        ApplicationSecurityGroupInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

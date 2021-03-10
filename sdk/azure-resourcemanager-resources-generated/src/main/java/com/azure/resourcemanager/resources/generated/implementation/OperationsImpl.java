@@ -7,7 +7,6 @@ package com.azure.resourcemanager.resources.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.resources.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.resources.generated.models.Operation;
@@ -19,9 +18,10 @@ public final class OperationsImpl implements Operations {
 
     private final OperationsClient innerClient;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    public OperationsImpl(OperationsClient innerClient, ResourceManager serviceManager) {
+    public OperationsImpl(
+        OperationsClient innerClient, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class OperationsImpl implements Operations {
         return this.innerClient;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

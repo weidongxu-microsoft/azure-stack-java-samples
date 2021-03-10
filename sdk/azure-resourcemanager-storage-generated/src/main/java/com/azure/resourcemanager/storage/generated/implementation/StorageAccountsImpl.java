@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.StorageAccountsClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStatusInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.CheckNameAvailabilityResultInner;
@@ -38,9 +37,10 @@ public final class StorageAccountsImpl implements StorageAccounts {
 
     private final StorageAccountsClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public StorageAccountsImpl(StorageAccountsClient innerClient, StorageManager serviceManager) {
+    public StorageAccountsImpl(
+        StorageAccountsClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -353,7 +353,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 

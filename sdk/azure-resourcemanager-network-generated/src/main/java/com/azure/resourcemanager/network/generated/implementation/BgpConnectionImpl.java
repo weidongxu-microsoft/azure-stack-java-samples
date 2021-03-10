@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpConnectionInner;
 import com.azure.resourcemanager.network.generated.models.BgpConnection;
 import com.azure.resourcemanager.network.generated.models.HubBgpConnectionStatus;
@@ -14,7 +13,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Definition, BgpConnection.Update {
     private BgpConnectionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -52,7 +51,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -86,7 +85,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this;
     }
 
-    BgpConnectionImpl(String name, NetworkManager serviceManager) {
+    BgpConnectionImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new BgpConnectionInner();
         this.serviceManager = serviceManager;
         this.connectionName = name;
@@ -114,7 +113,8 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this;
     }
 
-    BgpConnectionImpl(BgpConnectionInner innerObject, NetworkManager serviceManager) {
+    BgpConnectionImpl(
+        BgpConnectionInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

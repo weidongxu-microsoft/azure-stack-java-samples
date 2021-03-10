@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.compute.generated.models.Usage;
 import com.azure.resourcemanager.compute.generated.models.UsageName;
@@ -12,9 +11,9 @@ import com.azure.resourcemanager.compute.generated.models.UsageName;
 public final class UsageImpl implements Usage {
     private UsageInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    UsageImpl(UsageInner innerObject, ComputeManager serviceManager) {
+    UsageImpl(UsageInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +38,7 @@ public final class UsageImpl implements Usage {
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

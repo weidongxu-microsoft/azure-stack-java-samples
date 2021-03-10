@@ -7,7 +7,6 @@ package com.azure.resourcemanager.storage.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.SkusClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.SkuInformationInner;
 import com.azure.resourcemanager.storage.generated.models.SkuInformation;
@@ -19,9 +18,9 @@ public final class SkusImpl implements Skus {
 
     private final SkusClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public SkusImpl(SkusClient innerClient, StorageManager serviceManager) {
+    public SkusImpl(SkusClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +39,7 @@ public final class SkusImpl implements Skus {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

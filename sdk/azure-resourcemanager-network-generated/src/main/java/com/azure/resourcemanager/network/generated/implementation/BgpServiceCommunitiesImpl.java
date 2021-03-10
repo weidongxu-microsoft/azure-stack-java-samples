@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.BgpServiceCommunitiesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpServiceCommunityInner;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunities;
@@ -19,9 +18,11 @@ public final class BgpServiceCommunitiesImpl implements BgpServiceCommunities {
 
     private final BgpServiceCommunitiesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public BgpServiceCommunitiesImpl(BgpServiceCommunitiesClient innerClient, NetworkManager serviceManager) {
+    public BgpServiceCommunitiesImpl(
+        BgpServiceCommunitiesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class BgpServiceCommunitiesImpl implements BgpServiceCommunities {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

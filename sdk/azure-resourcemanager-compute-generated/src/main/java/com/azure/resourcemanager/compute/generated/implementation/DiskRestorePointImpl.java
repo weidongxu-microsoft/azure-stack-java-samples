@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner;
 import com.azure.resourcemanager.compute.generated.models.DiskRestorePoint;
 import com.azure.resourcemanager.compute.generated.models.Encryption;
@@ -16,9 +15,10 @@ import java.time.OffsetDateTime;
 public final class DiskRestorePointImpl implements DiskRestorePoint {
     private DiskRestorePointInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    DiskRestorePointImpl(DiskRestorePointInner innerObject, ComputeManager serviceManager) {
+    DiskRestorePointImpl(
+        DiskRestorePointInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -71,7 +71,7 @@ public final class DiskRestorePointImpl implements DiskRestorePoint {
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

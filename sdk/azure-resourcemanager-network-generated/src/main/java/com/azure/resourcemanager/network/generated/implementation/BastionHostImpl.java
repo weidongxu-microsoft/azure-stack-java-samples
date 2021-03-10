@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionHostInner;
 import com.azure.resourcemanager.network.generated.models.BastionHost;
 import com.azure.resourcemanager.network.generated.models.BastionHostIpConfiguration;
@@ -18,7 +17,7 @@ import java.util.Map;
 public final class BastionHostImpl implements BastionHost, BastionHost.Definition, BastionHost.Update {
     private BastionHostInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -78,7 +77,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -109,7 +108,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this;
     }
 
-    BastionHostImpl(String name, NetworkManager serviceManager) {
+    BastionHostImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new BastionHostInner();
         this.serviceManager = serviceManager;
         this.bastionHostname = name;
@@ -137,7 +136,8 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this;
     }
 
-    BastionHostImpl(BastionHostInner innerObject, NetworkManager serviceManager) {
+    BastionHostImpl(
+        BastionHostInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

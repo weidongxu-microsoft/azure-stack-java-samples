@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealth;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealthPool;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class ApplicationGatewayBackendHealthImpl implements ApplicationGatewayBackendHealth {
     private ApplicationGatewayBackendHealthInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ApplicationGatewayBackendHealthImpl(
-        ApplicationGatewayBackendHealthInner innerObject, NetworkManager serviceManager) {
+        ApplicationGatewayBackendHealthInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class ApplicationGatewayBackendHealthImpl implements ApplicationGat
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewall;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallApplicationRuleCollection;
@@ -27,7 +26,7 @@ import java.util.Map;
 public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Definition, AzureFirewall.Update {
     private AzureFirewallInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -161,7 +160,7 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -194,7 +193,7 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    AzureFirewallImpl(String name, NetworkManager serviceManager) {
+    AzureFirewallImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new AzureFirewallInner();
         this.serviceManager = serviceManager;
         this.azureFirewallName = name;
@@ -223,7 +222,8 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    AzureFirewallImpl(AzureFirewallInner innerObject, NetworkManager serviceManager) {
+    AzureFirewallImpl(
+        AzureFirewallInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

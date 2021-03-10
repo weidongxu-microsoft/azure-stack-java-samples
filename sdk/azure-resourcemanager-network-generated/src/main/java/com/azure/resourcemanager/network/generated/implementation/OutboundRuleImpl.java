@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.OutboundRuleInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerOutboundRuleProtocol;
 import com.azure.resourcemanager.network.generated.models.OutboundRule;
@@ -16,9 +15,10 @@ import java.util.List;
 public final class OutboundRuleImpl implements OutboundRule {
     private OutboundRuleInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    OutboundRuleImpl(OutboundRuleInner innerObject, NetworkManager serviceManager) {
+    OutboundRuleImpl(
+        OutboundRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -76,7 +76,7 @@ public final class OutboundRuleImpl implements OutboundRule {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

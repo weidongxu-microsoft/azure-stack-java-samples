@@ -71,6 +71,13 @@ public interface StorageAccount {
     Identity identity();
 
     /**
+     * Gets the extendedLocation property: The extendedLocation of the resource.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the provisioningState property: Gets the status of the storage account at the time the operation was called.
      *
      * @return the provisioningState value.
@@ -265,6 +272,13 @@ public interface StorageAccount {
     Boolean allowSharedKeyAccess();
 
     /**
+     * Gets the enableNfsV3 property: NFS 3.0 protocol support enabled if set to true.
+     *
+     * @return the enableNfsV3 value.
+     */
+    Boolean enableNfsV3();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -360,6 +374,7 @@ public interface StorageAccount {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithIdentity,
                 DefinitionStages.WithCustomDomain,
                 DefinitionStages.WithEncryption,
@@ -372,7 +387,8 @@ public interface StorageAccount {
                 DefinitionStages.WithRoutingPreference,
                 DefinitionStages.WithAllowBlobPublicAccess,
                 DefinitionStages.WithMinimumTlsVersion,
-                DefinitionStages.WithAllowSharedKeyAccess {
+                DefinitionStages.WithAllowSharedKeyAccess,
+                DefinitionStages.WithEnableNfsV3 {
             /**
              * Executes the create request.
              *
@@ -403,6 +419,20 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the StorageAccount definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: Optional. Set the extended location of the resource. If not set,
+             * the storage account will be created in Azure main region. Otherwise it will be created in the specified
+             * extended location.
+             *
+             * @param extendedLocation Optional. Set the extended location of the resource. If not set, the storage
+             *     account will be created in Azure main region. Otherwise it will be created in the specified extended
+             *     location.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the StorageAccount definition allowing to specify identity. */
         interface WithIdentity {
@@ -560,6 +590,16 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             WithCreate withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
+        }
+        /** The stage of the StorageAccount definition allowing to specify enableNfsV3. */
+        interface WithEnableNfsV3 {
+            /**
+             * Specifies the enableNfsV3 property: NFS 3.0 protocol support enabled if set to true..
+             *
+             * @param enableNfsV3 NFS 3.0 protocol support enabled if set to true.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableNfsV3(Boolean enableNfsV3);
         }
     }
     /**

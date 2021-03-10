@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.AvailabilitySetsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.AvailabilitySetInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
@@ -23,9 +22,10 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
 
     private final AvailabilitySetsClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public AvailabilitySetsImpl(AvailabilitySetsClient innerClient, ComputeManager serviceManager) {
+    public AvailabilitySetsImpl(
+        AvailabilitySetsClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -184,7 +184,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 

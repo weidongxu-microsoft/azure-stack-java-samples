@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.ProvidersClient;
 import com.azure.resourcemanager.resources.generated.fluent.models.ProviderInner;
 import com.azure.resourcemanager.resources.generated.models.Provider;
@@ -21,9 +20,10 @@ public final class ProvidersImpl implements Providers {
 
     private final ProvidersClient innerClient;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    public ProvidersImpl(ProvidersClient innerClient, ResourceManager serviceManager) {
+    public ProvidersImpl(
+        ProvidersClient innerClient, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -154,7 +154,7 @@ public final class ProvidersImpl implements Providers {
         return this.innerClient;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetVMsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResultInner;
@@ -19,9 +18,9 @@ import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
-import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVM;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceView;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMs;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -30,9 +29,11 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
 
     private final VirtualMachineScaleSetVMsClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetVMsImpl(VirtualMachineScaleSetVMsClient innerClient, ComputeManager serviceManager) {
+    public VirtualMachineScaleSetVMsImpl(
+        VirtualMachineScaleSetVMsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput) {
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput);
     }
 
@@ -53,7 +54,7 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput, context);
     }
@@ -301,7 +302,7 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

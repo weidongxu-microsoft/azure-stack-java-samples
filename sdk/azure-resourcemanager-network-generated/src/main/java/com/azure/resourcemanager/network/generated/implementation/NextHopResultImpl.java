@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.NextHopResultInner;
 import com.azure.resourcemanager.network.generated.models.NextHopResult;
 import com.azure.resourcemanager.network.generated.models.NextHopType;
@@ -12,9 +11,10 @@ import com.azure.resourcemanager.network.generated.models.NextHopType;
 public final class NextHopResultImpl implements NextHopResult {
     private NextHopResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NextHopResultImpl(NextHopResultInner innerObject, NetworkManager serviceManager) {
+    NextHopResultImpl(
+        NextHopResultInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class NextHopResultImpl implements NextHopResult {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.EncryptionScopeInner;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScope;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScopeKeyVaultProperties;
@@ -16,7 +15,7 @@ import java.time.OffsetDateTime;
 public final class EncryptionScopeImpl implements EncryptionScope, EncryptionScope.Definition, EncryptionScope.Update {
     private EncryptionScopeInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -50,11 +49,15 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this.innerModel().keyVaultProperties();
     }
 
+    public Boolean requireInfrastructureEncryption() {
+        return this.innerModel().requireInfrastructureEncryption();
+    }
+
     public EncryptionScopeInner innerModel() {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -90,7 +93,7 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this;
     }
 
-    EncryptionScopeImpl(String name, StorageManager serviceManager) {
+    EncryptionScopeImpl(String name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new EncryptionScopeInner();
         this.serviceManager = serviceManager;
         this.encryptionScopeName = name;
@@ -120,7 +123,8 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this;
     }
 
-    EncryptionScopeImpl(EncryptionScopeInner innerObject, StorageManager serviceManager) {
+    EncryptionScopeImpl(
+        EncryptionScopeInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -160,6 +164,11 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
 
     public EncryptionScopeImpl withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties) {
         this.innerModel().withKeyVaultProperties(keyVaultProperties);
+        return this;
+    }
+
+    public EncryptionScopeImpl withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption) {
+        this.innerModel().withRequireInfrastructureEncryption(requireInfrastructureEncryption);
         return this;
     }
 }

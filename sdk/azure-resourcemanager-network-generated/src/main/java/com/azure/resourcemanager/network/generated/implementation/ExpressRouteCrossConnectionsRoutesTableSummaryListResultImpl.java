@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionRoutesTableSummary;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionsRoutesTableSummaryListResult;
@@ -15,10 +14,11 @@ public final class ExpressRouteCrossConnectionsRoutesTableSummaryListResultImpl
     implements ExpressRouteCrossConnectionsRoutesTableSummaryListResult {
     private ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ExpressRouteCrossConnectionsRoutesTableSummaryListResultImpl(
-        ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner innerObject, NetworkManager serviceManager) {
+        ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class ExpressRouteCrossConnectionsRoutesTableSummaryListResultImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

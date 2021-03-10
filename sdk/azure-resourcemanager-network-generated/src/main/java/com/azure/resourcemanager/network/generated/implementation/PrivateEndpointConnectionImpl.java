@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpoint;
@@ -15,9 +14,11 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 public final class PrivateEndpointConnectionImpl implements PrivateEndpointConnection {
     private PrivateEndpointConnectionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, NetworkManager serviceManager) {
+    PrivateEndpointConnectionImpl(
+        PrivateEndpointConnectionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -63,7 +64,7 @@ public final class PrivateEndpointConnectionImpl implements PrivateEndpointConne
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

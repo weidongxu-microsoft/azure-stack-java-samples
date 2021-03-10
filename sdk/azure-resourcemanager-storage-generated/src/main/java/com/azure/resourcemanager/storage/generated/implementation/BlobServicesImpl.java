@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.BlobServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.BlobServiceProperties;
@@ -21,9 +20,10 @@ public final class BlobServicesImpl implements BlobServices {
 
     private final BlobServicesClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public BlobServicesImpl(BlobServicesClient innerClient, StorageManager serviceManager) {
+    public BlobServicesImpl(
+        BlobServicesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -107,7 +107,7 @@ public final class BlobServicesImpl implements BlobServices {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 

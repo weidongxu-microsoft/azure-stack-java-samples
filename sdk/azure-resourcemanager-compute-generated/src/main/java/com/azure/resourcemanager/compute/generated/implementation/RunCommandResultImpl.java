@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResultInner;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
 import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
@@ -14,9 +13,10 @@ import java.util.List;
 public final class RunCommandResultImpl implements RunCommandResult {
     private RunCommandResultInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RunCommandResultImpl(RunCommandResultInner innerObject, ComputeManager serviceManager) {
+    RunCommandResultImpl(
+        RunCommandResultInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class RunCommandResultImpl implements RunCommandResult {
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

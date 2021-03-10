@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetExtensionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetExtensionInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetExtension;
@@ -21,10 +20,11 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
 
     private final VirtualMachineScaleSetExtensionsClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public VirtualMachineScaleSetExtensionsImpl(
-        VirtualMachineScaleSetExtensionsClient innerClient, ComputeManager serviceManager) {
+        VirtualMachineScaleSetExtensionsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -199,7 +199,7 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 

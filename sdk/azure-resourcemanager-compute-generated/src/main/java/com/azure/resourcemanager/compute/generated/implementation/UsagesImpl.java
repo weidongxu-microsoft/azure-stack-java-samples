@@ -7,7 +7,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.compute.generated.models.Usage;
@@ -19,9 +18,10 @@ public final class UsagesImpl implements Usages {
 
     private final UsagesClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public UsagesImpl(UsagesClient innerClient, ComputeManager serviceManager) {
+    public UsagesImpl(
+        UsagesClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class UsagesImpl implements Usages {
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

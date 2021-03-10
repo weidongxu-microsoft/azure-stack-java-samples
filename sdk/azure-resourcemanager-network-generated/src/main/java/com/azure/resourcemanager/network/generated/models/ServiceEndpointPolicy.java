@@ -49,6 +49,13 @@ public interface ServiceEndpointPolicy {
     String etag();
 
     /**
+     * Gets the kind property: Kind of service endpoint policy. This is metadata used for the Azure portal experience.
+     *
+     * @return the kind value.
+     */
+    String kind();
+
+    /**
      * Gets the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the
      * service endpoint policy.
      *

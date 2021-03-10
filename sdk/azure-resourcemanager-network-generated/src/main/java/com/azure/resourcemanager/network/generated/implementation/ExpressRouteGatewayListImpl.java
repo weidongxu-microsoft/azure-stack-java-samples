@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteGatewayListInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteGateway;
@@ -16,9 +15,11 @@ import java.util.stream.Collectors;
 public final class ExpressRouteGatewayListImpl implements ExpressRouteGatewayList {
     private ExpressRouteGatewayListInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteGatewayListImpl(ExpressRouteGatewayListInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteGatewayListImpl(
+        ExpressRouteGatewayListInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class ExpressRouteGatewayListImpl implements ExpressRouteGatewayLis
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

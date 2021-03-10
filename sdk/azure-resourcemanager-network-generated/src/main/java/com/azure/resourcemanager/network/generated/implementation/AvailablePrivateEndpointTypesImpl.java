@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.AvailablePrivateEndpointTypesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner;
 import com.azure.resourcemanager.network.generated.models.AvailablePrivateEndpointType;
@@ -19,10 +18,11 @@ public final class AvailablePrivateEndpointTypesImpl implements AvailablePrivate
 
     private final AvailablePrivateEndpointTypesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public AvailablePrivateEndpointTypesImpl(
-        AvailablePrivateEndpointTypesClient innerClient, NetworkManager serviceManager) {
+        AvailablePrivateEndpointTypesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -54,7 +54,7 @@ public final class AvailablePrivateEndpointTypesImpl implements AvailablePrivate
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

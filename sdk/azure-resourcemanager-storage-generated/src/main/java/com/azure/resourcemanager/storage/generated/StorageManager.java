@@ -24,6 +24,7 @@ import com.azure.resourcemanager.storage.generated.fluent.StorageManagementClien
 import com.azure.resourcemanager.storage.generated.implementation.BlobContainersImpl;
 import com.azure.resourcemanager.storage.generated.implementation.BlobInventoryPoliciesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.BlobServicesImpl;
+import com.azure.resourcemanager.storage.generated.implementation.DeletedAccountsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.EncryptionScopesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.FileServicesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.FileSharesImpl;
@@ -43,6 +44,7 @@ import com.azure.resourcemanager.storage.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.storage.generated.models.BlobContainers;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicies;
 import com.azure.resourcemanager.storage.generated.models.BlobServices;
+import com.azure.resourcemanager.storage.generated.models.DeletedAccounts;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScopes;
 import com.azure.resourcemanager.storage.generated.models.FileServices;
 import com.azure.resourcemanager.storage.generated.models.FileShares;
@@ -71,6 +73,8 @@ public final class StorageManager {
     private Skus skus;
 
     private StorageAccounts storageAccounts;
+
+    private DeletedAccounts deletedAccounts;
 
     private Usages usages;
 
@@ -286,6 +290,14 @@ public final class StorageManager {
             this.storageAccounts = new StorageAccountsImpl(clientObject.getStorageAccounts(), this);
         }
         return storageAccounts;
+    }
+
+    /** @return Resource collection API of DeletedAccounts. */
+    public DeletedAccounts deletedAccounts() {
+        if (this.deletedAccounts == null) {
+            this.deletedAccounts = new DeletedAccountsImpl(clientObject.getDeletedAccounts(), this);
+        }
+        return deletedAccounts;
     }
 
     /** @return Resource collection API of Usages. */

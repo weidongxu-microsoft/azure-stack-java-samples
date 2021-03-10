@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.PrivateLinkResourceListResultInner;
 import com.azure.resourcemanager.compute.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.compute.generated.models.PrivateLinkResourceListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class PrivateLinkResourceListResultImpl implements PrivateLinkResourceListResult {
     private PrivateLinkResourceListResultInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    PrivateLinkResourceListResultImpl(PrivateLinkResourceListResultInner innerObject, ComputeManager serviceManager) {
+    PrivateLinkResourceListResultImpl(
+        PrivateLinkResourceListResultInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class PrivateLinkResourceListResultImpl implements PrivateLinkResou
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

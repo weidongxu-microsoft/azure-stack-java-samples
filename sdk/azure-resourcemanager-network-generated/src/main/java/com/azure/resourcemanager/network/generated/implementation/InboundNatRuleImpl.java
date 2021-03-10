@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.InboundNatRuleInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.InboundNatRule;
@@ -17,7 +16,7 @@ import com.azure.resourcemanager.network.generated.models.TransportProtocol;
 public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.Definition, InboundNatRule.Update {
     private InboundNatRuleInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -80,7 +79,7 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -115,7 +114,7 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
-    InboundNatRuleImpl(String name, NetworkManager serviceManager) {
+    InboundNatRuleImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new InboundNatRuleInner();
         this.serviceManager = serviceManager;
         this.inboundNatRuleName = name;
@@ -144,7 +143,8 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
-    InboundNatRuleImpl(InboundNatRuleInner innerObject, NetworkManager serviceManager) {
+    InboundNatRuleImpl(
+        InboundNatRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

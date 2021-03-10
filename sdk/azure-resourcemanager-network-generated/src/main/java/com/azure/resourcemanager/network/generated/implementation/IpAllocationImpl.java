@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.IpAllocationInner;
 import com.azure.resourcemanager.network.generated.models.IpAllocation;
 import com.azure.resourcemanager.network.generated.models.IpAllocationType;
@@ -19,7 +18,7 @@ import java.util.Map;
 public final class IpAllocationImpl implements IpAllocation, IpAllocation.Definition, IpAllocation.Update {
     private IpAllocationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -99,7 +98,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -132,7 +131,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    IpAllocationImpl(String name, NetworkManager serviceManager) {
+    IpAllocationImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new IpAllocationInner();
         this.serviceManager = serviceManager;
         this.ipAllocationName = name;
@@ -163,7 +162,8 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    IpAllocationImpl(IpAllocationInner innerObject, NetworkManager serviceManager) {
+    IpAllocationImpl(
+        IpAllocationInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

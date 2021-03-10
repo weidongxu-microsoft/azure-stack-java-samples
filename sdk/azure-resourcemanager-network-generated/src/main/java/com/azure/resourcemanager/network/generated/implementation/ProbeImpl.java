@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ProbeInner;
 import com.azure.resourcemanager.network.generated.models.Probe;
 import com.azure.resourcemanager.network.generated.models.ProbeProtocol;
@@ -16,9 +15,9 @@ import java.util.List;
 public final class ProbeImpl implements Probe {
     private ProbeInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ProbeImpl(ProbeInner innerObject, NetworkManager serviceManager) {
+    ProbeImpl(ProbeInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -76,7 +75,7 @@ public final class ProbeImpl implements Probe {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

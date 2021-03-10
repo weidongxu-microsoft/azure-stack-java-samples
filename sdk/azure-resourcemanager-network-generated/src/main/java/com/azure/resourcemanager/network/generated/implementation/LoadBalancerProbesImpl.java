@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerProbesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ProbeInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerProbes;
@@ -21,9 +20,11 @@ public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
 
     private final LoadBalancerProbesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public LoadBalancerProbesImpl(LoadBalancerProbesClient innerClient, NetworkManager serviceManager) {
+    public LoadBalancerProbesImpl(
+        LoadBalancerProbesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -66,7 +67,7 @@ public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

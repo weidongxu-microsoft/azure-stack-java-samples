@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteInner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.Route;
@@ -14,7 +13,7 @@ import com.azure.resourcemanager.network.generated.models.RouteNextHopType;
 public final class RouteImpl implements Route, Route.Definition, Route.Update {
     private RouteInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -56,7 +55,7 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -90,7 +89,7 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
         return this;
     }
 
-    RouteImpl(String name, NetworkManager serviceManager) {
+    RouteImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new RouteInner();
         this.serviceManager = serviceManager;
         this.routeName = name;
@@ -118,7 +117,7 @@ public final class RouteImpl implements Route, Route.Definition, Route.Update {
         return this;
     }
 
-    RouteImpl(RouteInner innerObject, NetworkManager serviceManager) {
+    RouteImpl(RouteInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

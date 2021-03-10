@@ -6,7 +6,6 @@ package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobContainerInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.LegalHoldInner;
 import com.azure.resourcemanager.storage.generated.models.BlobContainer;
@@ -26,7 +25,7 @@ import java.util.Map;
 public final class BlobContainerImpl implements BlobContainer, BlobContainer.Definition, BlobContainer.Update {
     private BlobContainerInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -117,7 +116,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -153,7 +152,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this;
     }
 
-    BlobContainerImpl(String name, StorageManager serviceManager) {
+    BlobContainerImpl(String name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new BlobContainerInner();
         this.serviceManager = serviceManager;
         this.containerName = name;
@@ -183,7 +182,8 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this;
     }
 
-    BlobContainerImpl(BlobContainerInner innerObject, StorageManager serviceManager) {
+    BlobContainerImpl(
+        BlobContainerInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

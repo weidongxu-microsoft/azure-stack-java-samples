@@ -7,13 +7,14 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
 import com.azure.resourcemanager.network.generated.models.DnsSettings;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicy;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyInsights;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIntrusionDetection;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicySku;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicySnat;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyThreatIntelWhitelist;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyTransportSecurity;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
@@ -25,7 +26,7 @@ import java.util.Map;
 public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.Definition, FirewallPolicy.Update {
     private FirewallPolicyInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -99,6 +100,14 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this.innerModel().threatIntelWhitelist();
     }
 
+    public FirewallPolicyInsights insights() {
+        return this.innerModel().insights();
+    }
+
+    public FirewallPolicySnat snat() {
+        return this.innerModel().snat();
+    }
+
     public DnsSettings dnsSettings() {
         return this.innerModel().dnsSettings();
     }
@@ -131,7 +140,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -162,7 +171,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
-    FirewallPolicyImpl(String name, NetworkManager serviceManager) {
+    FirewallPolicyImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new FirewallPolicyInner();
         this.serviceManager = serviceManager;
         this.firewallPolicyName = name;
@@ -190,7 +199,8 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
-    FirewallPolicyImpl(FirewallPolicyInner innerObject, NetworkManager serviceManager) {
+    FirewallPolicyImpl(
+        FirewallPolicyInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -251,6 +261,16 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
 
     public FirewallPolicyImpl withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist) {
         this.innerModel().withThreatIntelWhitelist(threatIntelWhitelist);
+        return this;
+    }
+
+    public FirewallPolicyImpl withInsights(FirewallPolicyInsights insights) {
+        this.innerModel().withInsights(insights);
+        return this;
+    }
+
+    public FirewallPolicyImpl withSnat(FirewallPolicySnat snat) {
+        this.innerModel().withSnat(snat);
         return this;
     }
 

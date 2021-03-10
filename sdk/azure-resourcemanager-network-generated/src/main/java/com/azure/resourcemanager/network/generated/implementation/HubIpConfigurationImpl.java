@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.HubIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
@@ -19,7 +18,7 @@ public final class HubIpConfigurationImpl
     implements HubIpConfiguration, HubIpConfiguration.Definition, HubIpConfiguration.Update {
     private HubIpConfigurationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -71,7 +70,7 @@ public final class HubIpConfigurationImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -105,7 +104,7 @@ public final class HubIpConfigurationImpl
         return this;
     }
 
-    HubIpConfigurationImpl(String name, NetworkManager serviceManager) {
+    HubIpConfigurationImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new HubIpConfigurationInner();
         this.serviceManager = serviceManager;
         this.ipConfigName = name;
@@ -133,7 +132,9 @@ public final class HubIpConfigurationImpl
         return this;
     }
 
-    HubIpConfigurationImpl(HubIpConfigurationInner innerObject, NetworkManager serviceManager) {
+    HubIpConfigurationImpl(
+        HubIpConfigurationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

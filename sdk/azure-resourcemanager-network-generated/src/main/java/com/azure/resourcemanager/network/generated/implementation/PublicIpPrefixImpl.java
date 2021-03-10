@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.IpTag;
@@ -24,7 +23,7 @@ import java.util.Map;
 public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.Definition, PublicIpPrefix.Update {
     private PublicIpPrefixInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -130,7 +129,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -163,7 +162,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
-    PublicIpPrefixImpl(String name, NetworkManager serviceManager) {
+    PublicIpPrefixImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new PublicIpPrefixInner();
         this.serviceManager = serviceManager;
         this.publicIpPrefixName = name;
@@ -194,7 +193,8 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
-    PublicIpPrefixImpl(PublicIpPrefixInner innerObject, NetworkManager serviceManager) {
+    PublicIpPrefixImpl(
+        PublicIpPrefixInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -24,7 +23,7 @@ import java.util.stream.Collectors;
 public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, VirtualHub.Update {
     private VirtualHubInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -164,7 +163,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -197,7 +196,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    VirtualHubImpl(String name, NetworkManager serviceManager) {
+    VirtualHubImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualHubInner();
         this.serviceManager = serviceManager;
         this.virtualHubName = name;
@@ -228,7 +227,8 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    VirtualHubImpl(VirtualHubInner innerObject, NetworkManager serviceManager) {
+    VirtualHubImpl(
+        VirtualHubInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.models.DdosSettings;
@@ -28,7 +27,7 @@ import java.util.Map;
 public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddress.Definition, PublicIpAddress.Update {
     private PublicIpAddressInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -142,7 +141,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -175,7 +174,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this;
     }
 
-    PublicIpAddressImpl(String name, NetworkManager serviceManager) {
+    PublicIpAddressImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new PublicIpAddressInner();
         this.serviceManager = serviceManager;
         this.publicIpAddressName = name;
@@ -206,7 +205,8 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this;
     }
 
-    PublicIpAddressImpl(PublicIpAddressInner innerObject, NetworkManager serviceManager) {
+    PublicIpAddressImpl(
+        PublicIpAddressInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

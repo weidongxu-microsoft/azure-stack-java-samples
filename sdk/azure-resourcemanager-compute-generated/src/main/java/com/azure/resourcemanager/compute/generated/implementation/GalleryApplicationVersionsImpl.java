@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationVersionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryApplicationVersionInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersion;
@@ -22,9 +21,11 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
 
     private final GalleryApplicationVersionsClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public GalleryApplicationVersionsImpl(GalleryApplicationVersionsClient innerClient, ComputeManager serviceManager) {
+    public GalleryApplicationVersionsImpl(
+        GalleryApplicationVersionsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -260,7 +261,7 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 

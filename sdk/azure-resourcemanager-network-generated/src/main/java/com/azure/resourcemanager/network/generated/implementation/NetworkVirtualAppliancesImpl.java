@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualAppliancesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
@@ -21,9 +20,11 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
 
     private final NetworkVirtualAppliancesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkVirtualAppliancesImpl(NetworkVirtualAppliancesClient innerClient, NetworkManager serviceManager) {
+    public NetworkVirtualAppliancesImpl(
+        NetworkVirtualAppliancesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -179,7 +180,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

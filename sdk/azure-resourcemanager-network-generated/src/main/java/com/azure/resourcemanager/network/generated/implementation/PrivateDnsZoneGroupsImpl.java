@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.PrivateDnsZoneGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateDnsZoneGroupInner;
 import com.azure.resourcemanager.network.generated.models.PrivateDnsZoneGroup;
@@ -21,9 +20,11 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
 
     private final PrivateDnsZoneGroupsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public PrivateDnsZoneGroupsImpl(PrivateDnsZoneGroupsClient innerClient, NetworkManager serviceManager) {
+    public PrivateDnsZoneGroupsImpl(
+        PrivateDnsZoneGroupsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -115,7 +116,7 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

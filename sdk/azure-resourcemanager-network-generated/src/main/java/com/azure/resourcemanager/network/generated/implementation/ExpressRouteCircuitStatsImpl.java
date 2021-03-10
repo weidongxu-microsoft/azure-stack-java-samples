@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitStatsInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitStats;
 
 public final class ExpressRouteCircuitStatsImpl implements ExpressRouteCircuitStats {
     private ExpressRouteCircuitStatsInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteCircuitStatsImpl(ExpressRouteCircuitStatsInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteCircuitStatsImpl(
+        ExpressRouteCircuitStatsInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +39,7 @@ public final class ExpressRouteCircuitStatsImpl implements ExpressRouteCircuitSt
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

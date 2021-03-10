@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner;
@@ -25,9 +24,11 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
 
     private final VirtualMachineImagesClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public VirtualMachineImagesImpl(VirtualMachineImagesClient innerClient, ComputeManager serviceManager) {
+    public VirtualMachineImagesImpl(
+        VirtualMachineImagesClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -198,7 +199,7 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

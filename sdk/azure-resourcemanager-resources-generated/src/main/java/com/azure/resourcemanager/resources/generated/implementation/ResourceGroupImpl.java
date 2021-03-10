@@ -6,7 +6,6 @@ package com.azure.resourcemanager.resources.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupInner;
 import com.azure.resourcemanager.resources.generated.models.ExportTemplateRequest;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroup;
@@ -19,7 +18,7 @@ import java.util.Map;
 public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Definition, ResourceGroup.Update {
     private ResourceGroupInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -66,7 +65,7 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 
@@ -94,7 +93,7 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         return this;
     }
 
-    ResourceGroupImpl(String name, ResourceManager serviceManager) {
+    ResourceGroupImpl(String name, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = new ResourceGroupInner();
         this.serviceManager = serviceManager;
         this.resourceGroupName = name;
@@ -125,7 +124,8 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         return this;
     }
 
-    ResourceGroupImpl(ResourceGroupInner innerObject, ResourceManager serviceManager) {
+    ResourceGroupImpl(
+        ResourceGroupInner innerObject, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

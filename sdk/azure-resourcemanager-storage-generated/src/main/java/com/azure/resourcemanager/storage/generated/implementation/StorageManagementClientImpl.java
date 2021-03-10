@@ -24,6 +24,7 @@ import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.storage.generated.fluent.BlobContainersClient;
 import com.azure.resourcemanager.storage.generated.fluent.BlobInventoryPoliciesClient;
 import com.azure.resourcemanager.storage.generated.fluent.BlobServicesClient;
+import com.azure.resourcemanager.storage.generated.fluent.DeletedAccountsClient;
 import com.azure.resourcemanager.storage.generated.fluent.EncryptionScopesClient;
 import com.azure.resourcemanager.storage.generated.fluent.FileServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.FileSharesClient;
@@ -161,6 +162,18 @@ public final class StorageManagementClientImpl implements StorageManagementClien
      */
     public StorageAccountsClient getStorageAccounts() {
         return this.storageAccounts;
+    }
+
+    /** The DeletedAccountsClient object to access its operations. */
+    private final DeletedAccountsClient deletedAccounts;
+
+    /**
+     * Gets the DeletedAccountsClient object to access its operations.
+     *
+     * @return the DeletedAccountsClient object.
+     */
+    public DeletedAccountsClient getDeletedAccounts() {
+        return this.deletedAccounts;
     }
 
     /** The UsagesClient object to access its operations. */
@@ -365,10 +378,11 @@ public final class StorageManagementClientImpl implements StorageManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2019-06-01";
+        this.apiVersion = "2021-01-01";
         this.operations = new OperationsClientImpl(this);
         this.skus = new SkusClientImpl(this);
         this.storageAccounts = new StorageAccountsClientImpl(this);
+        this.deletedAccounts = new DeletedAccountsClientImpl(this);
         this.usages = new UsagesClientImpl(this);
         this.managementPolicies = new ManagementPoliciesClientImpl(this);
         this.blobInventoryPolicies = new BlobInventoryPoliciesClientImpl(this);

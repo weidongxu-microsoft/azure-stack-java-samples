@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.GroupIdInformationInner;
 import com.azure.resourcemanager.iothub.generated.fluent.models.PrivateLinkResourcesInner;
 import com.azure.resourcemanager.iothub.generated.models.GroupIdInformation;
@@ -16,9 +15,11 @@ import java.util.stream.Collectors;
 public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
     private PrivateLinkResourcesInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    PrivateLinkResourcesImpl(PrivateLinkResourcesInner innerObject, IotHubManager serviceManager) {
+    PrivateLinkResourcesImpl(
+        PrivateLinkResourcesInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 }

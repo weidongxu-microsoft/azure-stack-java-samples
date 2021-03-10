@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.HubRouteTableInner;
 import com.azure.resourcemanager.network.generated.models.HubRoute;
 import com.azure.resourcemanager.network.generated.models.HubRouteTable;
@@ -16,7 +15,7 @@ import java.util.List;
 public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Definition, HubRouteTable.Update {
     private HubRouteTableInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -78,7 +77,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -112,7 +111,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this;
     }
 
-    HubRouteTableImpl(String name, NetworkManager serviceManager) {
+    HubRouteTableImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new HubRouteTableInner();
         this.serviceManager = serviceManager;
         this.routeTableName = name;
@@ -140,7 +139,8 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this;
     }
 
-    HubRouteTableImpl(HubRouteTableInner innerObject, NetworkManager serviceManager) {
+    HubRouteTableImpl(
+        HubRouteTableInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

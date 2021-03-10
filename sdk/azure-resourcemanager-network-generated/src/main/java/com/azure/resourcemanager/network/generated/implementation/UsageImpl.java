@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.network.generated.models.Usage;
 import com.azure.resourcemanager.network.generated.models.UsageName;
@@ -13,9 +12,9 @@ import com.azure.resourcemanager.network.generated.models.UsageUnit;
 public final class UsageImpl implements Usage {
     private UsageInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    UsageImpl(UsageInner innerObject, NetworkManager serviceManager) {
+    UsageImpl(UsageInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -44,7 +43,7 @@ public final class UsageImpl implements Usage {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

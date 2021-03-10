@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareItemInner;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
 import com.azure.resourcemanager.storage.generated.models.FileShareItem;
@@ -17,9 +16,10 @@ import java.util.Map;
 public final class FileShareItemImpl implements FileShareItem {
     private FileShareItemInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    FileShareItemImpl(FileShareItemInner innerObject, StorageManager serviceManager) {
+    FileShareItemImpl(
+        FileShareItemInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -97,11 +97,15 @@ public final class FileShareItemImpl implements FileShareItem {
         return this.innerModel().shareUsageBytes();
     }
 
+    public OffsetDateTime snapshotTime() {
+        return this.innerModel().snapshotTime();
+    }
+
     public FileShareItemInner innerModel() {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

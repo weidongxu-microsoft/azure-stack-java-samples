@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpPeerStatusListResultInner;
 import com.azure.resourcemanager.network.generated.models.BgpPeerStatus;
 import com.azure.resourcemanager.network.generated.models.BgpPeerStatusListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class BgpPeerStatusListResultImpl implements BgpPeerStatusListResult {
     private BgpPeerStatusListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BgpPeerStatusListResultImpl(BgpPeerStatusListResultInner innerObject, NetworkManager serviceManager) {
+    BgpPeerStatusListResultImpl(
+        BgpPeerStatusListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class BgpPeerStatusListResultImpl implements BgpPeerStatusListResul
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

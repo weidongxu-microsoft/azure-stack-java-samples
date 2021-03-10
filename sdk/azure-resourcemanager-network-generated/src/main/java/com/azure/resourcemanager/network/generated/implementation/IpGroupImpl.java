@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.IpGroupInner;
 import com.azure.resourcemanager.network.generated.models.IpGroup;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -19,7 +18,7 @@ import java.util.Map;
 public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.Update {
     private IpGroupInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -93,7 +92,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -126,7 +125,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this;
     }
 
-    IpGroupImpl(String name, NetworkManager serviceManager) {
+    IpGroupImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new IpGroupInner();
         this.serviceManager = serviceManager;
         this.ipGroupsName = name;
@@ -157,7 +156,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this;
     }
 
-    IpGroupImpl(IpGroupInner innerObject, NetworkManager serviceManager) {
+    IpGroupImpl(IpGroupInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

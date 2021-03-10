@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner;
 import com.azure.resourcemanager.network.generated.fluent.models.InboundNatRuleInner;
@@ -31,10 +30,11 @@ import java.util.stream.Collectors;
 public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfaceIpConfiguration {
     private NetworkInterfaceIpConfigurationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     NetworkInterfaceIpConfigurationImpl(
-        NetworkInterfaceIpConfigurationInner innerObject, NetworkManager serviceManager) {
+        NetworkInterfaceIpConfigurationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -162,7 +162,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

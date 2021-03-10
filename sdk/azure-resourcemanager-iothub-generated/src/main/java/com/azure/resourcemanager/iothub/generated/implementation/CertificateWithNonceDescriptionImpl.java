@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateWithNonceDescriptionInner;
 import com.azure.resourcemanager.iothub.generated.models.CertificatePropertiesWithNonce;
 import com.azure.resourcemanager.iothub.generated.models.CertificateWithNonceDescription;
@@ -12,10 +11,11 @@ import com.azure.resourcemanager.iothub.generated.models.CertificateWithNonceDes
 public final class CertificateWithNonceDescriptionImpl implements CertificateWithNonceDescription {
     private CertificateWithNonceDescriptionInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
     CertificateWithNonceDescriptionImpl(
-        CertificateWithNonceDescriptionInner innerObject, IotHubManager serviceManager) {
+        CertificateWithNonceDescriptionInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -44,7 +44,7 @@ public final class CertificateWithNonceDescriptionImpl implements CertificateWit
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 }

@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.ManagementPoliciesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.ManagementPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.ManagementPolicies;
@@ -21,9 +20,11 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
 
     private final ManagementPoliciesClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public ManagementPoliciesImpl(ManagementPoliciesClient innerClient, StorageManager serviceManager) {
+    public ManagementPoliciesImpl(
+        ManagementPoliciesClient innerClient,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -186,7 +187,7 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 

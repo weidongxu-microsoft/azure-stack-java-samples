@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkConfigurationDiagnosticResponseInner;
 import com.azure.resourcemanager.network.generated.models.NetworkConfigurationDiagnosticResponse;
 import com.azure.resourcemanager.network.generated.models.NetworkConfigurationDiagnosticResult;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class NetworkConfigurationDiagnosticResponseImpl implements NetworkConfigurationDiagnosticResponse {
     private NetworkConfigurationDiagnosticResponseInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     NetworkConfigurationDiagnosticResponseImpl(
-        NetworkConfigurationDiagnosticResponseInner innerObject, NetworkManager serviceManager) {
+        NetworkConfigurationDiagnosticResponseInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class NetworkConfigurationDiagnosticResponseImpl implements Network
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

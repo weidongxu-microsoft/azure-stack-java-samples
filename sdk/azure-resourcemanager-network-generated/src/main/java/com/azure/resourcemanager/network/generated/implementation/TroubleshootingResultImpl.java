@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.TroubleshootingResultInner;
 import com.azure.resourcemanager.network.generated.models.TroubleshootingDetails;
 import com.azure.resourcemanager.network.generated.models.TroubleshootingResult;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class TroubleshootingResultImpl implements TroubleshootingResult {
     private TroubleshootingResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    TroubleshootingResultImpl(TroubleshootingResultInner innerObject, NetworkManager serviceManager) {
+    TroubleshootingResultImpl(
+        TroubleshootingResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +48,7 @@ public final class TroubleshootingResultImpl implements TroubleshootingResult {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

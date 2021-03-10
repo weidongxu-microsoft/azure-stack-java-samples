@@ -5,16 +5,17 @@
 package com.azure.resourcemanager.resources.generated.implementation;
 
 import com.azure.core.management.exception.ManagementError;
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupExportResultInner;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroupExportResult;
 
 public final class ResourceGroupExportResultImpl implements ResourceGroupExportResult {
     private ResourceGroupExportResultInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    ResourceGroupExportResultImpl(ResourceGroupExportResultInner innerObject, ResourceManager serviceManager) {
+    ResourceGroupExportResultImpl(
+        ResourceGroupExportResultInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -31,7 +32,7 @@ public final class ResourceGroupExportResultImpl implements ResourceGroupExportR
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

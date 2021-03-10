@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner;
@@ -31,9 +30,11 @@ import java.util.stream.Collectors;
 public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSetVM {
     private VirtualMachineScaleSetVMInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineScaleSetVMImpl(VirtualMachineScaleSetVMInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineScaleSetVMImpl(
+        VirtualMachineScaleSetVMInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -171,7 +172,7 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

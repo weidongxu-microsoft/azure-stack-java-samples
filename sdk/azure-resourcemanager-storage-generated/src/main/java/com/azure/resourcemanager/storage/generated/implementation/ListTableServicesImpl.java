@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListTableServicesInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.TableServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.ListTableServices;
@@ -16,9 +15,10 @@ import java.util.stream.Collectors;
 public final class ListTableServicesImpl implements ListTableServices {
     private ListTableServicesInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListTableServicesImpl(ListTableServicesInner innerObject, StorageManager serviceManager) {
+    ListTableServicesImpl(
+        ListTableServicesInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class ListTableServicesImpl implements ListTableServices {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

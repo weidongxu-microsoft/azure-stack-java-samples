@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.CertificatesClient;
 import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateDescriptionInner;
 import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateListDescriptionInner;
@@ -25,9 +24,10 @@ public final class CertificatesImpl implements Certificates {
 
     private final CertificatesClient innerClient;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    public CertificatesImpl(CertificatesClient innerClient, IotHubManager serviceManager) {
+    public CertificatesImpl(
+        CertificatesClient innerClient, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -271,7 +271,7 @@ public final class CertificatesImpl implements Certificates {
         return this.innerClient;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
@@ -25,7 +24,7 @@ import java.util.stream.Collectors;
 public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoint.Definition, PrivateEndpoint.Update {
     private PrivateEndpointInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -126,7 +125,7 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -157,7 +156,7 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this;
     }
 
-    PrivateEndpointImpl(String name, NetworkManager serviceManager) {
+    PrivateEndpointImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new PrivateEndpointInner();
         this.serviceManager = serviceManager;
         this.privateEndpointName = name;
@@ -185,7 +184,8 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this;
     }
 
-    PrivateEndpointImpl(PrivateEndpointInner innerObject, NetworkManager serviceManager) {
+    PrivateEndpointImpl(
+        PrivateEndpointInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

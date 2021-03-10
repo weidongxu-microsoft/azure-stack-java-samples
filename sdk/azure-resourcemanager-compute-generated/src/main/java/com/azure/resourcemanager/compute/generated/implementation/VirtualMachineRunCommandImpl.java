@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineRunCommandInner;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInputParameter;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommand;
@@ -21,7 +20,7 @@ public final class VirtualMachineRunCommandImpl
     implements VirtualMachineRunCommand, VirtualMachineRunCommand.Definition, VirtualMachineRunCommand.Update {
     private VirtualMachineRunCommandInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -114,7 +113,7 @@ public final class VirtualMachineRunCommandImpl
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -150,7 +149,8 @@ public final class VirtualMachineRunCommandImpl
         return this;
     }
 
-    VirtualMachineRunCommandImpl(String name, ComputeManager serviceManager) {
+    VirtualMachineRunCommandImpl(
+        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineRunCommandInner();
         this.serviceManager = serviceManager;
         this.runCommandName = name;
@@ -179,7 +179,9 @@ public final class VirtualMachineRunCommandImpl
         return this;
     }
 
-    VirtualMachineRunCommandImpl(VirtualMachineRunCommandInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineRunCommandImpl(
+        VirtualMachineRunCommandInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

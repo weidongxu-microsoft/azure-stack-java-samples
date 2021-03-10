@@ -26,7 +26,7 @@ public interface VirtualMachineScaleSetVMs {
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput);
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput);
 
     /**
      * Reimages (upgrade the operating system) a specific virtual machine in a VM scale set.
@@ -56,7 +56,7 @@ public interface VirtualMachineScaleSetVMs {
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context);
 
     /**

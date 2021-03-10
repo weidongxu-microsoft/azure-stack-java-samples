@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationSecurityGroup;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Definition, SecurityRule.Update {
     private SecurityRuleInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -147,7 +146,7 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -184,7 +183,7 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         return this;
     }
 
-    SecurityRuleImpl(String name, NetworkManager serviceManager) {
+    SecurityRuleImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new SecurityRuleInner();
         this.serviceManager = serviceManager;
         this.securityRuleName = name;
@@ -214,7 +213,8 @@ public final class SecurityRuleImpl implements SecurityRule, SecurityRule.Defini
         return this;
     }
 
-    SecurityRuleImpl(SecurityRuleInner innerObject, NetworkManager serviceManager) {
+    SecurityRuleImpl(
+        SecurityRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

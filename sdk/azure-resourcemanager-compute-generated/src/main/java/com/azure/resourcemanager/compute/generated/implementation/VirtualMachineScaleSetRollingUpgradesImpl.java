@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetRollingUpgradesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RollingUpgradeStatusInfoInner;
 import com.azure.resourcemanager.compute.generated.models.RollingUpgradeStatusInfo;
@@ -20,10 +19,11 @@ public final class VirtualMachineScaleSetRollingUpgradesImpl implements VirtualM
 
     private final VirtualMachineScaleSetRollingUpgradesClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public VirtualMachineScaleSetRollingUpgradesImpl(
-        VirtualMachineScaleSetRollingUpgradesClient innerClient, ComputeManager serviceManager) {
+        VirtualMachineScaleSetRollingUpgradesClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -80,7 +80,7 @@ public final class VirtualMachineScaleSetRollingUpgradesImpl implements VirtualM
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

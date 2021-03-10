@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.TableServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.CorsRules;
 import com.azure.resourcemanager.storage.generated.models.TableServiceProperties;
@@ -14,7 +13,7 @@ public final class TableServicePropertiesImpl
     implements TableServiceProperties, TableServiceProperties.Definition, TableServiceProperties.Update {
     private TableServicePropertiesInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -36,7 +35,7 @@ public final class TableServicePropertiesImpl
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -70,7 +69,7 @@ public final class TableServicePropertiesImpl
         return this;
     }
 
-    TableServicePropertiesImpl(StorageManager serviceManager) {
+    TableServicePropertiesImpl(com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new TableServicePropertiesInner();
         this.serviceManager = serviceManager;
     }
@@ -99,7 +98,9 @@ public final class TableServicePropertiesImpl
         return this;
     }
 
-    TableServicePropertiesImpl(TableServicePropertiesInner innerObject, StorageManager serviceManager) {
+    TableServicePropertiesImpl(
+        TableServicePropertiesInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

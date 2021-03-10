@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkProfileInner;
 import com.azure.resourcemanager.network.generated.models.ContainerNetworkInterface;
 import com.azure.resourcemanager.network.generated.models.ContainerNetworkInterfaceConfiguration;
@@ -20,7 +19,7 @@ import java.util.Map;
 public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.Definition, NetworkProfile.Update {
     private NetworkProfileInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -90,7 +89,7 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -125,7 +124,7 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         return this;
     }
 
-    NetworkProfileImpl(String name, NetworkManager serviceManager) {
+    NetworkProfileImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new NetworkProfileInner();
         this.serviceManager = serviceManager;
         this.networkProfileName = name;
@@ -156,7 +155,8 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         return this;
     }
 
-    NetworkProfileImpl(NetworkProfileInner innerObject, NetworkManager serviceManager) {
+    NetworkProfileImpl(
+        NetworkProfileInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

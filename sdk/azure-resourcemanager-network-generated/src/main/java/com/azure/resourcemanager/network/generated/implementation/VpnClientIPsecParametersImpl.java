@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientIPsecParametersInner;
 import com.azure.resourcemanager.network.generated.models.DhGroup;
 import com.azure.resourcemanager.network.generated.models.IkeEncryption;
@@ -17,9 +16,11 @@ import com.azure.resourcemanager.network.generated.models.VpnClientIPsecParamete
 public final class VpnClientIPsecParametersImpl implements VpnClientIPsecParameters {
     private VpnClientIPsecParametersInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnClientIPsecParametersImpl(VpnClientIPsecParametersInner innerObject, NetworkManager serviceManager) {
+    VpnClientIPsecParametersImpl(
+        VpnClientIPsecParametersInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -60,7 +61,7 @@ public final class VpnClientIPsecParametersImpl implements VpnClientIPsecParamet
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

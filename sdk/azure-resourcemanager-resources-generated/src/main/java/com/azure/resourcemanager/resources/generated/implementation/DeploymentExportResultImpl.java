@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.resources.generated.implementation;
 
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExportResultInner;
 import com.azure.resourcemanager.resources.generated.models.DeploymentExportResult;
 
 public final class DeploymentExportResultImpl implements DeploymentExportResult {
     private DeploymentExportResultInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    DeploymentExportResultImpl(DeploymentExportResultInner innerObject, ResourceManager serviceManager) {
+    DeploymentExportResultImpl(
+        DeploymentExportResultInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class DeploymentExportResultImpl implements DeploymentExportResult 
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

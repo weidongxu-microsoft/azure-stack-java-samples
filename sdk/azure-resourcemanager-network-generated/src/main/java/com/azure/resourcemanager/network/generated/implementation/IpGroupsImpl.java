@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.IpGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.IpGroupInner;
 import com.azure.resourcemanager.network.generated.models.IpGroup;
@@ -21,9 +20,10 @@ public final class IpGroupsImpl implements IpGroups {
 
     private final IpGroupsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public IpGroupsImpl(IpGroupsClient innerClient, NetworkManager serviceManager) {
+    public IpGroupsImpl(
+        IpGroupsClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -163,7 +163,7 @@ public final class IpGroupsImpl implements IpGroups {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

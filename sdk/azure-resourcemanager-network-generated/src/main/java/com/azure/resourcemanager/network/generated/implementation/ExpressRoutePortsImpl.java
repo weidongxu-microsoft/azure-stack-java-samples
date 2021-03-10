@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRoutePortInner;
 import com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner;
@@ -24,9 +23,11 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
 
     private final ExpressRoutePortsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ExpressRoutePortsImpl(ExpressRoutePortsClient innerClient, NetworkManager serviceManager) {
+    public ExpressRoutePortsImpl(
+        ExpressRoutePortsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -201,7 +202,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.storage.generated.models.Operation;
 import com.azure.resourcemanager.storage.generated.models.OperationDisplay;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.storage.generated.models.ServiceSpecification;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, StorageManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

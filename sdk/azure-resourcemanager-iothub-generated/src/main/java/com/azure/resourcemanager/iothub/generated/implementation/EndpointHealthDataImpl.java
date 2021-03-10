@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.EndpointHealthDataInner;
 import com.azure.resourcemanager.iothub.generated.models.EndpointHealthData;
 import com.azure.resourcemanager.iothub.generated.models.EndpointHealthStatus;
@@ -13,9 +12,10 @@ import java.time.OffsetDateTime;
 public final class EndpointHealthDataImpl implements EndpointHealthData {
     private EndpointHealthDataInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    EndpointHealthDataImpl(EndpointHealthDataInner innerObject, IotHubManager serviceManager) {
+    EndpointHealthDataImpl(
+        EndpointHealthDataInner innerObject, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -48,7 +48,7 @@ public final class EndpointHealthDataImpl implements EndpointHealthData {
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 }

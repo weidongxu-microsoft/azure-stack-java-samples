@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.DdosProtectionPlanInner;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlan;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -20,7 +19,7 @@ public final class DdosProtectionPlanImpl
     implements DdosProtectionPlan, DdosProtectionPlan.Definition, DdosProtectionPlan.Update {
     private DdosProtectionPlanInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -80,7 +79,7 @@ public final class DdosProtectionPlanImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -113,7 +112,7 @@ public final class DdosProtectionPlanImpl
         return this;
     }
 
-    DdosProtectionPlanImpl(String name, NetworkManager serviceManager) {
+    DdosProtectionPlanImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new DdosProtectionPlanInner();
         this.serviceManager = serviceManager;
         this.ddosProtectionPlanName = name;
@@ -144,7 +143,9 @@ public final class DdosProtectionPlanImpl
         return this;
     }
 
-    DdosProtectionPlanImpl(DdosProtectionPlanInner innerObject, NetworkManager serviceManager) {
+    DdosProtectionPlanImpl(
+        DdosProtectionPlanInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

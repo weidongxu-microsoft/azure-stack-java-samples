@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.QueueServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListQueueServicesInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.QueueServicePropertiesInner;
@@ -22,9 +21,10 @@ public final class QueueServicesImpl implements QueueServices {
 
     private final QueueServicesClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public QueueServicesImpl(QueueServicesClient innerClient, StorageManager serviceManager) {
+    public QueueServicesImpl(
+        QueueServicesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -120,7 +120,7 @@ public final class QueueServicesImpl implements QueueServices {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 

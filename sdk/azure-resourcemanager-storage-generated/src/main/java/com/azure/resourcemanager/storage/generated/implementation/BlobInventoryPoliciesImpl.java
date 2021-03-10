@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.BlobInventoryPoliciesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobInventoryPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicies;
@@ -22,9 +21,11 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
 
     private final BlobInventoryPoliciesClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public BlobInventoryPoliciesImpl(BlobInventoryPoliciesClient innerClient, StorageManager serviceManager) {
+    public BlobInventoryPoliciesImpl(
+        BlobInventoryPoliciesClient innerClient,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -207,7 +208,7 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 

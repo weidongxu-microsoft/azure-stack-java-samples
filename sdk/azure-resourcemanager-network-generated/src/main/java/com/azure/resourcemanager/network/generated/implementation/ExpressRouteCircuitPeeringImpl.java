@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitConnectionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitPeeringInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitStatsInner;
@@ -29,7 +28,7 @@ public final class ExpressRouteCircuitPeeringImpl
     implements ExpressRouteCircuitPeering, ExpressRouteCircuitPeering.Definition, ExpressRouteCircuitPeering.Update {
     private ExpressRouteCircuitPeeringInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -156,7 +155,7 @@ public final class ExpressRouteCircuitPeeringImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -191,7 +190,8 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    ExpressRouteCircuitPeeringImpl(String name, NetworkManager serviceManager) {
+    ExpressRouteCircuitPeeringImpl(
+        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCircuitPeeringInner();
         this.serviceManager = serviceManager;
         this.peeringName = name;
@@ -219,7 +219,9 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    ExpressRouteCircuitPeeringImpl(ExpressRouteCircuitPeeringInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteCircuitPeeringImpl(
+        ExpressRouteCircuitPeeringInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.CheckNameAvailabilityResultInner;
 import com.azure.resourcemanager.storage.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.storage.generated.models.Reason;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.storage.generated.models.Reason;
 public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabilityResult {
     private CheckNameAvailabilityResultInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    CheckNameAvailabilityResultImpl(CheckNameAvailabilityResultInner innerObject, StorageManager serviceManager) {
+    CheckNameAvailabilityResultImpl(
+        CheckNameAvailabilityResultInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabil
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceVisibilityInner;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceVisibility;
 
 public final class PrivateLinkServiceVisibilityImpl implements PrivateLinkServiceVisibility {
     private PrivateLinkServiceVisibilityInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateLinkServiceVisibilityImpl(PrivateLinkServiceVisibilityInner innerObject, NetworkManager serviceManager) {
+    PrivateLinkServiceVisibilityImpl(
+        PrivateLinkServiceVisibilityInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class PrivateLinkServiceVisibilityImpl implements PrivateLinkServic
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

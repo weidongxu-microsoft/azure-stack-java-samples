@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnSitesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteInner;
 import com.azure.resourcemanager.network.generated.models.VpnSite;
@@ -21,9 +20,10 @@ public final class VpnSitesImpl implements VpnSites {
 
     private final VpnSitesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnSitesImpl(VpnSitesClient innerClient, NetworkManager serviceManager) {
+    public VpnSitesImpl(
+        VpnSitesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -160,7 +160,7 @@ public final class VpnSitesImpl implements VpnSites {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

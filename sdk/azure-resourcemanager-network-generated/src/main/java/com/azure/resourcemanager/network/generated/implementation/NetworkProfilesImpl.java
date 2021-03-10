@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkProfilesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkProfileInner;
 import com.azure.resourcemanager.network.generated.models.NetworkProfile;
@@ -21,9 +20,10 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
 
     private final NetworkProfilesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkProfilesImpl(NetworkProfilesClient innerClient, NetworkManager serviceManager) {
+    public NetworkProfilesImpl(
+        NetworkProfilesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -167,7 +167,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

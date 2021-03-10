@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionsListResultInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMExtension;
@@ -17,10 +16,11 @@ public final class VirtualMachineScaleSetVMExtensionsListResultImpl
     implements VirtualMachineScaleSetVMExtensionsListResult {
     private VirtualMachineScaleSetVMExtensionsListResultInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     VirtualMachineScaleSetVMExtensionsListResultImpl(
-        VirtualMachineScaleSetVMExtensionsListResultInner innerObject, ComputeManager serviceManager) {
+        VirtualMachineScaleSetVMExtensionsListResultInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -43,7 +43,7 @@ public final class VirtualMachineScaleSetVMExtensionsListResultImpl
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

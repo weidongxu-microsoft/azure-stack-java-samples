@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateDnsZoneGroupInner;
 import com.azure.resourcemanager.network.generated.models.PrivateDnsZoneConfig;
 import com.azure.resourcemanager.network.generated.models.PrivateDnsZoneGroup;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class PrivateDnsZoneGroupImpl implements PrivateDnsZoneGroup {
     private PrivateDnsZoneGroupInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PrivateDnsZoneGroupImpl(PrivateDnsZoneGroupInner innerObject, NetworkManager serviceManager) {
+    PrivateDnsZoneGroupImpl(
+        PrivateDnsZoneGroupInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -51,7 +52,7 @@ public final class PrivateDnsZoneGroupImpl implements PrivateDnsZoneGroup {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

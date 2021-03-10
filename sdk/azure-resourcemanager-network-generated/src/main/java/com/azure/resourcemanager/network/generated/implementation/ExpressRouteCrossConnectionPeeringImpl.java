@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitPeeringConfig;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionPeering;
@@ -16,10 +15,11 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 public final class ExpressRouteCrossConnectionPeeringImpl implements ExpressRouteCrossConnectionPeering {
     private ExpressRouteCrossConnectionPeeringInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ExpressRouteCrossConnectionPeeringImpl(
-        ExpressRouteCrossConnectionPeeringInner innerObject, NetworkManager serviceManager) {
+        ExpressRouteCrossConnectionPeeringInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -100,7 +100,7 @@ public final class ExpressRouteCrossConnectionPeeringImpl implements ExpressRout
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

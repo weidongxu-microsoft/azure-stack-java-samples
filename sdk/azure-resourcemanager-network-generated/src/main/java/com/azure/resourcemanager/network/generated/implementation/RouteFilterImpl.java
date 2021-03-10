@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitPeeringInner;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterInner;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterRuleInner;
@@ -23,7 +22,7 @@ import java.util.stream.Collectors;
 public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definition, RouteFilter.Update {
     private RouteFilterInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -112,7 +111,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -145,7 +144,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         return this;
     }
 
-    RouteFilterImpl(String name, NetworkManager serviceManager) {
+    RouteFilterImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new RouteFilterInner();
         this.serviceManager = serviceManager;
         this.routeFilterName = name;
@@ -176,7 +175,8 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         return this;
     }
 
-    RouteFilterImpl(RouteFilterInner innerObject, NetworkManager serviceManager) {
+    RouteFilterImpl(
+        RouteFilterInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

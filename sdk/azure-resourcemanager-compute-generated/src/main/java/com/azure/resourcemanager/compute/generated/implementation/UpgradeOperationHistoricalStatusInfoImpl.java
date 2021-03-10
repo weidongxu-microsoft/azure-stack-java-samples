@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperationHistoricalStatusInfoInner;
 import com.azure.resourcemanager.compute.generated.models.UpgradeOperationHistoricalStatusInfo;
 import com.azure.resourcemanager.compute.generated.models.UpgradeOperationHistoricalStatusInfoProperties;
@@ -12,10 +11,11 @@ import com.azure.resourcemanager.compute.generated.models.UpgradeOperationHistor
 public final class UpgradeOperationHistoricalStatusInfoImpl implements UpgradeOperationHistoricalStatusInfo {
     private UpgradeOperationHistoricalStatusInfoInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     UpgradeOperationHistoricalStatusInfoImpl(
-        UpgradeOperationHistoricalStatusInfoInner innerObject, ComputeManager serviceManager) {
+        UpgradeOperationHistoricalStatusInfoInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -36,7 +36,7 @@ public final class UpgradeOperationHistoricalStatusInfoImpl implements UpgradeOp
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

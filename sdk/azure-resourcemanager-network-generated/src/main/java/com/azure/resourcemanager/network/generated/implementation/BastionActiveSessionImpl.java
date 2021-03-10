@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionActiveSessionInner;
 import com.azure.resourcemanager.network.generated.models.BastionActiveSession;
 import com.azure.resourcemanager.network.generated.models.BastionConnectProtocol;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.network.generated.models.BastionConnectProtocol
 public final class BastionActiveSessionImpl implements BastionActiveSession {
     private BastionActiveSessionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BastionActiveSessionImpl(BastionActiveSessionInner innerObject, NetworkManager serviceManager) {
+    BastionActiveSessionImpl(
+        BastionActiveSessionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -67,7 +68,7 @@ public final class BastionActiveSessionImpl implements BastionActiveSession {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

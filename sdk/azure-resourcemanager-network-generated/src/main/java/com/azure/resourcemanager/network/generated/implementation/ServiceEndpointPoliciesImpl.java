@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ServiceEndpointPoliciesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyInner;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicies;
@@ -21,9 +20,11 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
 
     private final ServiceEndpointPoliciesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ServiceEndpointPoliciesImpl(ServiceEndpointPoliciesClient innerClient, NetworkManager serviceManager) {
+    public ServiceEndpointPoliciesImpl(
+        ServiceEndpointPoliciesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -179,7 +180,7 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionImageInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionImage;
 import java.util.Collections;
@@ -13,9 +12,11 @@ import java.util.Map;
 public final class VirtualMachineExtensionImageImpl implements VirtualMachineExtensionImage {
     private VirtualMachineExtensionImageInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineExtensionImageImpl(VirtualMachineExtensionImageInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineExtensionImageImpl(
+        VirtualMachineExtensionImageInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -69,7 +70,7 @@ public final class VirtualMachineExtensionImageImpl implements VirtualMachineExt
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

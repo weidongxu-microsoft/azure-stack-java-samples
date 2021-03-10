@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskAccessInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.compute.generated.models.DiskAccess;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, DiskAccess.Update {
     private DiskAccessInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -82,7 +81,7 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -115,7 +114,7 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         return this;
     }
 
-    DiskAccessImpl(String name, ComputeManager serviceManager) {
+    DiskAccessImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new DiskAccessInner();
         this.serviceManager = serviceManager;
         this.diskAccessName = name;
@@ -144,7 +143,8 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         return this;
     }
 
-    DiskAccessImpl(DiskAccessInner innerObject, ComputeManager serviceManager) {
+    DiskAccessImpl(
+        DiskAccessInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

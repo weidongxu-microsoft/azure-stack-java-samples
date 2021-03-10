@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyDefinitionInner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyDefinition;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpointPolicyDefinition {
     private ServiceEndpointPolicyDefinitionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ServiceEndpointPolicyDefinitionImpl(
-        ServiceEndpointPolicyDefinitionInner innerObject, NetworkManager serviceManager) {
+        ServiceEndpointPolicyDefinitionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -59,7 +59,7 @@ public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpoin
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

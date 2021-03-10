@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.ObjectReplicationPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPolicy;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPolicyRule;
@@ -17,7 +16,7 @@ public final class ObjectReplicationPolicyImpl
     implements ObjectReplicationPolicy, ObjectReplicationPolicy.Definition, ObjectReplicationPolicy.Update {
     private ObjectReplicationPolicyInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -60,7 +59,7 @@ public final class ObjectReplicationPolicyImpl
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -98,7 +97,8 @@ public final class ObjectReplicationPolicyImpl
         return this;
     }
 
-    ObjectReplicationPolicyImpl(String name, StorageManager serviceManager) {
+    ObjectReplicationPolicyImpl(
+        String name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new ObjectReplicationPolicyInner();
         this.serviceManager = serviceManager;
         this.objectReplicationPolicyId = name;
@@ -130,7 +130,9 @@ public final class ObjectReplicationPolicyImpl
         return this;
     }
 
-    ObjectReplicationPolicyImpl(ObjectReplicationPolicyInner innerObject, StorageManager serviceManager) {
+    ObjectReplicationPolicyImpl(
+        ObjectReplicationPolicyInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.resources.generated.implementation;
 
 import com.azure.core.management.exception.ManagementError;
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentValidateResultInner;
 import com.azure.resourcemanager.resources.generated.models.DeploymentPropertiesExtended;
 import com.azure.resourcemanager.resources.generated.models.DeploymentValidateResult;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.resources.generated.models.DeploymentValidateRe
 public final class DeploymentValidateResultImpl implements DeploymentValidateResult {
     private DeploymentValidateResultInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    DeploymentValidateResultImpl(DeploymentValidateResultInner innerObject, ResourceManager serviceManager) {
+    DeploymentValidateResultImpl(
+        DeploymentValidateResultInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -32,7 +33,7 @@ public final class DeploymentValidateResultImpl implements DeploymentValidateRes
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

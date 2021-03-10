@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInformationInner;
 import com.azure.resourcemanager.network.generated.models.FlowLogFormatParameters;
 import com.azure.resourcemanager.network.generated.models.FlowLogInformation;
@@ -14,9 +13,11 @@ import com.azure.resourcemanager.network.generated.models.TrafficAnalyticsProper
 public final class FlowLogInformationImpl implements FlowLogInformation {
     private FlowLogInformationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    FlowLogInformationImpl(FlowLogInformationInner innerObject, NetworkManager serviceManager) {
+    FlowLogInformationImpl(
+        FlowLogInformationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -49,7 +50,7 @@ public final class FlowLogInformationImpl implements FlowLogInformation {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

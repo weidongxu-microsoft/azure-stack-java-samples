@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineRunCommandsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocumentBaseInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocumentInner;
@@ -25,9 +24,11 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
 
     private final VirtualMachineRunCommandsClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public VirtualMachineRunCommandsImpl(VirtualMachineRunCommandsClient innerClient, ComputeManager serviceManager) {
+    public VirtualMachineRunCommandsImpl(
+        VirtualMachineRunCommandsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -228,7 +229,7 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 

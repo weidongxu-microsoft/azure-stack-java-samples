@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableProvidersListInner;
 import com.azure.resourcemanager.network.generated.models.AvailableProvidersList;
 import com.azure.resourcemanager.network.generated.models.AvailableProvidersListCountry;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class AvailableProvidersListImpl implements AvailableProvidersList {
     private AvailableProvidersListInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AvailableProvidersListImpl(AvailableProvidersListInner innerObject, NetworkManager serviceManager) {
+    AvailableProvidersListImpl(
+        AvailableProvidersListInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class AvailableProvidersListImpl implements AvailableProvidersList 
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

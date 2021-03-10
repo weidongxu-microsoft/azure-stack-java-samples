@@ -76,6 +76,7 @@ public interface FileShares {
      *     between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
      *     character must be immediately preceded and followed by a letter or number.
      * @param expand Optional, used to expand the properties within share's properties.
+     * @param xMsSnapshot Optional, used to retrieve properties of a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -83,7 +84,12 @@ public interface FileShares {
      * @return properties of a specified share.
      */
     Response<FileShare> getWithResponse(
-        String resourceGroupName, String accountName, String shareName, GetShareExpand expand, Context context);
+        String resourceGroupName,
+        String accountName,
+        String shareName,
+        GetShareExpand expand,
+        String xMsSnapshot,
+        Context context);
 
     /**
      * Deletes specified share under its account.
@@ -111,13 +117,15 @@ public interface FileShares {
      * @param shareName The name of the file share within the specified storage account. File share names must be
      *     between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
      *     character must be immediately preceded and followed by a letter or number.
+     * @param xMsSnapshot Optional, used to delete a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String shareName, Context context);
+    Response<Void> deleteWithResponse(
+        String resourceGroupName, String accountName, String shareName, String xMsSnapshot, Context context);
 
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
@@ -172,13 +180,14 @@ public interface FileShares {
      *
      * @param id the resource ID.
      * @param expand Optional, used to expand the properties within share's properties.
+     * @param xMsSnapshot Optional, used to retrieve properties of a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return properties of a specified share.
      */
-    Response<FileShare> getByIdWithResponse(String id, GetShareExpand expand, Context context);
+    Response<FileShare> getByIdWithResponse(String id, GetShareExpand expand, String xMsSnapshot, Context context);
 
     /**
      * Deletes specified share under its account.
@@ -194,13 +203,14 @@ public interface FileShares {
      * Deletes specified share under its account.
      *
      * @param id the resource ID.
+     * @param xMsSnapshot Optional, used to delete a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    Response<Void> deleteByIdWithResponse(String id, Context context);
+    Response<Void> deleteByIdWithResponse(String id, String xMsSnapshot, Context context);
 
     /**
      * Begins definition for a new FileShare resource.

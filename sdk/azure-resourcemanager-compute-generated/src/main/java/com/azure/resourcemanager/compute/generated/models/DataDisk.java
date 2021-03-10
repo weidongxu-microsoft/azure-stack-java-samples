@@ -91,23 +91,6 @@ public final class DataDisk {
     private Boolean toBeDetached;
 
     /*
-     * Specifies the detach behavior to be used while detaching a disk or which
-     * is already in the process of detachment from the virtual machine.
-     * Supported values: **ForceDetach**. <br><br> detachOption:
-     * **ForceDetach** is applicable only for managed data disks. If a previous
-     * detachment attempt of the data disk did not complete due to an
-     * unexpected failure from the virtual machine and the disk is still not
-     * released then use force-detach as a last resort option to detach the
-     * disk forcibly from the VM. All writes might not have been flushed when
-     * using this detach behavior. <br><br> This feature is still in preview
-     * mode and is not supported for VirtualMachineScaleSet. To force-detach a
-     * data disk update toBeDetached to 'true' along with setting detachOption:
-     * 'ForceDetach'.
-     */
-    @JsonProperty(value = "detachOption")
-    private DiskDetachOptionTypes detachOption;
-
-    /*
      * Specifies the Read-Write IOPS for the managed disk when
      * StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine
      * ScaleSet VM disks. Can be updated only via updates to the VirtualMachine
@@ -124,6 +107,23 @@ public final class DataDisk {
      */
     @JsonProperty(value = "diskMBpsReadWrite", access = JsonProperty.Access.WRITE_ONLY)
     private Long diskMBpsReadWrite;
+
+    /*
+     * Specifies the detach behavior to be used while detaching a disk or which
+     * is already in the process of detachment from the virtual machine.
+     * Supported values: **ForceDetach**. <br><br> detachOption:
+     * **ForceDetach** is applicable only for managed data disks. If a previous
+     * detachment attempt of the data disk did not complete due to an
+     * unexpected failure from the virtual machine and the disk is still not
+     * released then use force-detach as a last resort option to detach the
+     * disk forcibly from the VM. All writes might not have been flushed when
+     * using this detach behavior. <br><br> This feature is still in preview
+     * mode and is not supported for VirtualMachineScaleSet. To force-detach a
+     * data disk update toBeDetached to 'true' along with setting detachOption:
+     * 'ForceDetach'.
+     */
+    @JsonProperty(value = "detachOption")
+    private DiskDetachOptionTypes detachOption;
 
     /**
      * Get the lun property: Specifies the logical unit number of the data disk. This value is used to identify data
@@ -352,6 +352,28 @@ public final class DataDisk {
     }
 
     /**
+     * Get the diskIopsReadWrite property: Specifies the Read-Write IOPS for the managed disk when StorageAccountType is
+     * UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the
+     * VirtualMachine Scale Set.
+     *
+     * @return the diskIopsReadWrite value.
+     */
+    public Long diskIopsReadWrite() {
+        return this.diskIopsReadWrite;
+    }
+
+    /**
+     * Get the diskMBpsReadWrite property: Specifies the bandwidth in MB per second for the managed disk when
+     * StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via
+     * updates to the VirtualMachine Scale Set.
+     *
+     * @return the diskMBpsReadWrite value.
+     */
+    public Long diskMBpsReadWrite() {
+        return this.diskMBpsReadWrite;
+    }
+
+    /**
      * Get the detachOption property: Specifies the detach behavior to be used while detaching a disk or which is
      * already in the process of detachment from the virtual machine. Supported values: **ForceDetach**.
      * &lt;br&gt;&lt;br&gt; detachOption: **ForceDetach** is applicable only for managed data disks. If a previous
@@ -383,28 +405,6 @@ public final class DataDisk {
     public DataDisk withDetachOption(DiskDetachOptionTypes detachOption) {
         this.detachOption = detachOption;
         return this;
-    }
-
-    /**
-     * Get the diskIopsReadWrite property: Specifies the Read-Write IOPS for the managed disk when StorageAccountType is
-     * UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via updates to the
-     * VirtualMachine Scale Set.
-     *
-     * @return the diskIopsReadWrite value.
-     */
-    public Long diskIopsReadWrite() {
-        return this.diskIopsReadWrite;
-    }
-
-    /**
-     * Get the diskMBpsReadWrite property: Specifies the bandwidth in MB per second for the managed disk when
-     * StorageAccountType is UltraSSD_LRS. Returned only for VirtualMachine ScaleSet VM disks. Can be updated only via
-     * updates to the VirtualMachine Scale Set.
-     *
-     * @return the diskMBpsReadWrite value.
-     */
-    public Long diskMBpsReadWrite() {
-        return this.diskMBpsReadWrite;
     }
 
     /**

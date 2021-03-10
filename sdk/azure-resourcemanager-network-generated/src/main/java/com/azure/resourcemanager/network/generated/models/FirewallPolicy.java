@@ -105,6 +105,20 @@ public interface FirewallPolicy {
     FirewallPolicyThreatIntelWhitelist threatIntelWhitelist();
 
     /**
+     * Gets the insights property: Insights on Firewall Policy.
+     *
+     * @return the insights value.
+     */
+    FirewallPolicyInsights insights();
+
+    /**
+     * Gets the snat property: The private IP addresses/IP ranges to which traffic will not be SNAT.
+     *
+     * @return the snat value.
+     */
+    FirewallPolicySnat snat();
+
+    /**
      * Gets the dnsSettings property: DNS Proxy Settings definition.
      *
      * @return the dnsSettings value.
@@ -210,6 +224,8 @@ public interface FirewallPolicy {
                 DefinitionStages.WithBasePolicy,
                 DefinitionStages.WithThreatIntelMode,
                 DefinitionStages.WithThreatIntelWhitelist,
+                DefinitionStages.WithInsights,
+                DefinitionStages.WithSnat,
                 DefinitionStages.WithDnsSettings,
                 DefinitionStages.WithIntrusionDetection,
                 DefinitionStages.WithTransportSecurity,
@@ -279,6 +295,26 @@ public interface FirewallPolicy {
              */
             WithCreate withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist);
         }
+        /** The stage of the FirewallPolicy definition allowing to specify insights. */
+        interface WithInsights {
+            /**
+             * Specifies the insights property: Insights on Firewall Policy..
+             *
+             * @param insights Insights on Firewall Policy.
+             * @return the next definition stage.
+             */
+            WithCreate withInsights(FirewallPolicyInsights insights);
+        }
+        /** The stage of the FirewallPolicy definition allowing to specify snat. */
+        interface WithSnat {
+            /**
+             * Specifies the snat property: The private IP addresses/IP ranges to which traffic will not be SNAT..
+             *
+             * @param snat The private IP addresses/IP ranges to which traffic will not be SNAT.
+             * @return the next definition stage.
+             */
+            WithCreate withSnat(FirewallPolicySnat snat);
+        }
         /** The stage of the FirewallPolicy definition allowing to specify dnsSettings. */
         interface WithDnsSettings {
             /**
@@ -334,6 +370,8 @@ public interface FirewallPolicy {
             UpdateStages.WithBasePolicy,
             UpdateStages.WithThreatIntelMode,
             UpdateStages.WithThreatIntelWhitelist,
+            UpdateStages.WithInsights,
+            UpdateStages.WithSnat,
             UpdateStages.WithDnsSettings,
             UpdateStages.WithIntrusionDetection,
             UpdateStages.WithTransportSecurity,
@@ -404,6 +442,26 @@ public interface FirewallPolicy {
              * @return the next definition stage.
              */
             Update withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist);
+        }
+        /** The stage of the FirewallPolicy update allowing to specify insights. */
+        interface WithInsights {
+            /**
+             * Specifies the insights property: Insights on Firewall Policy..
+             *
+             * @param insights Insights on Firewall Policy.
+             * @return the next definition stage.
+             */
+            Update withInsights(FirewallPolicyInsights insights);
+        }
+        /** The stage of the FirewallPolicy update allowing to specify snat. */
+        interface WithSnat {
+            /**
+             * Specifies the snat property: The private IP addresses/IP ranges to which traffic will not be SNAT..
+             *
+             * @param snat The private IP addresses/IP ranges to which traffic will not be SNAT.
+             * @return the next definition stage.
+             */
+            Update withSnat(FirewallPolicySnat snat);
         }
         /** The stage of the FirewallPolicy update allowing to specify dnsSettings. */
         interface WithDnsSettings {

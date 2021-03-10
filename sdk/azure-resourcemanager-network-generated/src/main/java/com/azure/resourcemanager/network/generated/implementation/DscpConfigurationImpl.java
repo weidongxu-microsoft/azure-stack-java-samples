@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.DscpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.models.DscpConfiguration;
@@ -24,7 +23,7 @@ public final class DscpConfigurationImpl
     implements DscpConfiguration, DscpConfiguration.Definition, DscpConfiguration.Update {
     private DscpConfigurationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -142,7 +141,7 @@ public final class DscpConfigurationImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -173,7 +172,7 @@ public final class DscpConfigurationImpl
         return this;
     }
 
-    DscpConfigurationImpl(String name, NetworkManager serviceManager) {
+    DscpConfigurationImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new DscpConfigurationInner();
         this.serviceManager = serviceManager;
         this.dscpConfigurationName = name;
@@ -201,7 +200,8 @@ public final class DscpConfigurationImpl
         return this;
     }
 
-    DscpConfigurationImpl(DscpConfigurationInner innerObject, NetworkManager serviceManager) {
+    DscpConfigurationImpl(
+        DscpConfigurationInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

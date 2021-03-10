@@ -8,8 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.models.GalleryArtifactPublishingProfileBase;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPropertiesProvisioningState;
+import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPublishingProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,10 +23,10 @@ public class GalleryImageVersionInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(GalleryImageVersionInner.class);
 
     /*
-     * Describes the basic gallery artifact publishing profile.
+     * The publishing profile of a gallery Image Version.
      */
     @JsonProperty(value = "properties.publishingProfile")
-    private GalleryArtifactPublishingProfileBase publishingProfile;
+    private GalleryImageVersionPublishingProfile publishingProfile;
 
     /*
      * The provisioning state, which only appears in the response.
@@ -47,21 +47,21 @@ public class GalleryImageVersionInner extends Resource {
     private ReplicationStatus replicationStatus;
 
     /**
-     * Get the publishingProfile property: Describes the basic gallery artifact publishing profile.
+     * Get the publishingProfile property: The publishing profile of a gallery Image Version.
      *
      * @return the publishingProfile value.
      */
-    public GalleryArtifactPublishingProfileBase publishingProfile() {
+    public GalleryImageVersionPublishingProfile publishingProfile() {
         return this.publishingProfile;
     }
 
     /**
-     * Set the publishingProfile property: Describes the basic gallery artifact publishing profile.
+     * Set the publishingProfile property: The publishing profile of a gallery Image Version.
      *
      * @param publishingProfile the publishingProfile value to set.
      * @return the GalleryImageVersionInner object itself.
      */
-    public GalleryImageVersionInner withPublishingProfile(GalleryArtifactPublishingProfileBase publishingProfile) {
+    public GalleryImageVersionInner withPublishingProfile(GalleryImageVersionPublishingProfile publishingProfile) {
         this.publishingProfile = publishingProfile;
         return this;
     }

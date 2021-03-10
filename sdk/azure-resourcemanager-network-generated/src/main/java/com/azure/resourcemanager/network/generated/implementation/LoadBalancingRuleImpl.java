@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancingRuleInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancingRule;
 import com.azure.resourcemanager.network.generated.models.LoadDistribution;
@@ -15,9 +14,10 @@ import com.azure.resourcemanager.network.generated.models.TransportProtocol;
 public final class LoadBalancingRuleImpl implements LoadBalancingRule {
     private LoadBalancingRuleInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    LoadBalancingRuleImpl(LoadBalancingRuleInner innerObject, NetworkManager serviceManager) {
+    LoadBalancingRuleImpl(
+        LoadBalancingRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -90,7 +90,7 @@ public final class LoadBalancingRuleImpl implements LoadBalancingRule {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

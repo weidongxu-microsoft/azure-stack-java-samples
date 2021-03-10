@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.resources.generated.implementation;
 
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.TemplateHashResultInner;
 import com.azure.resourcemanager.resources.generated.models.TemplateHashResult;
 
 public final class TemplateHashResultImpl implements TemplateHashResult {
     private TemplateHashResultInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    TemplateHashResultImpl(TemplateHashResultInner innerObject, ResourceManager serviceManager) {
+    TemplateHashResultImpl(
+        TemplateHashResultInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +31,7 @@ public final class TemplateHashResultImpl implements TemplateHashResult {
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

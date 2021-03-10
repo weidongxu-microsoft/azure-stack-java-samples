@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.HubVirtualNetworkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.HubVirtualNetworkConnection;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -14,9 +13,11 @@ import com.azure.resourcemanager.network.generated.models.RoutingConfiguration;
 public final class HubVirtualNetworkConnectionImpl implements HubVirtualNetworkConnection {
     private HubVirtualNetworkConnectionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    HubVirtualNetworkConnectionImpl(HubVirtualNetworkConnectionInner innerObject, NetworkManager serviceManager) {
+    HubVirtualNetworkConnectionImpl(
+        HubVirtualNetworkConnectionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -61,7 +62,7 @@ public final class HubVirtualNetworkConnectionImpl implements HubVirtualNetworkC
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

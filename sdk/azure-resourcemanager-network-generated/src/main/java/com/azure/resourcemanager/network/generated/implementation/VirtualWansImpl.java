@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualWansClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualWanInner;
 import com.azure.resourcemanager.network.generated.models.VirtualWan;
@@ -21,9 +20,10 @@ public final class VirtualWansImpl implements VirtualWans {
 
     private final VirtualWansClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualWansImpl(VirtualWansClient innerClient, NetworkManager serviceManager) {
+    public VirtualWansImpl(
+        VirtualWansClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -160,7 +160,7 @@ public final class VirtualWansImpl implements VirtualWans {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

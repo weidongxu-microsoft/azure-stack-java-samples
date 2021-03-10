@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NatRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayNatRuleInner;
 import com.azure.resourcemanager.network.generated.models.NatRules;
@@ -21,9 +20,10 @@ public final class NatRulesImpl implements NatRules {
 
     private final NatRulesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NatRulesImpl(NatRulesClient innerClient, NetworkManager serviceManager) {
+    public NatRulesImpl(
+        NatRulesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -181,7 +181,7 @@ public final class NatRulesImpl implements NatRules {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

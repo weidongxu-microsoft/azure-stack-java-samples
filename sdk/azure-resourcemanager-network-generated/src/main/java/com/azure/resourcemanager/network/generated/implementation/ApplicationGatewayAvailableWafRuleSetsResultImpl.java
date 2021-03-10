@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableWafRuleSetsResultInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAvailableWafRuleSetsResult;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFirewallRuleSet;
@@ -15,10 +14,11 @@ public final class ApplicationGatewayAvailableWafRuleSetsResultImpl
     implements ApplicationGatewayAvailableWafRuleSetsResult {
     private ApplicationGatewayAvailableWafRuleSetsResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ApplicationGatewayAvailableWafRuleSetsResultImpl(
-        ApplicationGatewayAvailableWafRuleSetsResultInner innerObject, NetworkManager serviceManager) {
+        ApplicationGatewayAvailableWafRuleSetsResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -36,7 +36,7 @@ public final class ApplicationGatewayAvailableWafRuleSetsResultImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

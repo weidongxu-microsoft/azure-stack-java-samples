@@ -4,44 +4,31 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
+import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Collection;
 
 /** Defines values for OrchestrationMode. */
-public enum OrchestrationMode {
-    /** Enum value Uniform. */
-    UNIFORM("Uniform"),
+public final class OrchestrationMode extends ExpandableStringEnum<OrchestrationMode> {
+    /** Static value Uniform for OrchestrationMode. */
+    public static final OrchestrationMode UNIFORM = fromString("Uniform");
 
-    /** Enum value Flexible. */
-    FLEXIBLE("Flexible");
-
-    /** The actual serialized value for a OrchestrationMode instance. */
-    private final String value;
-
-    OrchestrationMode(String value) {
-        this.value = value;
-    }
+    /** Static value Flexible for OrchestrationMode. */
+    public static final OrchestrationMode FLEXIBLE = fromString("Flexible");
 
     /**
-     * Parses a serialized value to a OrchestrationMode instance.
+     * Creates or finds a OrchestrationMode from its string representation.
      *
-     * @param value the serialized value to parse.
-     * @return the parsed OrchestrationMode object, or null if unable to parse.
+     * @param name a name to look for.
+     * @return the corresponding OrchestrationMode.
      */
     @JsonCreator
-    public static OrchestrationMode fromString(String value) {
-        OrchestrationMode[] items = OrchestrationMode.values();
-        for (OrchestrationMode item : items) {
-            if (item.toString().equalsIgnoreCase(value)) {
-                return item;
-            }
-        }
-        return null;
+    public static OrchestrationMode fromString(String name) {
+        return fromString(name, OrchestrationMode.class);
     }
 
-    @JsonValue
-    @Override
-    public String toString() {
-        return this.value;
+    /** @return known OrchestrationMode values. */
+    public static Collection<OrchestrationMode> values() {
+        return values(OrchestrationMode.class);
     }
 }

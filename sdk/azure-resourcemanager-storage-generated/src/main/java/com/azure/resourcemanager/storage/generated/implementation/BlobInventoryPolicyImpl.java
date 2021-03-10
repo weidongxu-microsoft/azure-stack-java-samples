@@ -4,20 +4,19 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobInventoryPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicy;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicyName;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicySchema;
-import com.azure.resourcemanager.storage.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class BlobInventoryPolicyImpl
     implements BlobInventoryPolicy, BlobInventoryPolicy.Definition, BlobInventoryPolicy.Update {
     private BlobInventoryPolicyInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -47,7 +46,7 @@ public final class BlobInventoryPolicyImpl
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -85,7 +84,8 @@ public final class BlobInventoryPolicyImpl
         return this;
     }
 
-    BlobInventoryPolicyImpl(BlobInventoryPolicyName name, StorageManager serviceManager) {
+    BlobInventoryPolicyImpl(
+        BlobInventoryPolicyName name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new BlobInventoryPolicyInner();
         this.serviceManager = serviceManager;
         this.blobInventoryPolicyName = name;
@@ -117,7 +117,9 @@ public final class BlobInventoryPolicyImpl
         return this;
     }
 
-    BlobInventoryPolicyImpl(BlobInventoryPolicyInner innerObject, StorageManager serviceManager) {
+    BlobInventoryPolicyImpl(
+        BlobInventoryPolicyInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

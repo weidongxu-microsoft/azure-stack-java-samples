@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.FileServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServiceItemsInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServicePropertiesInner;
@@ -22,9 +21,10 @@ public final class FileServicesImpl implements FileServices {
 
     private final FileServicesClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public FileServicesImpl(FileServicesClient innerClient, StorageManager serviceManager) {
+    public FileServicesImpl(
+        FileServicesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -120,7 +120,7 @@ public final class FileServicesImpl implements FileServices {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 

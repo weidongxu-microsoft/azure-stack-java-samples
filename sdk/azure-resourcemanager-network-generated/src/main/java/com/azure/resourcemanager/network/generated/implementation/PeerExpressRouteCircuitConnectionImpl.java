@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRouteCircuitConnectionInner;
 import com.azure.resourcemanager.network.generated.models.CircuitConnectionStatus;
 import com.azure.resourcemanager.network.generated.models.PeerExpressRouteCircuitConnection;
@@ -14,10 +13,11 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 public final class PeerExpressRouteCircuitConnectionImpl implements PeerExpressRouteCircuitConnection {
     private PeerExpressRouteCircuitConnectionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     PeerExpressRouteCircuitConnectionImpl(
-        PeerExpressRouteCircuitConnectionInner innerObject, NetworkManager serviceManager) {
+        PeerExpressRouteCircuitConnectionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -70,7 +70,7 @@ public final class PeerExpressRouteCircuitConnectionImpl implements PeerExpressR
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

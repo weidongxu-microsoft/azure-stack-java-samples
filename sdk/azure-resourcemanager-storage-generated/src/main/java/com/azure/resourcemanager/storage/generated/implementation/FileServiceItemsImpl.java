@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServiceItemsInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.FileServiceItems;
@@ -16,9 +15,10 @@ import java.util.stream.Collectors;
 public final class FileServiceItemsImpl implements FileServiceItems {
     private FileServiceItemsInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    FileServiceItemsImpl(FileServiceItemsInner innerObject, StorageManager serviceManager) {
+    FileServiceItemsImpl(
+        FileServiceItemsInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class FileServiceItemsImpl implements FileServiceItems {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPoliciesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyInner;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicies;
@@ -21,9 +20,10 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
 
     private final FirewallPoliciesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public FirewallPoliciesImpl(FirewallPoliciesClient innerClient, NetworkManager serviceManager) {
+    public FirewallPoliciesImpl(
+        FirewallPoliciesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -171,7 +171,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

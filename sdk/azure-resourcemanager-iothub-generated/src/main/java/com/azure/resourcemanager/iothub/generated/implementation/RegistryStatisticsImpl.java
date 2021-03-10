@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.RegistryStatisticsInner;
 import com.azure.resourcemanager.iothub.generated.models.RegistryStatistics;
 
 public final class RegistryStatisticsImpl implements RegistryStatistics {
     private RegistryStatisticsInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    RegistryStatisticsImpl(RegistryStatisticsInner innerObject, IotHubManager serviceManager) {
+    RegistryStatisticsImpl(
+        RegistryStatisticsInner innerObject, com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class RegistryStatisticsImpl implements RegistryStatistics {
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 }

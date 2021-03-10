@@ -14,6 +14,7 @@ import com.azure.resourcemanager.storage.generated.fluent.models.FileShareItemIn
 import com.azure.resourcemanager.storage.generated.models.DeletedShare;
 import com.azure.resourcemanager.storage.generated.models.GetShareExpand;
 import com.azure.resourcemanager.storage.generated.models.ListSharesExpand;
+import com.azure.resourcemanager.storage.generated.models.PutSharesExpand;
 
 /** An instance of this class provides access to all the operations defined in FileSharesClient. */
 public interface FileSharesClient {
@@ -89,6 +90,7 @@ public interface FileSharesClient {
      *     between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
      *     character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties of the file share to create.
+     * @param expand Optional, used to create a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -97,7 +99,12 @@ public interface FileSharesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<FileShareInner> createWithResponse(
-        String resourceGroupName, String accountName, String shareName, FileShareInner fileShare, Context context);
+        String resourceGroupName,
+        String accountName,
+        String shareName,
+        FileShareInner fileShare,
+        PutSharesExpand expand,
+        Context context);
 
     /**
      * Updates share properties as specified in request body. Properties not mentioned in the request will not be
@@ -170,6 +177,7 @@ public interface FileSharesClient {
      *     between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
      *     character must be immediately preceded and followed by a letter or number.
      * @param expand Optional, used to expand the properties within share's properties.
+     * @param xMsSnapshot Optional, used to retrieve properties of a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -178,7 +186,12 @@ public interface FileSharesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<FileShareInner> getWithResponse(
-        String resourceGroupName, String accountName, String shareName, GetShareExpand expand, Context context);
+        String resourceGroupName,
+        String accountName,
+        String shareName,
+        GetShareExpand expand,
+        String xMsSnapshot,
+        Context context);
 
     /**
      * Deletes specified share under its account.
@@ -207,6 +220,7 @@ public interface FileSharesClient {
      * @param shareName The name of the file share within the specified storage account. File share names must be
      *     between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
      *     character must be immediately preceded and followed by a letter or number.
+     * @param xMsSnapshot Optional, used to delete a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -214,7 +228,8 @@ public interface FileSharesClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String shareName, Context context);
+    Response<Void> deleteWithResponse(
+        String resourceGroupName, String accountName, String shareName, String xMsSnapshot, Context context);
 
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.

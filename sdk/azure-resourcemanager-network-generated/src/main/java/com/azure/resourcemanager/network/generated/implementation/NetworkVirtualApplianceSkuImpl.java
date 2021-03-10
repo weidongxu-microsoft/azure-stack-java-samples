@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceSkuInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceSku;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceSkuInstances;
@@ -15,9 +14,11 @@ import java.util.Map;
 public final class NetworkVirtualApplianceSkuImpl implements NetworkVirtualApplianceSku {
     private NetworkVirtualApplianceSkuInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    NetworkVirtualApplianceSkuImpl(NetworkVirtualApplianceSkuInner innerObject, NetworkManager serviceManager) {
+    NetworkVirtualApplianceSkuImpl(
+        NetworkVirtualApplianceSkuInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -77,7 +78,7 @@ public final class NetworkVirtualApplianceSkuImpl implements NetworkVirtualAppli
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

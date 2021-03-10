@@ -133,19 +133,6 @@ public interface VirtualMachineUpdate {
     SubResource proximityPlacementGroup();
 
     /**
-     * Gets the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual
-     * Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
-     * best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable only if the
-     * 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual Machine Scale Set that is
-     * referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This property cannot be updated once the
-     * Virtual Machine is created.&lt;li&gt;Fault domain assignment can be viewed in the Virtual Machine Instance
-     * View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
-     *
-     * @return the platformFaultDomain value.
-     */
-    Integer platformFaultDomain();
-
-    /**
      * Gets the priority property: Specifies the priority for the virtual machine. &lt;br&gt;&lt;br&gt;Minimum
      * api-version: 2019-03-01.
      *
@@ -233,6 +220,19 @@ public interface VirtualMachineUpdate {
      * @return the extensionsTimeBudget value.
      */
     String extensionsTimeBudget();
+
+    /**
+     * Gets the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual
+     * Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
+     * best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable only if the
+     * 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual Machine Scale Set that is
+     * referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This property cannot be updated once the
+     * Virtual Machine is created.&lt;li&gt;Fault domain assignment can be viewed in the Virtual Machine Instance
+     * View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
+     *
+     * @return the platformFaultDomain value.
+     */
+    Integer platformFaultDomain();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner object.

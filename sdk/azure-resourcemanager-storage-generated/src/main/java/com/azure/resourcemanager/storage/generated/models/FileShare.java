@@ -136,6 +136,14 @@ public interface FileShare {
     Long shareUsageBytes();
 
     /**
+     * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with
+     * expand param "snapshots".
+     *
+     * @return the snapshotTime value.
+     */
+    OffsetDateTime snapshotTime();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner object.
      *
      * @return the inner object.
@@ -173,7 +181,8 @@ public interface FileShare {
                 DefinitionStages.WithShareQuota,
                 DefinitionStages.WithEnabledProtocols,
                 DefinitionStages.WithRootSquash,
-                DefinitionStages.WithAccessTier {
+                DefinitionStages.WithAccessTier,
+                DefinitionStages.WithExpand {
             /**
              * Executes the create request.
              *
@@ -244,6 +253,16 @@ public interface FileShare {
              * @return the next definition stage.
              */
             WithCreate withAccessTier(ShareAccessTier accessTier);
+        }
+        /** The stage of the FileShare definition allowing to specify expand. */
+        interface WithExpand {
+            /**
+             * Specifies the expand property: Optional, used to create a snapshot..
+             *
+             * @param expand Optional, used to create a snapshot.
+             * @return the next definition stage.
+             */
+            WithCreate withExpand(PutSharesExpand expand);
         }
     }
     /**

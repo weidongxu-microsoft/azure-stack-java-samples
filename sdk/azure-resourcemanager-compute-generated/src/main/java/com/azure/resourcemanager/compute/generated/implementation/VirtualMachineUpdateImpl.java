@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner;
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
@@ -29,9 +28,11 @@ import java.util.Map;
 public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
     private VirtualMachineUpdateInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineUpdateImpl(VirtualMachineUpdateInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineUpdateImpl(
+        VirtualMachineUpdateInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -102,10 +103,6 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
         return this.innerModel().proximityPlacementGroup();
     }
 
-    public Integer platformFaultDomain() {
-        return this.innerModel().platformFaultDomain();
-    }
-
     public VirtualMachinePriorityTypes priority() {
         return this.innerModel().priority();
     }
@@ -151,11 +148,15 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
         return this.innerModel().extensionsTimeBudget();
     }
 
+    public Integer platformFaultDomain() {
+        return this.innerModel().platformFaultDomain();
+    }
+
     public VirtualMachineUpdateInner innerModel() {
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

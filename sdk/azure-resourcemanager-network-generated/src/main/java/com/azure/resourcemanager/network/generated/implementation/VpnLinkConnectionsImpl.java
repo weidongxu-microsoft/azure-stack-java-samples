@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnLinkConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.VpnLinkConnections;
@@ -19,11 +18,45 @@ public final class VpnLinkConnectionsImpl implements VpnLinkConnections {
 
     private final VpnLinkConnectionsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnLinkConnectionsImpl(VpnLinkConnectionsClient innerClient, NetworkManager serviceManager) {
+    public VpnLinkConnectionsImpl(
+        VpnLinkConnectionsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
+    }
+
+    public void resetConnection(
+        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+        this.serviceClient().resetConnection(resourceGroupName, gatewayName, connectionName, linkConnectionName);
+    }
+
+    public void resetConnection(
+        String resourceGroupName,
+        String gatewayName,
+        String connectionName,
+        String linkConnectionName,
+        Context context) {
+        this
+            .serviceClient()
+            .resetConnection(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
+    }
+
+    public String getIkeSas(
+        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+        return this.serviceClient().getIkeSas(resourceGroupName, gatewayName, connectionName, linkConnectionName);
+    }
+
+    public String getIkeSas(
+        String resourceGroupName,
+        String gatewayName,
+        String connectionName,
+        String linkConnectionName,
+        Context context) {
+        return this
+            .serviceClient()
+            .getIkeSas(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
     }
 
     public PagedIterable<VpnSiteLinkConnection> listByVpnConnection(
@@ -44,7 +77,7 @@ public final class VpnLinkConnectionsImpl implements VpnLinkConnections {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

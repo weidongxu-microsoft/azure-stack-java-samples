@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.AutoApprovedPrivateLinkServiceInner;
 import com.azure.resourcemanager.network.generated.models.AutoApprovedPrivateLinkService;
 
 public final class AutoApprovedPrivateLinkServiceImpl implements AutoApprovedPrivateLinkService {
     private AutoApprovedPrivateLinkServiceInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AutoApprovedPrivateLinkServiceImpl(AutoApprovedPrivateLinkServiceInner innerObject, NetworkManager serviceManager) {
+    AutoApprovedPrivateLinkServiceImpl(
+        AutoApprovedPrivateLinkServiceInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class AutoApprovedPrivateLinkServiceImpl implements AutoApprovedPri
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

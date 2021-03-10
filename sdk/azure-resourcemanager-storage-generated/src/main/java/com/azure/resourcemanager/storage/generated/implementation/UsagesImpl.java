@@ -7,7 +7,6 @@ package com.azure.resourcemanager.storage.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.storage.generated.models.Usage;
@@ -19,9 +18,10 @@ public final class UsagesImpl implements Usages {
 
     private final UsagesClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public UsagesImpl(UsagesClient innerClient, StorageManager serviceManager) {
+    public UsagesImpl(
+        UsagesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class UsagesImpl implements Usages {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInner;
 import com.azure.resourcemanager.network.generated.models.FlowLog;
 import com.azure.resourcemanager.network.generated.models.FlowLogFormatParameters;
@@ -20,7 +19,7 @@ import java.util.Map;
 public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.Update {
     private FlowLogInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -95,7 +94,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -131,7 +130,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this;
     }
 
-    FlowLogImpl(String name, NetworkManager serviceManager) {
+    FlowLogImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new FlowLogInner();
         this.serviceManager = serviceManager;
         this.flowLogName = name;
@@ -163,7 +162,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this;
     }
 
-    FlowLogImpl(FlowLogInner innerObject, NetworkManager serviceManager) {
+    FlowLogImpl(FlowLogInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

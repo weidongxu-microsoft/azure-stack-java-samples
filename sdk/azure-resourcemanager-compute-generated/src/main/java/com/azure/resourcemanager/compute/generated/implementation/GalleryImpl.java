@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryInner;
 import com.azure.resourcemanager.compute.generated.models.Gallery;
 import com.azure.resourcemanager.compute.generated.models.GalleryIdentifier;
@@ -18,7 +17,7 @@ import java.util.Map;
 public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.Update {
     private GalleryInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -69,7 +68,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -102,7 +101,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this;
     }
 
-    GalleryImpl(String name, ComputeManager serviceManager) {
+    GalleryImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new GalleryInner();
         this.serviceManager = serviceManager;
         this.galleryName = name;
@@ -131,7 +130,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this;
     }
 
-    GalleryImpl(GalleryInner innerObject, ComputeManager serviceManager) {
+    GalleryImpl(GalleryInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

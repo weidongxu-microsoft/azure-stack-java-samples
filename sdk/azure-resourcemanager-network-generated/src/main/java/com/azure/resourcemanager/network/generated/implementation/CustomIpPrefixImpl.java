@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.CustomIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.CommissionedState;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefix;
@@ -21,7 +20,7 @@ import java.util.Map;
 public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.Definition, CustomIpPrefix.Update {
     private CustomIpPrefixInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -102,7 +101,7 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -135,7 +134,7 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
-    CustomIpPrefixImpl(String name, NetworkManager serviceManager) {
+    CustomIpPrefixImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new CustomIpPrefixInner();
         this.serviceManager = serviceManager;
         this.customIpPrefixName = name;
@@ -166,7 +165,8 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
-    CustomIpPrefixImpl(CustomIpPrefixInner innerObject, NetworkManager serviceManager) {
+    CustomIpPrefixImpl(
+        CustomIpPrefixInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

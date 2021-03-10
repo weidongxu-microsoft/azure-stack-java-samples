@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.network.generated.models.Operation;
 import com.azure.resourcemanager.network.generated.models.OperationDisplay;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.network.generated.models.OperationPropertiesFor
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, NetworkManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

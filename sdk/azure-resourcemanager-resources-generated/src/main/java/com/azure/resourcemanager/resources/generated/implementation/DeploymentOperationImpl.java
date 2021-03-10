@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.resources.generated.implementation;
 
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentOperationInner;
 import com.azure.resourcemanager.resources.generated.models.DeploymentOperation;
 import com.azure.resourcemanager.resources.generated.models.DeploymentOperationProperties;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.resources.generated.models.DeploymentOperationP
 public final class DeploymentOperationImpl implements DeploymentOperation {
     private DeploymentOperationInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    DeploymentOperationImpl(DeploymentOperationInner innerObject, ResourceManager serviceManager) {
+    DeploymentOperationImpl(
+        DeploymentOperationInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class DeploymentOperationImpl implements DeploymentOperation {
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

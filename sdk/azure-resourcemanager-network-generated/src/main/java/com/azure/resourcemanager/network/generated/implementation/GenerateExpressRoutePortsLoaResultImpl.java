@@ -4,17 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner;
 import com.azure.resourcemanager.network.generated.models.GenerateExpressRoutePortsLoaResult;
 
 public final class GenerateExpressRoutePortsLoaResultImpl implements GenerateExpressRoutePortsLoaResult {
     private GenerateExpressRoutePortsLoaResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     GenerateExpressRoutePortsLoaResultImpl(
-        GenerateExpressRoutePortsLoaResultInner innerObject, NetworkManager serviceManager) {
+        GenerateExpressRoutePortsLoaResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -27,7 +27,7 @@ public final class GenerateExpressRoutePortsLoaResultImpl implements GenerateExp
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

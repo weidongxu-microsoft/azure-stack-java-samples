@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientConnectionHealthDetailListResultInner;
 import com.azure.resourcemanager.network.generated.models.VpnClientConnectionHealthDetail;
 import com.azure.resourcemanager.network.generated.models.VpnClientConnectionHealthDetailListResult;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class VpnClientConnectionHealthDetailListResultImpl implements VpnClientConnectionHealthDetailListResult {
     private VpnClientConnectionHealthDetailListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     VpnClientConnectionHealthDetailListResultImpl(
-        VpnClientConnectionHealthDetailListResultInner innerObject, NetworkManager serviceManager) {
+        VpnClientConnectionHealthDetailListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class VpnClientConnectionHealthDetailListResultImpl implements VpnC
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

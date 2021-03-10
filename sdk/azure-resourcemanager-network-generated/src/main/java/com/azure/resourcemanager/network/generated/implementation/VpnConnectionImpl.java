@@ -5,12 +5,12 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnConnectionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingConfiguration;
+import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VpnConnection;
 import com.azure.resourcemanager.network.generated.models.VpnConnectionStatus;
@@ -22,9 +22,10 @@ import java.util.stream.Collectors;
 public final class VpnConnectionImpl implements VpnConnection {
     private VpnConnectionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnConnectionImpl(VpnConnectionInner innerObject, NetworkManager serviceManager) {
+    VpnConnectionImpl(
+        VpnConnectionInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -94,6 +95,15 @@ public final class VpnConnectionImpl implements VpnConnection {
         }
     }
 
+    public List<TrafficSelectorPolicy> trafficSelectorPolicies() {
+        List<TrafficSelectorPolicy> inner = this.innerModel().trafficSelectorPolicies();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public Boolean enableRateLimiting() {
         return this.innerModel().enableRateLimiting();
     }
@@ -132,7 +142,7 @@ public final class VpnConnectionImpl implements VpnConnection {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

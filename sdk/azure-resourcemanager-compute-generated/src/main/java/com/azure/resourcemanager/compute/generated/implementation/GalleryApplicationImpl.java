@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryApplicationInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplication;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationUpdate;
@@ -19,7 +18,7 @@ public final class GalleryApplicationImpl
     implements GalleryApplication, GalleryApplication.Definition, GalleryApplication.Update {
     private GalleryApplicationInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -82,7 +81,7 @@ public final class GalleryApplicationImpl
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -119,7 +118,7 @@ public final class GalleryApplicationImpl
         return this;
     }
 
-    GalleryApplicationImpl(String name, ComputeManager serviceManager) {
+    GalleryApplicationImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new GalleryApplicationInner();
         this.serviceManager = serviceManager;
         this.galleryApplicationName = name;
@@ -148,7 +147,9 @@ public final class GalleryApplicationImpl
         return this;
     }
 
-    GalleryApplicationImpl(GalleryApplicationInner innerObject, ComputeManager serviceManager) {
+    GalleryApplicationImpl(
+        GalleryApplicationInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

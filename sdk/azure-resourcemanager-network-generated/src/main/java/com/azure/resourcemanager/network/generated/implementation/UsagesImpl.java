@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.network.generated.models.Usage;
@@ -19,9 +18,10 @@ public final class UsagesImpl implements Usages {
 
     private final UsagesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public UsagesImpl(UsagesClient innerClient, NetworkManager serviceManager) {
+    public UsagesImpl(
+        UsagesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class UsagesImpl implements Usages {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

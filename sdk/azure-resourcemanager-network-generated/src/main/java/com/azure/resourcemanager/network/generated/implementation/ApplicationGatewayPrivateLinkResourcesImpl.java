@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPrivateLinkResourcesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateLinkResourceInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResource;
@@ -19,10 +18,11 @@ public final class ApplicationGatewayPrivateLinkResourcesImpl implements Applica
 
     private final ApplicationGatewayPrivateLinkResourcesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public ApplicationGatewayPrivateLinkResourcesImpl(
-        ApplicationGatewayPrivateLinkResourcesClient innerClient, NetworkManager serviceManager) {
+        ApplicationGatewayPrivateLinkResourcesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -45,7 +45,7 @@ public final class ApplicationGatewayPrivateLinkResourcesImpl implements Applica
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

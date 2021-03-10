@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.RollingUpgradeStatusInfoInner;
 import com.azure.resourcemanager.compute.generated.models.ApiError;
 import com.azure.resourcemanager.compute.generated.models.RollingUpgradePolicy;
@@ -17,9 +16,11 @@ import java.util.Map;
 public final class RollingUpgradeStatusInfoImpl implements RollingUpgradeStatusInfo {
     private RollingUpgradeStatusInfoInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RollingUpgradeStatusInfoImpl(RollingUpgradeStatusInfoInner innerObject, ComputeManager serviceManager) {
+    RollingUpgradeStatusInfoImpl(
+        RollingUpgradeStatusInfoInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -69,7 +70,7 @@ public final class RollingUpgradeStatusInfoImpl implements RollingUpgradeStatusI
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

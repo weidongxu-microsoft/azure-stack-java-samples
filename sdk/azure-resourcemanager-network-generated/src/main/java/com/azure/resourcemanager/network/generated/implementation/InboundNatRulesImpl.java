@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.InboundNatRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.InboundNatRuleInner;
 import com.azure.resourcemanager.network.generated.models.InboundNatRule;
@@ -21,9 +20,10 @@ public final class InboundNatRulesImpl implements InboundNatRules {
 
     private final InboundNatRulesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public InboundNatRulesImpl(InboundNatRulesClient innerClient, NetworkManager serviceManager) {
+    public InboundNatRulesImpl(
+        InboundNatRulesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -188,7 +188,7 @@ public final class InboundNatRulesImpl implements InboundNatRules {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

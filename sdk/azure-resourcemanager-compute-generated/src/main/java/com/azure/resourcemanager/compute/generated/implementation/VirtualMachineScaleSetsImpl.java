@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RecoveryWalkResponseInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperationHistoricalStatusInfoInner;
@@ -34,9 +33,11 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     private final VirtualMachineScaleSetsClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetsImpl(VirtualMachineScaleSetsClient innerClient, ComputeManager serviceManager) {
+    public VirtualMachineScaleSetsImpl(
+        VirtualMachineScaleSetsClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -487,7 +488,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkWatchersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableProvidersListInner;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureReachabilityReportInner;
@@ -52,9 +51,10 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
 
     private final NetworkWatchersClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public NetworkWatchersImpl(NetworkWatchersClient innerClient, NetworkManager serviceManager) {
+    public NetworkWatchersImpl(
+        NetworkWatchersClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -473,7 +473,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

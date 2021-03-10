@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSitesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualApplianceSiteInner;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSite;
@@ -21,9 +20,11 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
 
     private final VirtualApplianceSitesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualApplianceSitesImpl(VirtualApplianceSitesClient innerClient, NetworkManager serviceManager) {
+    public VirtualApplianceSitesImpl(
+        VirtualApplianceSitesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -206,7 +207,7 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

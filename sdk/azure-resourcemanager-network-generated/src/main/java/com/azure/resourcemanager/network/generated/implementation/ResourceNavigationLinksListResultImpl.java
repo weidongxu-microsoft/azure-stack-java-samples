@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLink;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLinksListResult;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class ResourceNavigationLinksListResultImpl implements ResourceNavigationLinksListResult {
     private ResourceNavigationLinksListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ResourceNavigationLinksListResultImpl(
-        ResourceNavigationLinksListResultInner innerObject, NetworkManager serviceManager) {
+        ResourceNavigationLinksListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class ResourceNavigationLinksListResultImpl implements ResourceNavi
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.RecoveryWalkResponseInner;
 import com.azure.resourcemanager.compute.generated.models.RecoveryWalkResponse;
 
 public final class RecoveryWalkResponseImpl implements RecoveryWalkResponse {
     private RecoveryWalkResponseInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RecoveryWalkResponseImpl(RecoveryWalkResponseInner innerObject, ComputeManager serviceManager) {
+    RecoveryWalkResponseImpl(
+        RecoveryWalkResponseInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +31,7 @@ public final class RecoveryWalkResponseImpl implements RecoveryWalkResponse {
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

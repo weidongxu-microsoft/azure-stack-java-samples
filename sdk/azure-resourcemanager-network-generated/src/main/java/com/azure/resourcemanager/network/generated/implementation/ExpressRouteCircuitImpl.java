@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitAuthorizationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitPeeringInner;
@@ -28,7 +27,7 @@ public final class ExpressRouteCircuitImpl
     implements ExpressRouteCircuit, ExpressRouteCircuit.Definition, ExpressRouteCircuit.Update {
     private ExpressRouteCircuitInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -151,7 +150,7 @@ public final class ExpressRouteCircuitImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -184,7 +183,7 @@ public final class ExpressRouteCircuitImpl
         return this;
     }
 
-    ExpressRouteCircuitImpl(String name, NetworkManager serviceManager) {
+    ExpressRouteCircuitImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCircuitInner();
         this.serviceManager = serviceManager;
         this.circuitName = name;
@@ -215,7 +214,9 @@ public final class ExpressRouteCircuitImpl
         return this;
     }
 
-    ExpressRouteCircuitImpl(ExpressRouteCircuitInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteCircuitImpl(
+        ExpressRouteCircuitInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

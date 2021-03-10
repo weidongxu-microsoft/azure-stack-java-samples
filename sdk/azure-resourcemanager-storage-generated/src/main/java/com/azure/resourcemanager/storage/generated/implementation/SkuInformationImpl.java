@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.SkuInformationInner;
 import com.azure.resourcemanager.storage.generated.models.Kind;
 import com.azure.resourcemanager.storage.generated.models.Restriction;
@@ -18,9 +17,10 @@ import java.util.List;
 public final class SkuInformationImpl implements SkuInformation {
     private SkuInformationInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    SkuInformationImpl(SkuInformationInner innerObject, StorageManager serviceManager) {
+    SkuInformationImpl(
+        SkuInformationInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +72,7 @@ public final class SkuInformationImpl implements SkuInformation {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

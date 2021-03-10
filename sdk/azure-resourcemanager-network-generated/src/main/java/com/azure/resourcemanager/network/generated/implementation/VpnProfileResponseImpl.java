@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnProfileResponseInner;
 import com.azure.resourcemanager.network.generated.models.VpnProfileResponse;
 
 public final class VpnProfileResponseImpl implements VpnProfileResponse {
     private VpnProfileResponseInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VpnProfileResponseImpl(VpnProfileResponseInner innerObject, NetworkManager serviceManager) {
+    VpnProfileResponseImpl(
+        VpnProfileResponseInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class VpnProfileResponseImpl implements VpnProfileResponse {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

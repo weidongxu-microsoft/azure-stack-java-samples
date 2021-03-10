@@ -117,6 +117,13 @@ public interface VpnConnection {
     List<IpsecPolicy> ipsecPolicies();
 
     /**
+     * Gets the trafficSelectorPolicies property: The Traffic Selector Policies to be considered by this connection.
+     *
+     * @return the trafficSelectorPolicies value.
+     */
+    List<TrafficSelectorPolicy> trafficSelectorPolicies();
+
+    /**
      * Gets the enableRateLimiting property: EnableBgp flag.
      *
      * @return the enableRateLimiting value.

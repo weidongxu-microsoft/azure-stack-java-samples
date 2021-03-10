@@ -46,19 +46,6 @@ public final class ImportDevicesRequest {
     @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
 
-    /*
-     * The value indicating whether configurations should be imported.
-     */
-    @JsonProperty(value = "includeConfigurations")
-    private Boolean includeConfigurations;
-
-    /*
-     * The blob name to be used when importing configurations from the provided
-     * input blob container.
-     */
-    @JsonProperty(value = "configurationsBlobName")
-    private String configurationsBlobName;
-
     /**
      * Get the inputBlobContainerUri property: The input blob container URI.
      *
@@ -158,48 +145,6 @@ public final class ImportDevicesRequest {
      */
     public ImportDevicesRequest withAuthenticationType(AuthenticationType authenticationType) {
         this.authenticationType = authenticationType;
-        return this;
-    }
-
-    /**
-     * Get the includeConfigurations property: The value indicating whether configurations should be imported.
-     *
-     * @return the includeConfigurations value.
-     */
-    public Boolean includeConfigurations() {
-        return this.includeConfigurations;
-    }
-
-    /**
-     * Set the includeConfigurations property: The value indicating whether configurations should be imported.
-     *
-     * @param includeConfigurations the includeConfigurations value to set.
-     * @return the ImportDevicesRequest object itself.
-     */
-    public ImportDevicesRequest withIncludeConfigurations(Boolean includeConfigurations) {
-        this.includeConfigurations = includeConfigurations;
-        return this;
-    }
-
-    /**
-     * Get the configurationsBlobName property: The blob name to be used when importing configurations from the provided
-     * input blob container.
-     *
-     * @return the configurationsBlobName value.
-     */
-    public String configurationsBlobName() {
-        return this.configurationsBlobName;
-    }
-
-    /**
-     * Set the configurationsBlobName property: The blob name to be used when importing configurations from the provided
-     * input blob container.
-     *
-     * @param configurationsBlobName the configurationsBlobName value to set.
-     * @return the ImportDevicesRequest object itself.
-     */
-    public ImportDevicesRequest withConfigurationsBlobName(String configurationsBlobName) {
-        this.configurationsBlobName = configurationsBlobName;
         return this;
     }
 

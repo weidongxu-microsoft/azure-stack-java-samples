@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteLinkInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRoutePortInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteLink;
@@ -25,7 +24,7 @@ public final class ExpressRoutePortImpl
     implements ExpressRoutePort, ExpressRoutePort.Definition, ExpressRoutePort.Update {
     private ExpressRoutePortInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -131,7 +130,7 @@ public final class ExpressRoutePortImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -164,7 +163,7 @@ public final class ExpressRoutePortImpl
         return this;
     }
 
-    ExpressRoutePortImpl(String name, NetworkManager serviceManager) {
+    ExpressRoutePortImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ExpressRoutePortInner();
         this.serviceManager = serviceManager;
         this.expressRoutePortName = name;
@@ -195,7 +194,8 @@ public final class ExpressRoutePortImpl
         return this;
     }
 
-    ExpressRoutePortImpl(ExpressRoutePortInner innerObject, NetworkManager serviceManager) {
+    ExpressRoutePortImpl(
+        ExpressRoutePortInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

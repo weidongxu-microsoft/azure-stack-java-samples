@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.TablesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.TableInner;
 import com.azure.resourcemanager.storage.generated.models.Table;
@@ -21,9 +20,10 @@ public final class TablesImpl implements Tables {
 
     private final TablesClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public TablesImpl(TablesClient innerClient, StorageManager serviceManager) {
+    public TablesImpl(
+        TablesClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -123,7 +123,7 @@ public final class TablesImpl implements Tables {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

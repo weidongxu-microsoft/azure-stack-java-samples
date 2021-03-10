@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskInner;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
 import com.azure.resourcemanager.compute.generated.models.Disk;
@@ -29,7 +28,7 @@ import java.util.Map;
 public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
     private DiskInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -191,7 +190,7 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -224,7 +223,7 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this;
     }
 
-    DiskImpl(String name, ComputeManager serviceManager) {
+    DiskImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new DiskInner();
         this.serviceManager = serviceManager;
         this.diskName = name;
@@ -247,7 +246,7 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this;
     }
 
-    DiskImpl(DiskInner innerObject, ComputeManager serviceManager) {
+    DiskImpl(DiskInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

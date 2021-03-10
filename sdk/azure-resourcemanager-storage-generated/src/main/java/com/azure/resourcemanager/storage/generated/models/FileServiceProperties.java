@@ -54,6 +54,13 @@ public interface FileServiceProperties {
     DeleteRetentionPolicy shareDeleteRetentionPolicy();
 
     /**
+     * Gets the protocolSettings property: Protocol settings for file service.
+     *
+     * @return the protocolSettings value.
+     */
+    ProtocolSettings protocolSettings();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.FileServicePropertiesInner object.
      *
      * @return the inner object.
@@ -86,7 +93,10 @@ public interface FileServiceProperties {
          * The stage of the FileServiceProperties definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithCors, DefinitionStages.WithShareDeleteRetentionPolicy {
+        interface WithCreate
+            extends DefinitionStages.WithCors,
+                DefinitionStages.WithShareDeleteRetentionPolicy,
+                DefinitionStages.WithProtocolSettings {
             /**
              * Executes the create request.
              *
@@ -126,6 +136,16 @@ public interface FileServiceProperties {
              */
             WithCreate withShareDeleteRetentionPolicy(DeleteRetentionPolicy shareDeleteRetentionPolicy);
         }
+        /** The stage of the FileServiceProperties definition allowing to specify protocolSettings. */
+        interface WithProtocolSettings {
+            /**
+             * Specifies the protocolSettings property: Protocol settings for file service.
+             *
+             * @param protocolSettings Protocol settings for file service.
+             * @return the next definition stage.
+             */
+            WithCreate withProtocolSettings(ProtocolSettings protocolSettings);
+        }
     }
     /**
      * Begins update for the FileServiceProperties resource.
@@ -135,7 +155,8 @@ public interface FileServiceProperties {
     FileServiceProperties.Update update();
 
     /** The template for FileServiceProperties update. */
-    interface Update extends UpdateStages.WithCors, UpdateStages.WithShareDeleteRetentionPolicy {
+    interface Update
+        extends UpdateStages.WithCors, UpdateStages.WithShareDeleteRetentionPolicy, UpdateStages.WithProtocolSettings {
         /**
          * Executes the update request.
          *
@@ -176,6 +197,16 @@ public interface FileServiceProperties {
              * @return the next definition stage.
              */
             Update withShareDeleteRetentionPolicy(DeleteRetentionPolicy shareDeleteRetentionPolicy);
+        }
+        /** The stage of the FileServiceProperties update allowing to specify protocolSettings. */
+        interface WithProtocolSettings {
+            /**
+             * Specifies the protocolSettings property: Protocol settings for file service.
+             *
+             * @param protocolSettings Protocol settings for file service.
+             * @return the next definition stage.
+             */
+            Update withProtocolSettings(ProtocolSettings protocolSettings);
         }
     }
     /**

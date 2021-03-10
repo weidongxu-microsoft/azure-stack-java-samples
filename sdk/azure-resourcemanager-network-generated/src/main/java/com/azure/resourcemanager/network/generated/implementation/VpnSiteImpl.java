@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
@@ -26,7 +25,7 @@ import java.util.stream.Collectors;
 public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.Update {
     private VpnSiteInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -119,7 +118,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -152,7 +151,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this;
     }
 
-    VpnSiteImpl(String name, NetworkManager serviceManager) {
+    VpnSiteImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VpnSiteInner();
         this.serviceManager = serviceManager;
         this.vpnSiteName = name;
@@ -183,7 +182,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this;
     }
 
-    VpnSiteImpl(VpnSiteInner innerObject, NetworkManager serviceManager) {
+    VpnSiteImpl(VpnSiteInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

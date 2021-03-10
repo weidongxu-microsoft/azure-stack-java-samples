@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionsListResultInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtension;
@@ -16,10 +15,11 @@ import java.util.stream.Collectors;
 public final class VirtualMachineExtensionsListResultImpl implements VirtualMachineExtensionsListResult {
     private VirtualMachineExtensionsListResultInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     VirtualMachineExtensionsListResultImpl(
-        VirtualMachineExtensionsListResultInner innerObject, ComputeManager serviceManager) {
+        VirtualMachineExtensionsListResultInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +42,7 @@ public final class VirtualMachineExtensionsListResultImpl implements VirtualMach
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

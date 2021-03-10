@@ -46,7 +46,7 @@ public interface LogAnalytics {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return logAnalytics operation status response.
      */
-    LogAnalyticsOperationResult exportThrottledRequests(String location, LogAnalyticsInputBase parameters);
+    LogAnalyticsOperationResult exportThrottledRequests(String location, ThrottledRequestsInput parameters);
 
     /**
      * Export logs that show total throttled Api requests for this subscription in the given time window.
@@ -60,5 +60,5 @@ public interface LogAnalytics {
      * @return logAnalytics operation status response.
      */
     LogAnalyticsOperationResult exportThrottledRequests(
-        String location, LogAnalyticsInputBase parameters, Context context);
+        String location, ThrottledRequestsInput parameters, Context context);
 }

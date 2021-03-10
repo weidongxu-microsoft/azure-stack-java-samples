@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteLinkInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteLink;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteLinkAdminState;
@@ -15,9 +14,10 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 public final class ExpressRouteLinkImpl implements ExpressRouteLink {
     private ExpressRouteLinkInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ExpressRouteLinkImpl(ExpressRouteLinkInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteLinkImpl(
+        ExpressRouteLinkInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -70,7 +70,7 @@ public final class ExpressRouteLinkImpl implements ExpressRouteLink {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.HubVirtualNetworkConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.HubVirtualNetworkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.HubVirtualNetworkConnection;
@@ -21,10 +20,11 @@ public final class HubVirtualNetworkConnectionsImpl implements HubVirtualNetwork
 
     private final HubVirtualNetworkConnectionsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public HubVirtualNetworkConnectionsImpl(
-        HubVirtualNetworkConnectionsClient innerClient, NetworkManager serviceManager) {
+        HubVirtualNetworkConnectionsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -114,7 +114,7 @@ public final class HubVirtualNetworkConnectionsImpl implements HubVirtualNetwork
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

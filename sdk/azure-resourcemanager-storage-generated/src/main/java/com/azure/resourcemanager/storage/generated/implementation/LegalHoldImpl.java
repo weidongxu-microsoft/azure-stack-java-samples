@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.LegalHoldInner;
 import com.azure.resourcemanager.storage.generated.models.LegalHold;
 import java.util.Collections;
@@ -13,9 +12,10 @@ import java.util.List;
 public final class LegalHoldImpl implements LegalHold {
     private LegalHoldInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    LegalHoldImpl(LegalHoldInner innerObject, StorageManager serviceManager) {
+    LegalHoldImpl(
+        LegalHoldInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -37,7 +37,7 @@ public final class LegalHoldImpl implements LegalHold {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

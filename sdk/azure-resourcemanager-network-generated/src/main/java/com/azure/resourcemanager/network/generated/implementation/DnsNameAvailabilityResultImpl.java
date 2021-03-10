@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.DnsNameAvailabilityResultInner;
 import com.azure.resourcemanager.network.generated.models.DnsNameAvailabilityResult;
 
 public final class DnsNameAvailabilityResultImpl implements DnsNameAvailabilityResult {
     private DnsNameAvailabilityResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    DnsNameAvailabilityResultImpl(DnsNameAvailabilityResultInner innerObject, NetworkManager serviceManager) {
+    DnsNameAvailabilityResultImpl(
+        DnsNameAvailabilityResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class DnsNameAvailabilityResultImpl implements DnsNameAvailabilityR
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

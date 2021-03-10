@@ -7,7 +7,6 @@ package com.azure.resourcemanager.resources.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExtendedInner;
 import com.azure.resourcemanager.resources.generated.models.Deployment;
 import com.azure.resourcemanager.resources.generated.models.DeploymentExportResult;
@@ -24,7 +23,7 @@ public final class DeploymentExtendedImpl
     implements DeploymentExtended, DeploymentExtended.Definition, DeploymentExtended.Update {
     private DeploymentExtendedInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -67,7 +66,7 @@ public final class DeploymentExtendedImpl
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 
@@ -102,7 +101,7 @@ public final class DeploymentExtendedImpl
         return this;
     }
 
-    DeploymentExtendedImpl(String name, ResourceManager serviceManager) {
+    DeploymentExtendedImpl(String name, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = new DeploymentExtendedInner();
         this.serviceManager = serviceManager;
         this.deploymentName = name;
@@ -132,7 +131,9 @@ public final class DeploymentExtendedImpl
         return this;
     }
 
-    DeploymentExtendedImpl(DeploymentExtendedInner innerObject, ResourceManager serviceManager) {
+    DeploymentExtendedImpl(
+        DeploymentExtendedInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

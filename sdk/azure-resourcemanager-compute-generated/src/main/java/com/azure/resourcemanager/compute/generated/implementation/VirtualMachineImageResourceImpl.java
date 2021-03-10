@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageResource;
@@ -14,9 +13,11 @@ import java.util.Map;
 public final class VirtualMachineImageResourceImpl implements VirtualMachineImageResource {
     private VirtualMachineImageResourceInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    VirtualMachineImageResourceImpl(VirtualMachineImageResourceInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineImageResourceImpl(
+        VirtualMachineImageResourceInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -50,7 +51,7 @@ public final class VirtualMachineImageResourceImpl implements VirtualMachineImag
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

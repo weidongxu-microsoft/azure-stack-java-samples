@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.P2SVpnConnectionHealthInner;
 import com.azure.resourcemanager.network.generated.models.P2SVpnConnectionHealth;
 
 public final class P2SVpnConnectionHealthImpl implements P2SVpnConnectionHealth {
     private P2SVpnConnectionHealthInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    P2SVpnConnectionHealthImpl(P2SVpnConnectionHealthInner innerObject, NetworkManager serviceManager) {
+    P2SVpnConnectionHealthImpl(
+        P2SVpnConnectionHealthInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class P2SVpnConnectionHealthImpl implements P2SVpnConnectionHealth 
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkUsageInner;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkUsage;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkUsageName;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkUsageNam
 public final class VirtualNetworkUsageImpl implements VirtualNetworkUsage {
     private VirtualNetworkUsageInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    VirtualNetworkUsageImpl(VirtualNetworkUsageInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkUsageImpl(
+        VirtualNetworkUsageInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -43,7 +44,7 @@ public final class VirtualNetworkUsageImpl implements VirtualNetworkUsage {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

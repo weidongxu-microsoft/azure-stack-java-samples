@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.GatewayRouteListResultInner;
 import com.azure.resourcemanager.network.generated.models.GatewayRoute;
 import com.azure.resourcemanager.network.generated.models.GatewayRouteListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class GatewayRouteListResultImpl implements GatewayRouteListResult {
     private GatewayRouteListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    GatewayRouteListResultImpl(GatewayRouteListResultInner innerObject, NetworkManager serviceManager) {
+    GatewayRouteListResultImpl(
+        GatewayRouteListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class GatewayRouteListResultImpl implements GatewayRouteListResult 
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

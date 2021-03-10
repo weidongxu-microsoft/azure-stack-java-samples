@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSkusClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceSkuInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceSku;
@@ -21,9 +20,11 @@ public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
 
     private final VirtualApplianceSkusClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualApplianceSkusImpl(VirtualApplianceSkusClient innerClient, NetworkManager serviceManager) {
+    public VirtualApplianceSkusImpl(
+        VirtualApplianceSkusClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -64,7 +65,7 @@ public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

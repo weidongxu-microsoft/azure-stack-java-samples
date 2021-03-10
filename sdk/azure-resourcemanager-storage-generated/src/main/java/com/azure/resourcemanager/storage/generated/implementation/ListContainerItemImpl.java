@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListContainerItemInner;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicyProperties;
 import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
@@ -20,9 +19,10 @@ import java.util.Map;
 public final class ListContainerItemImpl implements ListContainerItem {
     private ListContainerItemInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListContainerItemImpl(ListContainerItemInner innerObject, StorageManager serviceManager) {
+    ListContainerItemImpl(
+        ListContainerItemInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -116,7 +116,7 @@ public final class ListContainerItemImpl implements ListContainerItem {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.InboundSecurityRuleOperationsClient;
 import com.azure.resourcemanager.network.generated.models.InboundSecurityRuleOperations;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,10 +14,11 @@ public final class InboundSecurityRuleOperationsImpl implements InboundSecurityR
 
     private final InboundSecurityRuleOperationsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public InboundSecurityRuleOperationsImpl(
-        InboundSecurityRuleOperationsClient innerClient, NetworkManager serviceManager) {
+        InboundSecurityRuleOperationsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -27,7 +27,7 @@ public final class InboundSecurityRuleOperationsImpl implements InboundSecurityR
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

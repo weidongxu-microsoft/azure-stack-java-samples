@@ -123,6 +123,20 @@ public interface NetworkManagementClient {
     ResourceProvidersClient getResourceProviders();
 
     /**
+     * Gets the NetworkInterfacesClient object to access its operations.
+     *
+     * @return the NetworkInterfacesClient object.
+     */
+    NetworkInterfacesClient getNetworkInterfaces();
+
+    /**
+     * Gets the PublicIpAddressesClient object to access its operations.
+     *
+     * @return the PublicIpAddressesClient object.
+     */
+    PublicIpAddressesClient getPublicIpAddresses();
+
+    /**
      * Gets the CustomIpPrefixesClient object to access its operations.
      *
      * @return the CustomIpPrefixesClient object.
@@ -326,13 +340,6 @@ public interface NetworkManagementClient {
     NatGatewaysClient getNatGateways();
 
     /**
-     * Gets the NetworkInterfacesClient object to access its operations.
-     *
-     * @return the NetworkInterfacesClient object.
-     */
-    NetworkInterfacesClient getNetworkInterfaces();
-
-    /**
      * Gets the NetworkInterfaceIpConfigurationsClient object to access its operations.
      *
      * @return the NetworkInterfaceIpConfigurationsClient object.
@@ -471,13 +478,6 @@ public interface NetworkManagementClient {
      * @return the PrivateLinkServicesClient object.
      */
     PrivateLinkServicesClient getPrivateLinkServices();
-
-    /**
-     * Gets the PublicIpAddressesClient object to access its operations.
-     *
-     * @return the PublicIpAddressesClient object.
-     */
-    PublicIpAddressesClient getPublicIpAddresses();
 
     /**
      * Gets the PublicIpPrefixesClient object to access its operations.
@@ -690,6 +690,13 @@ public interface NetworkManagementClient {
     VpnGatewaysClient getVpnGateways();
 
     /**
+     * Gets the VpnLinkConnectionsClient object to access its operations.
+     *
+     * @return the VpnLinkConnectionsClient object.
+     */
+    VpnLinkConnectionsClient getVpnLinkConnections();
+
+    /**
      * Gets the VpnConnectionsClient object to access its operations.
      *
      * @return the VpnConnectionsClient object.
@@ -702,13 +709,6 @@ public interface NetworkManagementClient {
      * @return the VpnSiteLinkConnectionsClient object.
      */
     VpnSiteLinkConnectionsClient getVpnSiteLinkConnections();
-
-    /**
-     * Gets the VpnLinkConnectionsClient object to access its operations.
-     *
-     * @return the VpnLinkConnectionsClient object.
-     */
-    VpnLinkConnectionsClient getVpnLinkConnections();
 
     /**
      * Gets the NatRulesClient object to access its operations.

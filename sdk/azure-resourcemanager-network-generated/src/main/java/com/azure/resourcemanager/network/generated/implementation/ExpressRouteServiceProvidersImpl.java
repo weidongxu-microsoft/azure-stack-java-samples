@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteServiceProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteServiceProviderInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProvider;
@@ -19,10 +18,11 @@ public final class ExpressRouteServiceProvidersImpl implements ExpressRouteServi
 
     private final ExpressRouteServiceProvidersClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public ExpressRouteServiceProvidersImpl(
-        ExpressRouteServiceProvidersClient innerClient, NetworkManager serviceManager) {
+        ExpressRouteServiceProvidersClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class ExpressRouteServiceProvidersImpl implements ExpressRouteServi
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

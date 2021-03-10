@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PeerRouteListInner;
 import com.azure.resourcemanager.network.generated.models.PeerRoute;
 import com.azure.resourcemanager.network.generated.models.PeerRouteList;
@@ -14,9 +13,10 @@ import java.util.List;
 public final class PeerRouteListImpl implements PeerRouteList {
     private PeerRouteListInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    PeerRouteListImpl(PeerRouteListInner innerObject, NetworkManager serviceManager) {
+    PeerRouteListImpl(
+        PeerRouteListInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class PeerRouteListImpl implements PeerRouteList {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

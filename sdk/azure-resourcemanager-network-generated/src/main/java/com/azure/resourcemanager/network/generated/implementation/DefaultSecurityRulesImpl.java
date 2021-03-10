@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.DefaultSecurityRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 import com.azure.resourcemanager.network.generated.models.DefaultSecurityRules;
@@ -21,9 +20,11 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
 
     private final DefaultSecurityRulesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public DefaultSecurityRulesImpl(DefaultSecurityRulesClient innerClient, NetworkManager serviceManager) {
+    public DefaultSecurityRulesImpl(
+        DefaultSecurityRulesClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -71,7 +72,7 @@ public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

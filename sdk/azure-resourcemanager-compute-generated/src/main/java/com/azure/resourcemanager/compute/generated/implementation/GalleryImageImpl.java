@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageInner;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImage;
@@ -25,7 +24,7 @@ import java.util.Map;
 public final class GalleryImageImpl implements GalleryImage, GalleryImage.Definition, GalleryImage.Update {
     private GalleryImageInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -116,7 +115,7 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -152,7 +151,7 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this;
     }
 
-    GalleryImageImpl(String name, ComputeManager serviceManager) {
+    GalleryImageImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new GalleryImageInner();
         this.serviceManager = serviceManager;
         this.galleryImageName = name;
@@ -181,7 +180,8 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this;
     }
 
-    GalleryImageImpl(GalleryImageInner innerObject, ComputeManager serviceManager) {
+    GalleryImageImpl(
+        GalleryImageInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

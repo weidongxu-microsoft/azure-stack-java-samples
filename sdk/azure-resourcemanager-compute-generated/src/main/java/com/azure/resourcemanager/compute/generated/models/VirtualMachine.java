@@ -177,19 +177,6 @@ public interface VirtualMachine {
     SubResource proximityPlacementGroup();
 
     /**
-     * Gets the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual
-     * Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
-     * best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable only if the
-     * 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual Machine Scale Set that is
-     * referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This property cannot be updated once the
-     * Virtual Machine is created.&lt;li&gt;Fault domain assignment can be viewed in the Virtual Machine Instance
-     * View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
-     *
-     * @return the platformFaultDomain value.
-     */
-    Integer platformFaultDomain();
-
-    /**
      * Gets the priority property: Specifies the priority for the virtual machine. &lt;br&gt;&lt;br&gt;Minimum
      * api-version: 2019-03-01.
      *
@@ -279,6 +266,19 @@ public interface VirtualMachine {
     String extensionsTimeBudget();
 
     /**
+     * Gets the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual
+     * Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
+     * best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable only if the
+     * 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual Machine Scale Set that is
+     * referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This property cannot be updated once the
+     * Virtual Machine is created.&lt;li&gt;Fault domain assignment can be viewed in the Virtual Machine Instance
+     * View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
+     *
+     * @return the platformFaultDomain value.
+     */
+    Integer platformFaultDomain();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -359,14 +359,14 @@ public interface VirtualMachine {
                 DefinitionStages.WithAvailabilitySet,
                 DefinitionStages.WithVirtualMachineScaleSet,
                 DefinitionStages.WithProximityPlacementGroup,
-                DefinitionStages.WithPlatformFaultDomain,
                 DefinitionStages.WithPriority,
                 DefinitionStages.WithEvictionPolicy,
                 DefinitionStages.WithBillingProfile,
                 DefinitionStages.WithHost,
                 DefinitionStages.WithHostGroup,
                 DefinitionStages.WithLicenseType,
-                DefinitionStages.WithExtensionsTimeBudget {
+                DefinitionStages.WithExtensionsTimeBudget,
+                DefinitionStages.WithPlatformFaultDomain {
             /**
              * Executes the create request.
              *
@@ -583,29 +583,6 @@ public interface VirtualMachine {
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
-        /** The stage of the VirtualMachine definition allowing to specify platformFaultDomain. */
-        interface WithPlatformFaultDomain {
-            /**
-             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
-             * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
-             * fault domain that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is
-             * applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The
-             * Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt;
-             * 1.&lt;li&gt;This property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain
-             * assignment can be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version:
-             * 2020‐12‐01.
-             *
-             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
-             *     will be created. By default, the Virtual Machine will by automatically assigned to a fault domain
-             *     that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable
-             *     only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual
-             *     Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This
-             *     property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain assignment can
-             *     be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
-             * @return the next definition stage.
-             */
-            WithCreate withPlatformFaultDomain(Integer platformFaultDomain);
-        }
         /** The stage of the VirtualMachine definition allowing to specify priority. */
         interface WithPriority {
             /**
@@ -715,6 +692,29 @@ public interface VirtualMachine {
              */
             WithCreate withExtensionsTimeBudget(String extensionsTimeBudget);
         }
+        /** The stage of the VirtualMachine definition allowing to specify platformFaultDomain. */
+        interface WithPlatformFaultDomain {
+            /**
+             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
+             * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
+             * fault domain that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is
+             * applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The
+             * Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt;
+             * 1.&lt;li&gt;This property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain
+             * assignment can be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version:
+             * 2020‐12‐01.
+             *
+             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
+             *     will be created. By default, the Virtual Machine will by automatically assigned to a fault domain
+             *     that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable
+             *     only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual
+             *     Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This
+             *     property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain assignment can
+             *     be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
+             * @return the next definition stage.
+             */
+            WithCreate withPlatformFaultDomain(Integer platformFaultDomain);
+        }
     }
     /**
      * Begins update for the VirtualMachine resource.
@@ -739,14 +739,14 @@ public interface VirtualMachine {
             UpdateStages.WithAvailabilitySet,
             UpdateStages.WithVirtualMachineScaleSet,
             UpdateStages.WithProximityPlacementGroup,
-            UpdateStages.WithPlatformFaultDomain,
             UpdateStages.WithPriority,
             UpdateStages.WithEvictionPolicy,
             UpdateStages.WithBillingProfile,
             UpdateStages.WithHost,
             UpdateStages.WithHostGroup,
             UpdateStages.WithLicenseType,
-            UpdateStages.WithExtensionsTimeBudget {
+            UpdateStages.WithExtensionsTimeBudget,
+            UpdateStages.WithPlatformFaultDomain {
         /**
          * Executes the update request.
          *
@@ -955,29 +955,6 @@ public interface VirtualMachine {
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
-        /** The stage of the VirtualMachine update allowing to specify platformFaultDomain. */
-        interface WithPlatformFaultDomain {
-            /**
-             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
-             * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
-             * fault domain that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is
-             * applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The
-             * Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt;
-             * 1.&lt;li&gt;This property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain
-             * assignment can be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version:
-             * 2020‐12‐01.
-             *
-             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
-             *     will be created. By default, the Virtual Machine will by automatically assigned to a fault domain
-             *     that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable
-             *     only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual
-             *     Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This
-             *     property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain assignment can
-             *     be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
-             * @return the next definition stage.
-             */
-            Update withPlatformFaultDomain(Integer platformFaultDomain);
-        }
         /** The stage of the VirtualMachine update allowing to specify priority. */
         interface WithPriority {
             /**
@@ -1086,6 +1063,29 @@ public interface VirtualMachine {
              * @return the next definition stage.
              */
             Update withExtensionsTimeBudget(String extensionsTimeBudget);
+        }
+        /** The stage of the VirtualMachine update allowing to specify platformFaultDomain. */
+        interface WithPlatformFaultDomain {
+            /**
+             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
+             * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
+             * fault domain that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is
+             * applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The
+             * Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt;
+             * 1.&lt;li&gt;This property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain
+             * assignment can be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version:
+             * 2020‐12‐01.
+             *
+             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
+             *     will be created. By default, the Virtual Machine will by automatically assigned to a fault domain
+             *     that best maintains balance across available fault domains.&lt;br&gt;&lt;li&gt;This is applicable
+             *     only if the 'virtualMachineScaleSet' property of this Virtual Machine is set.&lt;li&gt;The Virtual
+             *     Machine Scale Set that is referenced, must have 'platformFaultDomainCount' &amp;gt; 1.&lt;li&gt;This
+             *     property cannot be updated once the Virtual Machine is created.&lt;li&gt;Fault domain assignment can
+             *     be viewed in the Virtual Machine Instance View.&lt;br&gt;&lt;br&gt;Minimum api‐version: 2020‐12‐01.
+             * @return the next definition stage.
+             */
+            Update withPlatformFaultDomain(Integer platformFaultDomain);
         }
     }
     /**

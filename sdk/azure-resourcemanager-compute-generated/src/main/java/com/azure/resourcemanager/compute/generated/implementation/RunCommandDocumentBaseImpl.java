@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocumentBaseInner;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
 import com.azure.resourcemanager.compute.generated.models.RunCommandDocumentBase;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.compute.generated.models.RunCommandDocumentBase
 public final class RunCommandDocumentBaseImpl implements RunCommandDocumentBase {
     private RunCommandDocumentBaseInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    RunCommandDocumentBaseImpl(RunCommandDocumentBaseInner innerObject, ComputeManager serviceManager) {
+    RunCommandDocumentBaseImpl(
+        RunCommandDocumentBaseInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -43,7 +44,7 @@ public final class RunCommandDocumentBaseImpl implements RunCommandDocumentBase 
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

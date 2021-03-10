@@ -304,6 +304,29 @@ public interface VirtualNetworkGatewayConnections {
     String getIkeSas(String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context);
 
     /**
+     * Resets the virtual network gateway connection specified.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetConnection(String resourceGroupName, String virtualNetworkGatewayConnectionName);
+
+    /**
+     * Resets the virtual network gateway connection specified.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetConnection(String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context);
+
+    /**
      * Gets the specified virtual network gateway connection by resource group.
      *
      * @param id the resource ID.

@@ -14,6 +14,7 @@ import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBase
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
 import com.azure.resourcemanager.storage.generated.models.Endpoints;
+import com.azure.resourcemanager.storage.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
 import com.azure.resourcemanager.storage.generated.models.Identity;
 import com.azure.resourcemanager.storage.generated.models.Kind;
@@ -52,6 +53,12 @@ public class StorageAccountInner extends Resource {
      */
     @JsonProperty(value = "identity")
     private Identity identity;
+
+    /*
+     * The extendedLocation of the resource.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * Gets the status of the storage account at the time the operation was
@@ -228,6 +235,12 @@ public class StorageAccountInner extends Resource {
     @JsonProperty(value = "properties.allowSharedKeyAccess")
     private Boolean allowSharedKeyAccess;
 
+    /*
+     * NFS 3.0 protocol support enabled if set to true.
+     */
+    @JsonProperty(value = "properties.isNfsV3Enabled")
+    private Boolean enableNfsV3;
+
     /**
      * Get the sku property: Gets the SKU.
      *
@@ -263,6 +276,26 @@ public class StorageAccountInner extends Resource {
      */
     public StorageAccountInner withIdentity(Identity identity) {
         this.identity = identity;
+        return this;
+    }
+
+    /**
+     * Get the extendedLocation property: The extendedLocation of the resource.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: The extendedLocation of the resource.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the StorageAccountInner object itself.
+     */
+    public StorageAccountInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
         return this;
     }
 
@@ -606,6 +639,26 @@ public class StorageAccountInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the enableNfsV3 property: NFS 3.0 protocol support enabled if set to true.
+     *
+     * @return the enableNfsV3 value.
+     */
+    public Boolean enableNfsV3() {
+        return this.enableNfsV3;
+    }
+
+    /**
+     * Set the enableNfsV3 property: NFS 3.0 protocol support enabled if set to true.
+     *
+     * @param enableNfsV3 the enableNfsV3 value to set.
+     * @return the StorageAccountInner object itself.
+     */
+    public StorageAccountInner withEnableNfsV3(Boolean enableNfsV3) {
+        this.enableNfsV3 = enableNfsV3;
+        return this;
+    }
+
     /** {@inheritDoc} */
     @Override
     public StorageAccountInner withLocation(String location) {
@@ -631,6 +684,9 @@ public class StorageAccountInner extends Resource {
         }
         if (identity() != null) {
             identity().validate();
+        }
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
         }
         if (primaryEndpoints() != null) {
             primaryEndpoints().validate();

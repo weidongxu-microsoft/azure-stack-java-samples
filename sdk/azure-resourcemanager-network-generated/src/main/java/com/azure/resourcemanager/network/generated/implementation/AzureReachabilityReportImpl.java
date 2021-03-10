@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureReachabilityReportInner;
 import com.azure.resourcemanager.network.generated.models.AzureReachabilityReport;
 import com.azure.resourcemanager.network.generated.models.AzureReachabilityReportItem;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class AzureReachabilityReportImpl implements AzureReachabilityReport {
     private AzureReachabilityReportInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AzureReachabilityReportImpl(AzureReachabilityReportInner innerObject, NetworkManager serviceManager) {
+    AzureReachabilityReportImpl(
+        AzureReachabilityReportInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -43,7 +44,7 @@ public final class AzureReachabilityReportImpl implements AzureReachabilityRepor
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

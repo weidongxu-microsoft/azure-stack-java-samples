@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.SharedAccessSignatureAuthorizationRuleInner;
 import com.azure.resourcemanager.iothub.generated.models.AccessRights;
 import com.azure.resourcemanager.iothub.generated.models.SharedAccessSignatureAuthorizationRule;
@@ -12,10 +11,11 @@ import com.azure.resourcemanager.iothub.generated.models.SharedAccessSignatureAu
 public final class SharedAccessSignatureAuthorizationRuleImpl implements SharedAccessSignatureAuthorizationRule {
     private SharedAccessSignatureAuthorizationRuleInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
     SharedAccessSignatureAuthorizationRuleImpl(
-        SharedAccessSignatureAuthorizationRuleInner innerObject, IotHubManager serviceManager) {
+        SharedAccessSignatureAuthorizationRuleInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class SharedAccessSignatureAuthorizationRuleImpl implements SharedA
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyRuleCollectionGroupInner;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyRuleCollection;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyRuleCollectionGroup;
@@ -19,7 +18,7 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         FirewallPolicyRuleCollectionGroup.Update {
     private FirewallPolicyRuleCollectionGroupInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -58,7 +57,7 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -95,7 +94,8 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this;
     }
 
-    FirewallPolicyRuleCollectionGroupImpl(String name, NetworkManager serviceManager) {
+    FirewallPolicyRuleCollectionGroupImpl(
+        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new FirewallPolicyRuleCollectionGroupInner();
         this.serviceManager = serviceManager;
         this.ruleCollectionGroupName = name;
@@ -126,7 +126,8 @@ public final class FirewallPolicyRuleCollectionGroupImpl
     }
 
     FirewallPolicyRuleCollectionGroupImpl(
-        FirewallPolicyRuleCollectionGroupInner innerObject, NetworkManager serviceManager) {
+        FirewallPolicyRuleCollectionGroupInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

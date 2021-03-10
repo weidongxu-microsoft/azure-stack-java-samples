@@ -7,7 +7,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.AvailabilitySetInner;
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySet;
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySetUpdate;
@@ -20,7 +19,7 @@ import java.util.Map;
 public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilitySet.Definition, AvailabilitySet.Update {
     private AvailabilitySetInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -93,7 +92,7 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -128,7 +127,7 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         return this;
     }
 
-    AvailabilitySetImpl(String name, ComputeManager serviceManager) {
+    AvailabilitySetImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new AvailabilitySetInner();
         this.serviceManager = serviceManager;
         this.availabilitySetName = name;
@@ -159,7 +158,8 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         return this;
     }
 
-    AvailabilitySetImpl(AvailabilitySetInner innerObject, ComputeManager serviceManager) {
+    AvailabilitySetImpl(
+        AvailabilitySetInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

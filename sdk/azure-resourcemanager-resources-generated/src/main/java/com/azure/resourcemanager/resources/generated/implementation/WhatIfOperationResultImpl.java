@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.resources.generated.implementation;
 
 import com.azure.core.management.exception.ManagementError;
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.WhatIfOperationResultInner;
 import com.azure.resourcemanager.resources.generated.models.WhatIfChange;
 import com.azure.resourcemanager.resources.generated.models.WhatIfOperationResult;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class WhatIfOperationResultImpl implements WhatIfOperationResult {
     private WhatIfOperationResultInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    WhatIfOperationResultImpl(WhatIfOperationResultInner innerObject, ResourceManager serviceManager) {
+    WhatIfOperationResultImpl(
+        WhatIfOperationResultInner innerObject,
+        com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -43,7 +44,7 @@ public final class WhatIfOperationResultImpl implements WhatIfOperationResult {
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

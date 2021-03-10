@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.AvailableDelegationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableDelegationInner;
 import com.azure.resourcemanager.network.generated.models.AvailableDelegation;
@@ -19,9 +18,11 @@ public final class AvailableDelegationsImpl implements AvailableDelegations {
 
     private final AvailableDelegationsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public AvailableDelegationsImpl(AvailableDelegationsClient innerClient, NetworkManager serviceManager) {
+    public AvailableDelegationsImpl(
+        AvailableDelegationsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class AvailableDelegationsImpl implements AvailableDelegations {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

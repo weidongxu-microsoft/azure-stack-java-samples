@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.DiskAccessesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskAccessInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpointConnectionInner;
@@ -25,9 +24,10 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     private final DiskAccessesClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public DiskAccessesImpl(DiskAccessesClient innerClient, ComputeManager serviceManager) {
+    public DiskAccessesImpl(
+        DiskAccessesClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -288,7 +288,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 

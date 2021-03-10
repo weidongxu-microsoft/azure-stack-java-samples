@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.RouteTablesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteTableInner;
 import com.azure.resourcemanager.network.generated.models.RouteTable;
@@ -21,9 +20,10 @@ public final class RouteTablesImpl implements RouteTables {
 
     private final RouteTablesClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public RouteTablesImpl(RouteTablesClient innerClient, NetworkManager serviceManager) {
+    public RouteTablesImpl(
+        RouteTablesClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -163,7 +163,7 @@ public final class RouteTablesImpl implements RouteTables {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

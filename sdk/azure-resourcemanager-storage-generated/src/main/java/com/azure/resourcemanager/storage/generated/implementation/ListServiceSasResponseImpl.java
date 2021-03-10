@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListServiceSasResponseInner;
 import com.azure.resourcemanager.storage.generated.models.ListServiceSasResponse;
 
 public final class ListServiceSasResponseImpl implements ListServiceSasResponse {
     private ListServiceSasResponseInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListServiceSasResponseImpl(ListServiceSasResponseInner innerObject, StorageManager serviceManager) {
+    ListServiceSasResponseImpl(
+        ListServiceSasResponseInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class ListServiceSasResponseImpl implements ListServiceSasResponse 
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

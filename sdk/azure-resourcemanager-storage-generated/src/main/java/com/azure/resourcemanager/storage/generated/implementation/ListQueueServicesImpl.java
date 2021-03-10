@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListQueueServicesInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.QueueServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.ListQueueServices;
@@ -16,9 +15,10 @@ import java.util.stream.Collectors;
 public final class ListQueueServicesImpl implements ListQueueServices {
     private ListQueueServicesInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    ListQueueServicesImpl(ListQueueServicesInner innerObject, StorageManager serviceManager) {
+    ListQueueServicesImpl(
+        ListQueueServicesInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class ListQueueServicesImpl implements ListQueueServices {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

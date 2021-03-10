@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubNameAvailabilityInfoInner;
 import com.azure.resourcemanager.iothub.generated.models.IotHubNameAvailabilityInfo;
 import com.azure.resourcemanager.iothub.generated.models.IotHubNameUnavailabilityReason;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.iothub.generated.models.IotHubNameUnavailabilit
 public final class IotHubNameAvailabilityInfoImpl implements IotHubNameAvailabilityInfo {
     private IotHubNameAvailabilityInfoInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    IotHubNameAvailabilityInfoImpl(IotHubNameAvailabilityInfoInner innerObject, IotHubManager serviceManager) {
+    IotHubNameAvailabilityInfoImpl(
+        IotHubNameAvailabilityInfoInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class IotHubNameAvailabilityInfoImpl implements IotHubNameAvailabil
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 }

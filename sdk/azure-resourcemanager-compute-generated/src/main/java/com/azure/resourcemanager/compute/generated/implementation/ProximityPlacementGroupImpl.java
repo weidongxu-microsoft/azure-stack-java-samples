@@ -6,13 +6,12 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroup;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupType;
+import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupUpdate;
 import com.azure.resourcemanager.compute.generated.models.SubResourceWithColocationStatus;
-import com.azure.resourcemanager.compute.generated.models.UpdateResource;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +20,7 @@ public final class ProximityPlacementGroupImpl
     implements ProximityPlacementGroup, ProximityPlacementGroup.Definition, ProximityPlacementGroup.Update {
     private ProximityPlacementGroupInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -95,7 +94,7 @@ public final class ProximityPlacementGroupImpl
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -103,7 +102,7 @@ public final class ProximityPlacementGroupImpl
 
     private String proximityPlacementGroupName;
 
-    private UpdateResource updateParameters;
+    private ProximityPlacementGroupUpdate updateParameters;
 
     public ProximityPlacementGroupImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -131,14 +130,15 @@ public final class ProximityPlacementGroupImpl
         return this;
     }
 
-    ProximityPlacementGroupImpl(String name, ComputeManager serviceManager) {
+    ProximityPlacementGroupImpl(
+        String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new ProximityPlacementGroupInner();
         this.serviceManager = serviceManager;
         this.proximityPlacementGroupName = name;
     }
 
     public ProximityPlacementGroupImpl update() {
-        this.updateParameters = new UpdateResource();
+        this.updateParameters = new ProximityPlacementGroupUpdate();
         return this;
     }
 
@@ -162,7 +162,9 @@ public final class ProximityPlacementGroupImpl
         return this;
     }
 
-    ProximityPlacementGroupImpl(ProximityPlacementGroupInner innerObject, ComputeManager serviceManager) {
+    ProximityPlacementGroupImpl(
+        ProximityPlacementGroupInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

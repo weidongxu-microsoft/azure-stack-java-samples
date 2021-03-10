@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner;
 import com.azure.resourcemanager.network.generated.models.AvailablePrivateEndpointType;
 
 public final class AvailablePrivateEndpointTypeImpl implements AvailablePrivateEndpointType {
     private AvailablePrivateEndpointTypeInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AvailablePrivateEndpointTypeImpl(AvailablePrivateEndpointTypeInner innerObject, NetworkManager serviceManager) {
+    AvailablePrivateEndpointTypeImpl(
+        AvailablePrivateEndpointTypeInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +39,7 @@ public final class AvailablePrivateEndpointTypeImpl implements AvailablePrivateE
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

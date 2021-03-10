@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.EffectiveNetworkSecurityGroupListResultInner;
 import com.azure.resourcemanager.network.generated.models.EffectiveNetworkSecurityGroup;
 import com.azure.resourcemanager.network.generated.models.EffectiveNetworkSecurityGroupListResult;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class EffectiveNetworkSecurityGroupListResultImpl implements EffectiveNetworkSecurityGroupListResult {
     private EffectiveNetworkSecurityGroupListResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     EffectiveNetworkSecurityGroupListResultImpl(
-        EffectiveNetworkSecurityGroupListResultInner innerObject, NetworkManager serviceManager) {
+        EffectiveNetworkSecurityGroupListResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class EffectiveNetworkSecurityGroupListResultImpl implements Effect
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthOnDemandInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendAddressPool;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealthHttpSettings;
@@ -13,10 +12,11 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBack
 public final class ApplicationGatewayBackendHealthOnDemandImpl implements ApplicationGatewayBackendHealthOnDemand {
     private ApplicationGatewayBackendHealthOnDemandInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     ApplicationGatewayBackendHealthOnDemandImpl(
-        ApplicationGatewayBackendHealthOnDemandInner innerObject, NetworkManager serviceManager) {
+        ApplicationGatewayBackendHealthOnDemandInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -33,7 +33,7 @@ public final class ApplicationGatewayBackendHealthOnDemandImpl implements Applic
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

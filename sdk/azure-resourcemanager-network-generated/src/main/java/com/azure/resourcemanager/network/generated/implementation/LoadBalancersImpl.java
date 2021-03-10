@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancer;
@@ -21,9 +20,10 @@ public final class LoadBalancersImpl implements LoadBalancers {
 
     private final LoadBalancersClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public LoadBalancersImpl(LoadBalancersClient innerClient, NetworkManager serviceManager) {
+    public LoadBalancersImpl(
+        LoadBalancersClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -163,7 +163,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

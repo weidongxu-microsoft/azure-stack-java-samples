@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.resources.generated.implementation;
 
-import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.TagsResourceInner;
 import com.azure.resourcemanager.resources.generated.models.Tags;
 import com.azure.resourcemanager.resources.generated.models.TagsResource;
@@ -12,9 +11,10 @@ import com.azure.resourcemanager.resources.generated.models.TagsResource;
 public final class TagsResourceImpl implements TagsResource {
     private TagsResourceInner innerObject;
 
-    private final ResourceManager serviceManager;
+    private final com.azure.resourcemanager.resources.generated.ResourceManager serviceManager;
 
-    TagsResourceImpl(TagsResourceInner innerObject, ResourceManager serviceManager) {
+    TagsResourceImpl(
+        TagsResourceInner innerObject, com.azure.resourcemanager.resources.generated.ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class TagsResourceImpl implements TagsResource {
         return this.innerObject;
     }
 
-    private ResourceManager manager() {
+    private com.azure.resourcemanager.resources.generated.ResourceManager manager() {
         return this.serviceManager;
     }
 }

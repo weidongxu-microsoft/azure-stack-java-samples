@@ -351,6 +351,30 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.resourceProviders;
     }
 
+    /** The NetworkInterfacesClient object to access its operations. */
+    private final NetworkInterfacesClient networkInterfaces;
+
+    /**
+     * Gets the NetworkInterfacesClient object to access its operations.
+     *
+     * @return the NetworkInterfacesClient object.
+     */
+    public NetworkInterfacesClient getNetworkInterfaces() {
+        return this.networkInterfaces;
+    }
+
+    /** The PublicIpAddressesClient object to access its operations. */
+    private final PublicIpAddressesClient publicIpAddresses;
+
+    /**
+     * Gets the PublicIpAddressesClient object to access its operations.
+     *
+     * @return the PublicIpAddressesClient object.
+     */
+    public PublicIpAddressesClient getPublicIpAddresses() {
+        return this.publicIpAddresses;
+    }
+
     /** The CustomIpPrefixesClient object to access its operations. */
     private final CustomIpPrefixesClient customIpPrefixes;
 
@@ -699,18 +723,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.natGateways;
     }
 
-    /** The NetworkInterfacesClient object to access its operations. */
-    private final NetworkInterfacesClient networkInterfaces;
-
-    /**
-     * Gets the NetworkInterfacesClient object to access its operations.
-     *
-     * @return the NetworkInterfacesClient object.
-     */
-    public NetworkInterfacesClient getNetworkInterfaces() {
-        return this.networkInterfaces;
-    }
-
     /** The NetworkInterfaceIpConfigurationsClient object to access its operations. */
     private final NetworkInterfaceIpConfigurationsClient networkInterfaceIpConfigurations;
 
@@ -949,18 +961,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public PrivateLinkServicesClient getPrivateLinkServices() {
         return this.privateLinkServices;
-    }
-
-    /** The PublicIpAddressesClient object to access its operations. */
-    private final PublicIpAddressesClient publicIpAddresses;
-
-    /**
-     * Gets the PublicIpAddressesClient object to access its operations.
-     *
-     * @return the PublicIpAddressesClient object.
-     */
-    public PublicIpAddressesClient getPublicIpAddresses() {
-        return this.publicIpAddresses;
     }
 
     /** The PublicIpPrefixesClient object to access its operations. */
@@ -1323,6 +1323,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.vpnGateways;
     }
 
+    /** The VpnLinkConnectionsClient object to access its operations. */
+    private final VpnLinkConnectionsClient vpnLinkConnections;
+
+    /**
+     * Gets the VpnLinkConnectionsClient object to access its operations.
+     *
+     * @return the VpnLinkConnectionsClient object.
+     */
+    public VpnLinkConnectionsClient getVpnLinkConnections() {
+        return this.vpnLinkConnections;
+    }
+
     /** The VpnConnectionsClient object to access its operations. */
     private final VpnConnectionsClient vpnConnections;
 
@@ -1345,18 +1357,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public VpnSiteLinkConnectionsClient getVpnSiteLinkConnections() {
         return this.vpnSiteLinkConnections;
-    }
-
-    /** The VpnLinkConnectionsClient object to access its operations. */
-    private final VpnLinkConnectionsClient vpnLinkConnections;
-
-    /**
-     * Gets the VpnLinkConnectionsClient object to access its operations.
-     *
-     * @return the VpnLinkConnectionsClient object.
-     */
-    public VpnLinkConnectionsClient getVpnLinkConnections() {
-        return this.vpnLinkConnections;
     }
 
     /** The NatRulesClient object to access its operations. */
@@ -1517,6 +1517,8 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.webCategories = new WebCategoriesClientImpl(this);
         this.bastionHosts = new BastionHostsClientImpl(this);
         this.resourceProviders = new ResourceProvidersClientImpl(this);
+        this.networkInterfaces = new NetworkInterfacesClientImpl(this);
+        this.publicIpAddresses = new PublicIpAddressesClientImpl(this);
         this.customIpPrefixes = new CustomIpPrefixesClientImpl(this);
         this.ddosCustomPolicies = new DdosCustomPoliciesClientImpl(this);
         this.ddosProtectionPlans = new DdosProtectionPlansClientImpl(this);
@@ -1546,7 +1548,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.loadBalancerNetworkInterfaces = new LoadBalancerNetworkInterfacesClientImpl(this);
         this.loadBalancerProbes = new LoadBalancerProbesClientImpl(this);
         this.natGateways = new NatGatewaysClientImpl(this);
-        this.networkInterfaces = new NetworkInterfacesClientImpl(this);
         this.networkInterfaceIpConfigurations = new NetworkInterfaceIpConfigurationsClientImpl(this);
         this.networkInterfaceLoadBalancers = new NetworkInterfaceLoadBalancersClientImpl(this);
         this.networkInterfaceTapConfigurations = new NetworkInterfaceTapConfigurationsClientImpl(this);
@@ -1567,7 +1568,6 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.availablePrivateEndpointTypes = new AvailablePrivateEndpointTypesClientImpl(this);
         this.privateDnsZoneGroups = new PrivateDnsZoneGroupsClientImpl(this);
         this.privateLinkServices = new PrivateLinkServicesClientImpl(this);
-        this.publicIpAddresses = new PublicIpAddressesClientImpl(this);
         this.publicIpPrefixes = new PublicIpPrefixesClientImpl(this);
         this.routeFilters = new RouteFiltersClientImpl(this);
         this.routeFilterRules = new RouteFilterRulesClientImpl(this);
@@ -1598,9 +1598,9 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.virtualHubs = new VirtualHubsClientImpl(this);
         this.hubVirtualNetworkConnections = new HubVirtualNetworkConnectionsClientImpl(this);
         this.vpnGateways = new VpnGatewaysClientImpl(this);
+        this.vpnLinkConnections = new VpnLinkConnectionsClientImpl(this);
         this.vpnConnections = new VpnConnectionsClientImpl(this);
         this.vpnSiteLinkConnections = new VpnSiteLinkConnectionsClientImpl(this);
-        this.vpnLinkConnections = new VpnLinkConnectionsClientImpl(this);
         this.natRules = new NatRulesClientImpl(this);
         this.p2SVpnGateways = new P2SVpnGatewaysClientImpl(this);
         this.vpnServerConfigurationsAssociatedWithVirtualWans =

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageQueueInner;
 import com.azure.resourcemanager.storage.generated.models.StorageQueue;
 import java.util.Collections;
@@ -14,7 +13,7 @@ import java.util.Map;
 public final class StorageQueueImpl implements StorageQueue, StorageQueue.Definition, StorageQueue.Update {
     private StorageQueueInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -45,7 +44,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -81,7 +80,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this;
     }
 
-    StorageQueueImpl(String name, StorageManager serviceManager) {
+    StorageQueueImpl(String name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new StorageQueueInner();
         this.serviceManager = serviceManager;
         this.queueName = name;
@@ -111,7 +110,8 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this;
     }
 
-    StorageQueueImpl(StorageQueueInner innerObject, StorageManager serviceManager) {
+    StorageQueueImpl(
+        StorageQueueInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

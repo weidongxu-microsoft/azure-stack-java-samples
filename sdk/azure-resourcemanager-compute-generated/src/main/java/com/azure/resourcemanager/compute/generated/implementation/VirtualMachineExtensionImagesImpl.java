@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineExtensionImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionImageInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionImage;
@@ -23,10 +22,11 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
 
     private final VirtualMachineExtensionImagesClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public VirtualMachineExtensionImagesImpl(
-        VirtualMachineExtensionImagesClient innerClient, ComputeManager serviceManager) {
+        VirtualMachineExtensionImagesClient innerClient,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -132,7 +132,7 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

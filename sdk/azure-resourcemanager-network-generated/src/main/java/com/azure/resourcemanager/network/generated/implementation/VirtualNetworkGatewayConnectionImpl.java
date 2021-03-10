@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.LocalNetworkGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayInner;
@@ -33,7 +32,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         VirtualNetworkGatewayConnection.Update {
     private VirtualNetworkGatewayConnectionInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -198,7 +197,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -232,7 +231,8 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    VirtualNetworkGatewayConnectionImpl(String name, NetworkManager serviceManager) {
+    VirtualNetworkGatewayConnectionImpl(
+        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkGatewayConnectionInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkGatewayConnectionName = name;
@@ -262,7 +262,8 @@ public final class VirtualNetworkGatewayConnectionImpl
     }
 
     VirtualNetworkGatewayConnectionImpl(
-        VirtualNetworkGatewayConnectionInner innerObject, NetworkManager serviceManager) {
+        VirtualNetworkGatewayConnectionInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

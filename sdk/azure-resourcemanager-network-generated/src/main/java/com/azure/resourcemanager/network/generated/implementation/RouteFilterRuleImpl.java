@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterRuleInner;
 import com.azure.resourcemanager.network.generated.models.Access;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -16,9 +15,10 @@ import java.util.List;
 public final class RouteFilterRuleImpl implements RouteFilterRule {
     private RouteFilterRuleInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    RouteFilterRuleImpl(RouteFilterRuleInner innerObject, NetworkManager serviceManager) {
+    RouteFilterRuleImpl(
+        RouteFilterRuleInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -64,7 +64,7 @@ public final class RouteFilterRuleImpl implements RouteFilterRule {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

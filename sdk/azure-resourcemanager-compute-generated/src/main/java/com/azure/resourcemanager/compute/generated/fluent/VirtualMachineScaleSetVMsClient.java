@@ -17,7 +17,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineS
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
-import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMReimageParameters;
 
 /** An instance of this class provides access to all the operations defined in VirtualMachineScaleSetVMsClient. */
 public interface VirtualMachineScaleSetVMsClient {
@@ -38,7 +38,7 @@ public interface VirtualMachineScaleSetVMsClient {
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput);
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput);
 
     /**
      * Reimages (upgrade the operating system) a specific virtual machine in a VM scale set.
@@ -58,7 +58,7 @@ public interface VirtualMachineScaleSetVMsClient {
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context);
 
     /**
@@ -77,7 +77,7 @@ public interface VirtualMachineScaleSetVMsClient {
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput);
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput);
 
     /**
      * Reimages (upgrade the operating system) a specific virtual machine in a VM scale set.
@@ -109,7 +109,7 @@ public interface VirtualMachineScaleSetVMsClient {
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context);
 
     /**

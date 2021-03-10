@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualRoutersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterInner;
 import com.azure.resourcemanager.network.generated.models.VirtualRouter;
@@ -21,9 +20,10 @@ public final class VirtualRoutersImpl implements VirtualRouters {
 
     private final VirtualRoutersClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VirtualRoutersImpl(VirtualRoutersClient innerClient, NetworkManager serviceManager) {
+    public VirtualRoutersImpl(
+        VirtualRoutersClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -167,7 +167,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

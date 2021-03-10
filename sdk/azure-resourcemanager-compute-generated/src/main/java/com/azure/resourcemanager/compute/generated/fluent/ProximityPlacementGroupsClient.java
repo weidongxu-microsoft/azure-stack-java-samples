@@ -10,7 +10,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
-import com.azure.resourcemanager.compute.generated.models.UpdateResource;
+import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupUpdate;
 
 /** An instance of this class provides access to all the operations defined in ProximityPlacementGroupsClient. */
 public interface ProximityPlacementGroupsClient {
@@ -61,7 +61,7 @@ public interface ProximityPlacementGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     ProximityPlacementGroupInner update(
-        String resourceGroupName, String proximityPlacementGroupName, UpdateResource parameters);
+        String resourceGroupName, String proximityPlacementGroupName, ProximityPlacementGroupUpdate parameters);
 
     /**
      * Update a proximity placement group.
@@ -77,7 +77,10 @@ public interface ProximityPlacementGroupsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ProximityPlacementGroupInner> updateWithResponse(
-        String resourceGroupName, String proximityPlacementGroupName, UpdateResource parameters, Context context);
+        String resourceGroupName,
+        String proximityPlacementGroupName,
+        ProximityPlacementGroupUpdate parameters,
+        Context context);
 
     /**
      * Delete a proximity placement group.

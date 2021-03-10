@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.DdosProtectionPlansClient;
 import com.azure.resourcemanager.network.generated.fluent.models.DdosProtectionPlanInner;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlan;
@@ -21,9 +20,11 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
 
     private final DdosProtectionPlansClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public DdosProtectionPlansImpl(DdosProtectionPlansClient innerClient, NetworkManager serviceManager) {
+    public DdosProtectionPlansImpl(
+        DdosProtectionPlansClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -170,7 +171,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

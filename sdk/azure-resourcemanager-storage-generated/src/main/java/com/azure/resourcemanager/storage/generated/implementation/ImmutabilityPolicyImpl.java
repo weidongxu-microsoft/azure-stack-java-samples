@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.ImmutabilityPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicy;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicyState;
@@ -14,7 +13,7 @@ public final class ImmutabilityPolicyImpl
     implements ImmutabilityPolicy, ImmutabilityPolicy.Definition, ImmutabilityPolicy.Update {
     private ImmutabilityPolicyInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -48,7 +47,7 @@ public final class ImmutabilityPolicyImpl
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -92,7 +91,7 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
-    ImmutabilityPolicyImpl(StorageManager serviceManager) {
+    ImmutabilityPolicyImpl(com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new ImmutabilityPolicyInner();
         this.serviceManager = serviceManager;
         this.createIfMatch = null;
@@ -125,7 +124,9 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
-    ImmutabilityPolicyImpl(ImmutabilityPolicyInner innerObject, StorageManager serviceManager) {
+    ImmutabilityPolicyImpl(
+        ImmutabilityPolicyInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

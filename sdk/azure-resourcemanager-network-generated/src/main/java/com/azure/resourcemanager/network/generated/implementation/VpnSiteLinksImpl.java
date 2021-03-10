@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnSiteLinksClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkInner;
 import com.azure.resourcemanager.network.generated.models.VpnSiteLink;
@@ -21,9 +20,10 @@ public final class VpnSiteLinksImpl implements VpnSiteLinks {
 
     private final VpnSiteLinksClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public VpnSiteLinksImpl(VpnSiteLinksClient innerClient, NetworkManager serviceManager) {
+    public VpnSiteLinksImpl(
+        VpnSiteLinksClient innerClient, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -67,7 +67,7 @@ public final class VpnSiteLinksImpl implements VpnSiteLinks {
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

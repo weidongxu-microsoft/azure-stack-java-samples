@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualApplianceSiteInner;
 import com.azure.resourcemanager.network.generated.models.Office365PolicyProperties;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -15,7 +14,7 @@ public final class VirtualApplianceSiteImpl
     implements VirtualApplianceSite, VirtualApplianceSite.Definition, VirtualApplianceSite.Update {
     private VirtualApplianceSiteInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -49,7 +48,7 @@ public final class VirtualApplianceSiteImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -85,7 +84,7 @@ public final class VirtualApplianceSiteImpl
         return this;
     }
 
-    VirtualApplianceSiteImpl(String name, NetworkManager serviceManager) {
+    VirtualApplianceSiteImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualApplianceSiteInner();
         this.serviceManager = serviceManager;
         this.siteName = name;
@@ -114,7 +113,9 @@ public final class VirtualApplianceSiteImpl
         return this;
     }
 
-    VirtualApplianceSiteImpl(VirtualApplianceSiteInner innerObject, NetworkManager serviceManager) {
+    VirtualApplianceSiteImpl(
+        VirtualApplianceSiteInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

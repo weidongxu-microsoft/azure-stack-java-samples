@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageInner;
 import com.azure.resourcemanager.compute.generated.models.GalleryImage;
@@ -21,9 +20,10 @@ public final class GalleryImagesImpl implements GalleryImages {
 
     private final GalleryImagesClient innerClient;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
-    public GalleryImagesImpl(GalleryImagesClient innerClient, ComputeManager serviceManager) {
+    public GalleryImagesImpl(
+        GalleryImagesClient innerClient, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -179,7 +179,7 @@ public final class GalleryImagesImpl implements GalleryImages {
         return this.innerClient;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 

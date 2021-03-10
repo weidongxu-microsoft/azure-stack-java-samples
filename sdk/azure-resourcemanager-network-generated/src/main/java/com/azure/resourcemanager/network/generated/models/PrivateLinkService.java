@@ -98,14 +98,14 @@ public interface PrivateLinkService {
      *
      * @return the visibility value.
      */
-    ResourceSet visibility();
+    PrivateLinkServicePropertiesVisibility visibility();
 
     /**
      * Gets the autoApproval property: The auto-approval list of the private link service.
      *
      * @return the autoApproval value.
      */
-    ResourceSet autoApproval();
+    PrivateLinkServicePropertiesAutoApproval autoApproval();
 
     /**
      * Gets the fqdns property: The list of Fqdn.
@@ -275,7 +275,7 @@ public interface PrivateLinkService {
              * @param visibility The visibility list of the private link service.
              * @return the next definition stage.
              */
-            WithCreate withVisibility(ResourceSet visibility);
+            WithCreate withVisibility(PrivateLinkServicePropertiesVisibility visibility);
         }
         /** The stage of the PrivateLinkService definition allowing to specify autoApproval. */
         interface WithAutoApproval {
@@ -285,7 +285,7 @@ public interface PrivateLinkService {
              * @param autoApproval The auto-approval list of the private link service.
              * @return the next definition stage.
              */
-            WithCreate withAutoApproval(ResourceSet autoApproval);
+            WithCreate withAutoApproval(PrivateLinkServicePropertiesAutoApproval autoApproval);
         }
         /** The stage of the PrivateLinkService definition allowing to specify fqdns. */
         interface WithFqdns {
@@ -394,7 +394,7 @@ public interface PrivateLinkService {
              * @param visibility The visibility list of the private link service.
              * @return the next definition stage.
              */
-            Update withVisibility(ResourceSet visibility);
+            Update withVisibility(PrivateLinkServicePropertiesVisibility visibility);
         }
         /** The stage of the PrivateLinkService update allowing to specify autoApproval. */
         interface WithAutoApproval {
@@ -404,7 +404,7 @@ public interface PrivateLinkService {
              * @param autoApproval The auto-approval list of the private link service.
              * @return the next definition stage.
              */
-            Update withAutoApproval(ResourceSet autoApproval);
+            Update withAutoApproval(PrivateLinkServicePropertiesAutoApproval autoApproval);
         }
         /** The stage of the PrivateLinkService update allowing to specify fqdns. */
         interface WithFqdns {

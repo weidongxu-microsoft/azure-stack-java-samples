@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
-import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubQuotaMetricInfoInner;
 import com.azure.resourcemanager.iothub.generated.models.IotHubQuotaMetricInfo;
 
 public final class IotHubQuotaMetricInfoImpl implements IotHubQuotaMetricInfo {
     private IotHubQuotaMetricInfoInner innerObject;
 
-    private final IotHubManager serviceManager;
+    private final com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager;
 
-    IotHubQuotaMetricInfoImpl(IotHubQuotaMetricInfoInner innerObject, IotHubManager serviceManager) {
+    IotHubQuotaMetricInfoImpl(
+        IotHubQuotaMetricInfoInner innerObject,
+        com.azure.resourcemanager.iothub.generated.IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class IotHubQuotaMetricInfoImpl implements IotHubQuotaMetricInfo {
         return this.innerObject;
     }
 
-    private IotHubManager manager() {
+    private com.azure.resourcemanager.iothub.generated.IotHubManager manager() {
         return this.serviceManager;
     }
 }

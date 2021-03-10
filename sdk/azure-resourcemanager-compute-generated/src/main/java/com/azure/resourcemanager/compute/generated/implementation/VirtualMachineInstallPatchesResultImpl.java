@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstallPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.models.ApiError;
 import com.azure.resourcemanager.compute.generated.models.PatchInstallationDetail;
@@ -18,10 +17,11 @@ import java.util.List;
 public final class VirtualMachineInstallPatchesResultImpl implements VirtualMachineInstallPatchesResult {
     private VirtualMachineInstallPatchesResultInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     VirtualMachineInstallPatchesResultImpl(
-        VirtualMachineInstallPatchesResultInner innerObject, ComputeManager serviceManager) {
+        VirtualMachineInstallPatchesResultInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -83,7 +83,7 @@ public final class VirtualMachineInstallPatchesResultImpl implements VirtualMach
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 }

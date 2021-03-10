@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualWanInner;
 import com.azure.resourcemanager.network.generated.models.OfficeTrafficCategory;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -20,7 +19,7 @@ import java.util.Map;
 public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, VirtualWan.Update {
     private VirtualWanInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -105,7 +104,7 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -138,7 +137,7 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this;
     }
 
-    VirtualWanImpl(String name, NetworkManager serviceManager) {
+    VirtualWanImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualWanInner();
         this.serviceManager = serviceManager;
         this.virtualWanName = name;
@@ -169,7 +168,8 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this;
     }
 
-    VirtualWanImpl(VirtualWanInner innerObject, NetworkManager serviceManager) {
+    VirtualWanImpl(
+        VirtualWanInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountListKeysResultInner;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountKey;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountListKeysResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class StorageAccountListKeysResultImpl implements StorageAccountListKeysResult {
     private StorageAccountListKeysResultInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    StorageAccountListKeysResultImpl(StorageAccountListKeysResultInner innerObject, StorageManager serviceManager) {
+    StorageAccountListKeysResultImpl(
+        StorageAccountListKeysResultInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class StorageAccountListKeysResultImpl implements StorageAccountLis
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

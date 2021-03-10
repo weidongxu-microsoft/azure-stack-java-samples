@@ -5,18 +5,18 @@
 package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.CorsRules;
 import com.azure.resourcemanager.storage.generated.models.DeleteRetentionPolicy;
 import com.azure.resourcemanager.storage.generated.models.FileServiceProperties;
+import com.azure.resourcemanager.storage.generated.models.ProtocolSettings;
 import com.azure.resourcemanager.storage.generated.models.Sku;
 
 public final class FileServicePropertiesImpl
     implements FileServiceProperties, FileServiceProperties.Definition, FileServiceProperties.Update {
     private FileServicePropertiesInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -42,11 +42,15 @@ public final class FileServicePropertiesImpl
         return this.innerModel().shareDeleteRetentionPolicy();
     }
 
+    public ProtocolSettings protocolSettings() {
+        return this.innerModel().protocolSettings();
+    }
+
     public FileServicePropertiesInner innerModel() {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -80,7 +84,7 @@ public final class FileServicePropertiesImpl
         return this;
     }
 
-    FileServicePropertiesImpl(StorageManager serviceManager) {
+    FileServicePropertiesImpl(com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new FileServicePropertiesInner();
         this.serviceManager = serviceManager;
     }
@@ -109,7 +113,9 @@ public final class FileServicePropertiesImpl
         return this;
     }
 
-    FileServicePropertiesImpl(FileServicePropertiesInner innerObject, StorageManager serviceManager) {
+    FileServicePropertiesImpl(
+        FileServicePropertiesInner innerObject,
+        com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -143,6 +149,11 @@ public final class FileServicePropertiesImpl
 
     public FileServicePropertiesImpl withShareDeleteRetentionPolicy(DeleteRetentionPolicy shareDeleteRetentionPolicy) {
         this.innerModel().withShareDeleteRetentionPolicy(shareDeleteRetentionPolicy);
+        return this;
+    }
+
+    public FileServicePropertiesImpl withProtocolSettings(ProtocolSettings protocolSettings) {
+        this.innerModel().withProtocolSettings(protocolSettings);
         return this;
     }
 }

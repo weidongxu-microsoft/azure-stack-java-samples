@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
 import com.azure.resourcemanager.network.generated.models.IpAllocationMethod;
@@ -16,10 +15,11 @@ import com.azure.resourcemanager.network.generated.models.Subnet;
 public final class PrivateLinkServiceIpConfigurationImpl implements PrivateLinkServiceIpConfiguration {
     private PrivateLinkServiceIpConfigurationInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     PrivateLinkServiceIpConfigurationImpl(
-        PrivateLinkServiceIpConfigurationInner innerObject, NetworkManager serviceManager) {
+        PrivateLinkServiceIpConfigurationInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -73,7 +73,7 @@ public final class PrivateLinkServiceIpConfigurationImpl implements PrivateLinkS
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureWebCategoryInner;
 import com.azure.resourcemanager.network.generated.models.AzureWebCategory;
 
 public final class AzureWebCategoryImpl implements AzureWebCategory {
     private AzureWebCategoryInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    AzureWebCategoryImpl(AzureWebCategoryInner innerObject, NetworkManager serviceManager) {
+    AzureWebCategoryImpl(
+        AzureWebCategoryInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +42,7 @@ public final class AzureWebCategoryImpl implements AzureWebCategory {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

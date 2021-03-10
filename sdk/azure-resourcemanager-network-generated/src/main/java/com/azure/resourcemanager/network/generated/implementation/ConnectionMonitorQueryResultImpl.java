@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorQueryResultInner;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorQueryResult;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorSourceStatus;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class ConnectionMonitorQueryResultImpl implements ConnectionMonitorQueryResult {
     private ConnectionMonitorQueryResultInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    ConnectionMonitorQueryResultImpl(ConnectionMonitorQueryResultInner innerObject, NetworkManager serviceManager) {
+    ConnectionMonitorQueryResultImpl(
+        ConnectionMonitorQueryResultInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +40,7 @@ public final class ConnectionMonitorQueryResultImpl implements ConnectionMonitor
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

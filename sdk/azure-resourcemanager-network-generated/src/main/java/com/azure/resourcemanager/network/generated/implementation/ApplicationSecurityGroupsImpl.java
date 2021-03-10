@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationSecurityGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationSecurityGroup;
@@ -21,9 +20,11 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
 
     private final ApplicationSecurityGroupsClient innerClient;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    public ApplicationSecurityGroupsImpl(ApplicationSecurityGroupsClient innerClient, NetworkManager serviceManager) {
+    public ApplicationSecurityGroupsImpl(
+        ApplicationSecurityGroupsClient innerClient,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -179,7 +180,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         return this.innerClient;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 

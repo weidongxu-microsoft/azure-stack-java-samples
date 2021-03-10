@@ -134,6 +134,14 @@ public interface FileShareItem {
     Long shareUsageBytes();
 
     /**
+     * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with
+     * expand param "snapshots".
+     *
+     * @return the snapshotTime value.
+     */
+    OffsetDateTime snapshotTime();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.FileShareItemInner object.
      *
      * @return the inner object.

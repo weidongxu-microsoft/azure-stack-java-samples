@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionInner;
@@ -18,8 +17,9 @@ import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkService;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.PrivateLinkServicePropertiesAutoApproval;
+import com.azure.resourcemanager.network.generated.models.PrivateLinkServicePropertiesVisibility;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.azure.resourcemanager.network.generated.models.ResourceSet;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +29,7 @@ public final class PrivateLinkServiceImpl
     implements PrivateLinkService, PrivateLinkService.Definition, PrivateLinkService.Update {
     private PrivateLinkServiceInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -120,11 +120,11 @@ public final class PrivateLinkServiceImpl
         }
     }
 
-    public ResourceSet visibility() {
+    public PrivateLinkServicePropertiesVisibility visibility() {
         return this.innerModel().visibility();
     }
 
-    public ResourceSet autoApproval() {
+    public PrivateLinkServicePropertiesAutoApproval autoApproval() {
         return this.innerModel().autoApproval();
     }
 
@@ -161,7 +161,7 @@ public final class PrivateLinkServiceImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -192,7 +192,7 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    PrivateLinkServiceImpl(String name, NetworkManager serviceManager) {
+    PrivateLinkServiceImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new PrivateLinkServiceInner();
         this.serviceManager = serviceManager;
         this.serviceName = name;
@@ -220,7 +220,9 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    PrivateLinkServiceImpl(PrivateLinkServiceInner innerObject, NetworkManager serviceManager) {
+    PrivateLinkServiceImpl(
+        PrivateLinkServiceInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
@@ -280,12 +282,12 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    public PrivateLinkServiceImpl withVisibility(ResourceSet visibility) {
+    public PrivateLinkServiceImpl withVisibility(PrivateLinkServicePropertiesVisibility visibility) {
         this.innerModel().withVisibility(visibility);
         return this;
     }
 
-    public PrivateLinkServiceImpl withAutoApproval(ResourceSet autoApproval) {
+    public PrivateLinkServiceImpl withAutoApproval(PrivateLinkServicePropertiesAutoApproval autoApproval) {
         this.innerModel().withAutoApproval(autoApproval);
         return this;
     }

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyResourceInner;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyResource;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyUpdateResource;
@@ -17,7 +16,7 @@ public final class SshPublicKeyResourceImpl
     implements SshPublicKeyResource, SshPublicKeyResource.Definition, SshPublicKeyResource.Update {
     private SshPublicKeyResourceInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -60,7 +59,7 @@ public final class SshPublicKeyResourceImpl
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -95,7 +94,7 @@ public final class SshPublicKeyResourceImpl
         return this;
     }
 
-    SshPublicKeyResourceImpl(String name, ComputeManager serviceManager) {
+    SshPublicKeyResourceImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new SshPublicKeyResourceInner();
         this.serviceManager = serviceManager;
         this.sshPublicKeyName = name;
@@ -126,7 +125,9 @@ public final class SshPublicKeyResourceImpl
         return this;
     }
 
-    SshPublicKeyResourceImpl(SshPublicKeyResourceInner innerObject, ComputeManager serviceManager) {
+    SshPublicKeyResourceImpl(
+        SshPublicKeyResourceInner innerObject,
+        com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

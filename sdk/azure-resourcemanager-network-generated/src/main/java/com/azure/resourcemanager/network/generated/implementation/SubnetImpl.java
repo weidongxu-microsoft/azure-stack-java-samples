@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationProfileInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
@@ -32,9 +31,9 @@ import java.util.stream.Collectors;
 public final class SubnetImpl implements Subnet {
     private SubnetInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    SubnetImpl(SubnetInner innerObject, NetworkManager serviceManager) {
+    SubnetImpl(SubnetInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -207,7 +206,7 @@ public final class SubnetImpl implements Subnet {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

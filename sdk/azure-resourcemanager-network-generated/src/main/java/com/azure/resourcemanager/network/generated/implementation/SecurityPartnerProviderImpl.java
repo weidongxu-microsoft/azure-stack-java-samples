@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityPartnerProviderInner;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProvider;
@@ -21,7 +20,7 @@ public final class SecurityPartnerProviderImpl
     implements SecurityPartnerProvider, SecurityPartnerProvider.Definition, SecurityPartnerProvider.Update {
     private SecurityPartnerProviderInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -80,7 +79,7 @@ public final class SecurityPartnerProviderImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -113,7 +112,8 @@ public final class SecurityPartnerProviderImpl
         return this;
     }
 
-    SecurityPartnerProviderImpl(String name, NetworkManager serviceManager) {
+    SecurityPartnerProviderImpl(
+        String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new SecurityPartnerProviderInner();
         this.serviceManager = serviceManager;
         this.securityPartnerProviderName = name;
@@ -144,7 +144,9 @@ public final class SecurityPartnerProviderImpl
         return this;
     }
 
-    SecurityPartnerProviderImpl(SecurityPartnerProviderInner innerObject, NetworkManager serviceManager) {
+    SecurityPartnerProviderImpl(
+        SecurityPartnerProviderInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
