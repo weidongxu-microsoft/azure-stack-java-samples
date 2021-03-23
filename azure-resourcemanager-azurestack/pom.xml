@@ -14,29 +14,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-compute-generated</artifactId>
-      <version>1.0.0-beta.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-iothub-generated</artifactId>
-      <version>1.0.0-beta.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-network-generated</artifactId>
-      <version>1.0.0-beta.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-resources-generated</artifactId>
-      <version>1.0.0-beta.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-storage-generated</artifactId>
-      <version>1.0.0-beta.1</version>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-core-management</artifactId>
+      <version>1.2.0</version>
     </dependency>
   </dependencies>
 

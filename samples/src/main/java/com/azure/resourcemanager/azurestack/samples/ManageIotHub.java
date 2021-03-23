@@ -10,9 +10,10 @@ import com.azure.core.management.AzureEnvironment;
 import com.azure.core.management.Region;
 import com.azure.core.management.profile.AzureProfile;
 import com.azure.identity.DefaultAzureCredentialBuilder;
-import com.azure.resourcemanager.iothub.generated.models.IotHubDescription;
-import com.azure.resourcemanager.iothub.generated.models.IotHubSku;
-import com.azure.resourcemanager.iothub.generated.models.IotHubSkuInfo;
+import com.azure.resourcemanager.azurestack.AzureResourceManager;
+import com.azure.resourcemanager.azurestack.iothub.models.IotHubDescription;
+import com.azure.resourcemanager.azurestack.iothub.models.IotHubSku;
+import com.azure.resourcemanager.azurestack.iothub.models.IotHubSkuInfo;
 
 import java.util.HashMap;
 import java.util.Map;

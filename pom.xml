@@ -10,11 +10,5 @@
     <module>samples</module>
 
     <module>azure-resourcemanager-azurestack</module>
-
-    <module>sdk/azure-resourcemanager-compute-generated</module>
-    <module>sdk/azure-resourcemanager-iothub-generated</module>
-    <module>sdk/azure-resourcemanager-network-generated</module>
-    <module>sdk/azure-resourcemanager-resources-generated</module>
-    <module>sdk/azure-resourcemanager-storage-generated</module>
   </modules>
 </project>
