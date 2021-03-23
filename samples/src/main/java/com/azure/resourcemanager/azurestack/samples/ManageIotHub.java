@@ -32,7 +32,7 @@ public final class ManageIotHub {
         String iotHubName = randomString("iot", 15);
 
         try {
-            azure.resources().resourceGroups().define(rgName)
+            azure.resource().resourceGroups().define(rgName)
                     .withRegion(region)
                     .create();
 
@@ -62,7 +62,7 @@ public final class ManageIotHub {
 
             return true;
         } finally {
-            azure.resources().resourceGroups().delete(rgName);
+            azure.resource().resourceGroups().delete(rgName);
         }
     }
 

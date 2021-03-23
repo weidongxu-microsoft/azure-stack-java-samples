@@ -132,7 +132,7 @@ public class AzureResourceManager {
         }
     }
 
-    public ResourceManager resources() {
+    public ResourceManager resource() {
         return resourceManager;
     }
 

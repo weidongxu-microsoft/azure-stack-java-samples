@@ -56,7 +56,7 @@ public final class ManageVirtualMachine {
         int diskSize = 16;
 
         try {
-            azure.resources().resourceGroups().define(rgName)
+            azure.resource().resourceGroups().define(rgName)
                     .withRegion(region)
                     .create();
 
@@ -134,7 +134,7 @@ public final class ManageVirtualMachine {
 
             return true;
         } finally {
-            azure.resources().resourceGroups().delete(rgName);
+            azure.resource().resourceGroups().delete(rgName);
         }
     }
 
