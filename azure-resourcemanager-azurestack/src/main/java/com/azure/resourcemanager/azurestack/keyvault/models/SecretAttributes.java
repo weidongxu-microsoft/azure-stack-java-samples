@@ -7,7 +7,6 @@ package com.azure.resourcemanager.azurestack.keyvault.models;
 import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.time.OffsetDateTime;
 
 /** The secret management attributes. */
 @Immutable
@@ -23,14 +22,14 @@ public final class SecretAttributes extends Attributes {
 
     /** {@inheritDoc} */
     @Override
-    public SecretAttributes withNotBefore(OffsetDateTime notBefore) {
+    public SecretAttributes withNotBefore(Long notBefore) {
         super.withNotBefore(notBefore);
         return this;
     }
 
     /** {@inheritDoc} */
     @Override
-    public SecretAttributes withExpires(OffsetDateTime expires) {
+    public SecretAttributes withExpires(Long expires) {
         super.withExpires(expires);
         return this;
     }
