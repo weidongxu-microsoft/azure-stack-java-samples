@@ -1,9 +1,5 @@
 # Samples for Java SDK for Azure Stack
 
-## Limitation
-
-The samples only works for Azure Cloud, not Azure Stack, as the api-version of the services involved is not yet available to any Azure Stack.
-
 ## Requirement
 
 Requires an Azure Subscription.
@@ -23,8 +19,6 @@ This way, only Subscription ID is required. It can be configured as `AZURE_SUBSC
 ## Modules
 
 `azure-resourcemanager-azurestack` module is the proof of concept of the new Azure Stack aggregated package. Artifact name and package name is TBD.
-
-Modules under `sdk` is Java SDK for services, as none of the SDK is released, it had to be included with this repository. Artifact name and package name is TBD.
 
 `samples` module contains the classes for samples.
 
