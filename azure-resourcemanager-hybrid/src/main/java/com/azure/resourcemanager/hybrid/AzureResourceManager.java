@@ -11,6 +11,7 @@ import com.azure.core.http.policy.RetryPolicy;
 import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hybrid.appservice.AppServiceManager;
+import com.azure.resourcemanager.hybrid.authorization.AuthorizationManager;
 import com.azure.resourcemanager.hybrid.commerce.UsageManager;
 import com.azure.resourcemanager.hybrid.compute.ComputeManager;
 import com.azure.resourcemanager.hybrid.databoxedge.DataBoxEdgeManager;
@@ -162,6 +163,8 @@ public class AzureResourceManager {
 
     private final AppServiceManager appServiceManager;
 
+    private final AuthorizationManager authorizationManager;
+
     /** @return the {@link UsageManager}. */
     public UsageManager usage() {
         return usageManager;
@@ -217,6 +220,11 @@ public class AzureResourceManager {
         return appServiceManager;
     }
 
+    /** @return the {@link AuthorizationManager}. */
+    public AuthorizationManager authorization() {
+        return authorizationManager;
+    }
+
     private AzureResourceManager(TokenCredential credential, AzureProfile profile, Configurable configurable) {
         Objects.requireNonNull(credential, "'credential' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
@@ -232,6 +240,7 @@ public class AzureResourceManager {
         ResourceManager.Configurable resourceManagerConfigurable = ResourceManager.configure();
         StorageManager.Configurable storageManagerConfigurable = StorageManager.configure();
         AppServiceManager.Configurable appServiceManagerConfigurable = AppServiceManager.configure();
+        AuthorizationManager.Configurable authorizationManagerConfigurable = AuthorizationManager.configure();
 
         HttpClient httpClient = configurable.httpClient;
         if (httpClient == null) {
@@ -249,6 +258,7 @@ public class AzureResourceManager {
             resourceManagerConfigurable.withHttpClient(httpClient);
             storageManagerConfigurable.withHttpClient(httpClient);
             appServiceManagerConfigurable.withHttpClient(httpClient);
+            authorizationManagerConfigurable.withHttpClient(httpClient);
         }
         if (configurable.httpLogOptions != null) {
             usageManagerConfigurable.withLogOptions(configurable.httpLogOptions);
@@ -262,6 +272,7 @@ public class AzureResourceManager {
             resourceManagerConfigurable.withLogOptions(configurable.httpLogOptions);
             storageManagerConfigurable.withLogOptions(configurable.httpLogOptions);
             appServiceManagerConfigurable.withLogOptions(configurable.httpLogOptions);
+            authorizationManagerConfigurable.withLogOptions(configurable.httpLogOptions);
         }
         if (configurable.retryPolicy != null) {
             usageManagerConfigurable.withRetryPolicy(configurable.retryPolicy);
@@ -275,6 +286,7 @@ public class AzureResourceManager {
             resourceManagerConfigurable.withRetryPolicy(configurable.retryPolicy);
             storageManagerConfigurable.withRetryPolicy(configurable.retryPolicy);
             appServiceManagerConfigurable.withRetryPolicy(configurable.retryPolicy);
+            authorizationManagerConfigurable.withRetryPolicy(configurable.retryPolicy);
         }
         for (HttpPipelinePolicy policy : configurable.policies) {
             usageManagerConfigurable.withPolicy(policy);
@@ -288,6 +300,7 @@ public class AzureResourceManager {
             resourceManagerConfigurable.withPolicy(policy);
             storageManagerConfigurable.withPolicy(policy);
             appServiceManagerConfigurable.withPolicy(policy);
+            authorizationManagerConfigurable.withPolicy(policy);
         }
         if (configurable.defaultPollInterval != null) {
             usageManagerConfigurable.withDefaultPollInterval(configurable.defaultPollInterval);
@@ -301,6 +314,7 @@ public class AzureResourceManager {
             resourceManagerConfigurable.withDefaultPollInterval(configurable.defaultPollInterval);
             storageManagerConfigurable.withDefaultPollInterval(configurable.defaultPollInterval);
             appServiceManagerConfigurable.withDefaultPollInterval(configurable.defaultPollInterval);
+            authorizationManagerConfigurable.withDefaultPollInterval(configurable.defaultPollInterval);
         }
 
         this.usageManager = usageManagerConfigurable.authenticate(credential, profile);
@@ -314,6 +328,7 @@ public class AzureResourceManager {
         this.resourceManager = resourceManagerConfigurable.authenticate(credential, profile);
         this.storageManager = storageManagerConfigurable.authenticate(credential, profile);
         this.appServiceManager = appServiceManagerConfigurable.authenticate(credential, profile);
+        this.authorizationManager = authorizationManagerConfigurable.authenticate(credential, profile);
 
         this.subscriptionId = profile.getSubscriptionId();
         this.tenantId = profile.getTenantId();

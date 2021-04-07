@@ -245,6 +245,7 @@ public final class DataBoxEdgeManager {
                 .add(
                     new BearerTokenAuthenticationPolicy(
                         credential, profile.getEnvironment().getManagementEndpoint() + "/.default"));
+            policies.addAll(this.policies);
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
             HttpPipeline httpPipeline =
